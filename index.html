@@ -3052,37 +3052,26 @@
 
   
   <!-- ============================================================== -->
-  <!-- PPDB 2027-2028 SLEEK SQUIRCLE CAPSULE MODAL (ZERO SCROLL, COMPACT)-->
+  <!-- CUTE MINIMALIST POPUP (PILIHAN 1 - SQUIRCLE DIALOG MATCHING REF)  -->
   <!-- ============================================================== -->
-  <div id="ppdbModal" class="ppdb-modal-overlay" role="dialog" aria-modal="true" aria-labelledby="ppdbModalSchool">
-    <div class="ppdb-capsule-card">
-      <button type="button" class="ppdb-close-circle" id="closePpdbModal" aria-label="Tutup Pengumuman">&times;</button>
+  <div id="ppdbModal" class="ppdb-modal-overlay" role="dialog" aria-modal="true" aria-labelledby="ppdbModalTitle">
+    <div class="ppdb-cute-card">
+      <button type="button" class="ppdb-cute-close" id="closePpdbModal" aria-label="Tutup Pengumuman">&times;</button>
       
-      <!-- Mini School Logo -->
-      <div class="mb-3">
-        <img src="images/logo.png" alt="Logo SD Kristen Satya Wacana" style="width: 58px; height: 58px; object-fit: contain; filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1));">
+      <!-- Top Centerpiece Circle with Logo -->
+      <div class="ppdb-avatar-circle">
+        <img src="images/logo.png" alt="Logo SD Kristen Satya Wacana">
       </div>
 
-      <!-- Badge requested: Bergabung Bersama Kami di 2027-2028 -->
-      <div class="ppdb-capsule-badge">
-        ✨ Bergabung Bersama Kami di 2027-2028
-      </div>
+      <!-- Headline: Pilihan 1 -->
+      <h3 class="ppdb-cute-title" id="ppdbModalTitle">SD Kristen Satya Wacana</h3>
 
-      <!-- Title -->
-      <div class="ppdb-capsule-title">Penerimaan Peserta Didik Baru</div>
-      <div class="ppdb-capsule-school" id="ppdbModalSchool">SD Kristen Satya Wacana</div>
+      <!-- Subtext: Bergabung Bersama Kami di 2027-2028 -->
+      <p class="ppdb-cute-sub">Bergabung Bersama Kami di 2027-2028</p>
 
-      <!-- 4 Vision Pills: Inovatif, Holistik, Wawasan Global, Kasih -->
-      <div class="ppdb-vision-tags">
-        <span class="ppdb-tag tag-primary">Inovatif</span>
-        <span class="ppdb-tag tag-orange">Holistik</span>
-        <span class="ppdb-tag tag-primary">Wawasan Global</span>
-        <span class="ppdb-tag tag-orange">Kasih</span>
-      </div>
-
-      <!-- Single Action Button: WhatsApp -->
-      <a href="https://wa.me/6281390304093?text=Halo%20Panitia%20PPDB%20SD%20Kristen%20Satya%20Wacana,%20saya%20ingin%20mendaftar%20untuk%20Tahun%20Ajaran%202027-2028" target="_blank" class="ppdb-btn-wa">
-        <span class="icon-whatsapp mr-2" style="font-size: 20px;"></span> Chat WhatsApp PPDB (081390304093)
+      <!-- Pill Button: Collect Reward Style -->
+      <a href="https://wa.me/6281390304093?text=Halo%20Panitia%20PPDB%20SD%20Kristen%20Satya%20Wacana,%20saya%20ingin%20mendaftar%20untuk%20Tahun%20Ajaran%202027-2028" target="_blank" class="ppdb-cute-btn">
+        <span class="icon-whatsapp mr-2" style="font-size: 20px;"></span> Chat WhatsApp
       </a>
     </div>
   </div>
@@ -3092,18 +3081,18 @@
       var modal = document.getElementById('ppdbModal');
       var closeBtn = document.getElementById('closePpdbModal');
 
-      if (!sessionStorage.getItem('sdlab_ppdb_capsule_seen')) {
+      if (!sessionStorage.getItem('sdlab_cute_popup_seen')) {
         setTimeout(function() {
           if (modal) {
             modal.classList.add('show');
           }
-        }, 600);
+        }, 500);
       }
 
       function closeModal() {
         if (modal) {
           modal.classList.remove('show');
-          sessionStorage.setItem('sdlab_ppdb_capsule_seen', 'true');
+          sessionStorage.setItem('sdlab_cute_popup_seen', 'true');
         }
       }
 
