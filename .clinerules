@@ -1,0 +1,27 @@
+# CLINE SYSTEM RULES - SD KRISTEN SATYA WACANA (SD LAB UKSW)
+
+## 1. PEMBATASAN KONTEKS & MEMORI (TOKEN SAVER)
+- Fokus pembacaan file hanya pada file HTML, CSS, JS yang sedang dikerjakan.
+- Rujuk file `GEMINI.md` untuk identitas sekolah, visi misi, dan pedoman kurikulum KSP 2025/2026.
+
+## 2. STRICT CONSTRAINTS (ATURAN MUTLAK)
+- **TANGGAL KEGIATAN**: DILARANG KERAS menyematkan tanggal, hari, bulan, dan tahun pada kartu kegiatan/berita/galeri. Gunakan badge kategori tematik (Outdoor Learning, Outing Class, Edukasi Damkar, Mitigasi Bencana, Panggung Dongeng, Prestasi Siswa).
+- **KAK KEMPO**: Kak Kempo adalah Aktivis Pendongeng Anak Nasional dari Semarang (BUKAN bela diri kempo). Semua konten terkait beliau adalah Panggung Dongeng & Literasi Karakter.
+- **LOMBA KEMERDEKAAN**: Tanpa kata "semarak" dan "pesta rakyat". Judul bersih: "Peringatan & Lomba Kemerdekaan Republik Indonesia di SD Kristen Satya Wacana".
+- **TAGLINE UTAMA**: "Membentuk Generasi Inovatif, Holistik, dan Berwawasan Global berdasarkan Kasih".
+
+## 3. STANDAR DESAIN & WARNA (ANTI-TABRAKAN WARNA)
+- Latar Belakang Gelap / Foto: Dark overlay merata (rgba(15, 23, 42, 0.85)), teks judul & deskripsi WAJIB Putih Bersih (#ffffff), angka & highlight Oranye-Emas (#fd5f00 / #f59f00), ikon terang. Dilarang teks hitam/biru redup di atas foto gelap.
+- Latar Belakang Terang: Heading Navy Slate (#1e293b), Subjudul Biru (#0d83ff), Body Slate Gray (#475569).
+
+## 4. EQUAL HEIGHT BOXES (SOLUSI BOX TIDAK RATA)
+- Semua kartu (.staff, .course, .pricing-entry, .blog-entry) harus memiliki tinggi rata menggunakan flexbox:
+  - Container column: `d-flex align-items-stretch mb-4`
+  - Card: `h-100 d-flex flex-column justify-content-between`
+  - Gambar thumbnail / foto guru: rasio tetap dan konsisten.
+  - Nama dan jabatan memiliki min-height agar sejajar rapi.
+
+## 5. GIT PROTOCOL
+- Identitas lokal: `webmaster <webmaster@sdlabuksw.sch.id>`
+- Remote: `https://github.com/webmaster610/websdlab.git` (main)
+- Dilarang menyentuh `git config --global`.
