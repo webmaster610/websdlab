@@ -3052,27 +3052,56 @@
 
   
   <!-- ============================================================== -->
-  <!-- CUTE MINIMALIST POPUP (PILIHAN 1 - SQUIRCLE DIALOG MATCHING REF)  -->
+  <!-- POPUP PENGUMUMAN PPDB (CANVA-OPTIMIZED & HIGH CONVERTING)       -->
   <!-- ============================================================== -->
   <div id="ppdbModal" class="ppdb-modal-overlay" role="dialog" aria-modal="true" aria-labelledby="ppdbModalTitle">
-    <div class="ppdb-cute-card">
-      <button type="button" class="ppdb-cute-close" id="closePpdbModal" aria-label="Tutup Pengumuman">&times;</button>
+    <div class="ppdb-popup-card">
+      <!-- Close Button (✕) -->
+      <button type="button" class="ppdb-popup-close" id="closePpdbModal" aria-label="Tutup Pengumuman">&times;</button>
       
-      <!-- Top Centerpiece Circle with Logo -->
-      <div class="ppdb-avatar-circle">
-        <img src="images/logo.png" alt="Logo SD Kristen Satya Wacana">
+      <!-- Photo Header with Dark Gradient Overlay -->
+      <div class="ppdb-popup-hero">
+        <div class="ppdb-popup-hero-overlay"></div>
+        <span class="ppdb-popup-hero-title">SD Kristen Satya Wacana</span>
       </div>
 
-      <!-- Headline: Pilihan 1 -->
-      <h3 class="ppdb-cute-title" id="ppdbModalTitle">SD Kristen Satya Wacana</h3>
+      <!-- Overlapping School Logo Circle -->
+      <div class="ppdb-popup-logo-wrap">
+        <img src="images/logo.png" alt="Logo SD Kristen Satya Wacana Salatiga">
+      </div>
 
-      <!-- Subtext: Bergabung Bersama Kami di 2027-2028 -->
-      <p class="ppdb-cute-sub">Bergabung Bersama Kami di 2027-2028</p>
+      <!-- Card Body Content -->
+      <div class="ppdb-popup-body">
+        <!-- Period Badge -->
+        <span class="ppdb-tagline-badge">Penerimaan Siswa Baru 2027 – 2028</span>
 
-      <!-- Pill Button: Collect Reward Style -->
-      <a href="https://wa.me/6281390304093?text=Halo%20Panitia%20PPDB%20SD%20Kristen%20Satya%20Wacana,%20saya%20ingin%20mendaftar%20untuk%20Tahun%20Ajaran%202027-2028" target="_blank" class="ppdb-cute-btn">
-        <span class="icon-whatsapp mr-2" style="font-size: 20px;"></span> Chat WhatsApp
-      </a>
+        <!-- Headline -->
+        <h3 class="ppdb-popup-title" id="ppdbModalTitle">Bergabung Bersama Kami!</h3>
+        <p class="ppdb-popup-sub">Mendidik dengan Inovasi, Karakter, dan Kasih</p>
+
+        <!-- 4 Vision Pills (Replaces long vision text) -->
+        <div class="ppdb-vision-tags">
+          <span class="ppdb-vtag"><span class="icon-star ppdb-vtag-icon"></span> Inovatif</span>
+          <span class="ppdb-vtag"><span class="icon-check ppdb-vtag-icon"></span> Holistik</span>
+          <span class="ppdb-vtag"><span class="icon-globe ppdb-vtag-icon"></span> Berwawasan Global</span>
+          <span class="ppdb-vtag"><span class="icon-heart ppdb-vtag-icon" style="color: #ef4444;"></span> Kasih</span>
+        </div>
+
+        <!-- Slogan: Let's Grow Together in Love -->
+        <div class="ppdb-slogan">“Let's Grow Together in Love”</div>
+
+        <!-- WhatsApp CTA Button -->
+        <a href="https://wa.me/6281390304093?text=Halo%20Panitia%20PPDB%20SD%20Kristen%20Satya%20Wacana,%20saya%20ingin%20informasi%20pendaftaran%20Tahun%20Pelajaran%202027-2028" target="_blank" class="ppdb-btn-wa">
+          <span class="icon-whatsapp mr-2" style="font-size: 20px;"></span> Chat WhatsApp PPDB
+        </a>
+
+        <!-- Footer Info -->
+        <div class="ppdb-card-foot">
+          <a href="https://sdlabuksw.sch.id" target="_blank"><span class="icon-globe mr-1"></span>sdlabuksw.sch.id</a>
+          <span>•</span>
+          <a href="tel:0298323660"><span class="icon-phone mr-1"></span>(0298) 323660</a>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -3081,18 +3110,19 @@
       var modal = document.getElementById('ppdbModal');
       var closeBtn = document.getElementById('closePpdbModal');
 
-      if (!sessionStorage.getItem('sdlab_cute_popup_seen')) {
+      // Tampilkan otomatis saat halaman dibuka
+      if (!sessionStorage.getItem('sdlab_ppdb_popup_v2')) {
         setTimeout(function() {
           if (modal) {
             modal.classList.add('show');
           }
-        }, 500);
+        }, 600);
       }
 
       function closeModal() {
         if (modal) {
           modal.classList.remove('show');
-          sessionStorage.setItem('sdlab_cute_popup_seen', 'true');
+          sessionStorage.setItem('sdlab_ppdb_popup_v2', 'true');
         }
       }
 
