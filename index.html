@@ -3059,10 +3059,9 @@
       <!-- Close Button (✕) -->
       <button type="button" class="ppdb-popup-close" id="closePpdbModal" aria-label="Tutup Pengumuman">&times;</button>
       
-      <!-- Photo Header with Dark Gradient Overlay -->
+      <!-- Photo Header with Dark Gradient Overlay (Clean without text badge) -->
       <div class="ppdb-popup-hero">
         <div class="ppdb-popup-hero-overlay"></div>
-        <span class="ppdb-popup-hero-title">SD Kristen Satya Wacana</span>
       </div>
 
       <!-- Overlapping School Logo Circle -->
@@ -3072,19 +3071,12 @@
 
       <!-- Card Body Content -->
       <div class="ppdb-popup-body">
-        <!-- Period Badge -->
-        <span class="ppdb-tagline-badge">Penerimaan Siswa Baru 2027 – 2028</span>
-
         <!-- Headline -->
-        <h3 class="ppdb-popup-title" id="ppdbModalTitle">Bergabung Bersama Kami!</h3>
-        <p class="ppdb-popup-sub">Mendidik dengan Inovasi, Karakter, dan Kasih</p>
+        <h3 class="ppdb-popup-title" id="ppdbModalTitle">Bergabung Bersama Kami di<br>Tahun Pelajaran 2027–2028</h3>
 
-        <!-- 4 Vision Pills (Replaces long vision text) -->
-        <div class="ppdb-vision-tags">
-          <span class="ppdb-vtag"><span class="icon-star ppdb-vtag-icon"></span> Inovatif</span>
-          <span class="ppdb-vtag"><span class="icon-check ppdb-vtag-icon"></span> Holistik</span>
-          <span class="ppdb-vtag"><span class="icon-globe ppdb-vtag-icon"></span> Berwawasan Global</span>
-          <span class="ppdb-vtag"><span class="icon-heart ppdb-vtag-icon" style="color: #ef4444;"></span> Kasih</span>
+        <!-- Visi Resmi Sekolah -->
+        <div class="ppdb-popup-vision">
+          “Terwujudnya Peserta Didik yang Inovatif, Berkembang secara Holistik, dan Berwawasan Global dengan Kasih.”
         </div>
 
         <!-- Slogan: Let's Grow Together in Love -->
@@ -3111,7 +3103,7 @@
       var closeBtn = document.getElementById('closePpdbModal');
 
       // Tampilkan otomatis saat halaman dibuka
-      if (!sessionStorage.getItem('sdlab_ppdb_popup_v2')) {
+      if (!sessionStorage.getItem('sdlab_ppdb_popup_v3')) {
         setTimeout(function() {
           if (modal) {
             modal.classList.add('show');
@@ -3122,7 +3114,7 @@
       function closeModal() {
         if (modal) {
           modal.classList.remove('show');
-          sessionStorage.setItem('sdlab_ppdb_popup_v2', 'true');
+          sessionStorage.setItem('sdlab_ppdb_popup_v3', 'true');
         }
       }
 
