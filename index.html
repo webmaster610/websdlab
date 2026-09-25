@@ -3050,6 +3050,91 @@
 
 
 
+  
+  <!-- ========================================== -->
+  <!-- PPDB 2027/2028 WELCOME ANNOUNCEMENT MODAL  -->
+  <!-- ========================================== -->
+  <div id="ppdbModal" class="ppdb-modal-overlay" role="dialog" aria-modal="true" aria-labelledby="ppdbModalTitle">
+    <div class="ppdb-modal-dialog">
+      <div class="ppdb-modal-content">
+        <button type="button" class="ppdb-close-btn" id="closePpdbModal" aria-label="Tutup Pengumuman">&times;</button>
+        <div class="ppdb-modal-header text-center">
+          <div class="ppdb-badge">
+            <span class="icon-bullhorn mr-1"></span> PENGUMUMAN RESMI SEKOLAH
+          </div>
+          <h3 class="ppdb-title" id="ppdbModalTitle">Penerimaan Peserta Didik Baru (PPDB)<br><span class="text-primary font-weight-bold">Tahun Ajaran 2027/2028</span></h3>
+          <p class="ppdb-subtitle">Telah Resmi Dibuka!</p>
+        </div>
+        <div class="ppdb-modal-body text-center">
+          <div class="ppdb-img-container mb-3">
+            <img src="images/gedung_depan.webp" alt="Gedung SD Kristen Satya Wacana" class="shadow-sm">
+          </div>
+          <p class="ppdb-desc">
+            Mari bertumbuh bersama keluarga besar <strong>SD Kristen Satya Wacana (SD Lab UKSW) Salatiga</strong>. Sekolah Laboratorium Terakreditasi <strong>"A" (Unggul)</strong> yang membentuk generasi inovatif, berkembang secara holistik, dan berwawasan global dengan kasih Kristiani.
+          </p>
+          <div class="ppdb-highlights row no-gutters text-left my-3 p-3 bg-light rounded border">
+            <div class="col-6 mb-2"><span class="icon-check text-success mr-1"></span> Terakreditasi "A" (Unggul)</div>
+            <div class="col-6 mb-2"><span class="icon-check text-success mr-1"></span> Akses Lab AI &amp; Robotika</div>
+            <div class="col-6"><span class="icon-check text-success mr-1"></span> Literasi Tinggi (81.76)</div>
+            <div class="col-6"><span class="icon-check text-success mr-1"></span> 16 Ekstrakurikuler Pilihan</div>
+          </div>
+        </div>
+        <div class="ppdb-modal-footer">
+          <a href="https://wa.me/6281390304093?text=Halo%20Panitia%20PPDB%20SD%20Kristen%20Satya%20Wacana,%20saya%20ingin%20mendaftar%20untuk%20Tahun%20Ajaran%202027/2028" target="_blank" class="btn btn-secondary btn-block py-3 font-weight-bold shadow ppdb-cta-btn">
+            <span class="icon-whatsapp mr-2"></span> Daftar / Tanya via WhatsApp PPDB
+          </a>
+          <button type="button" class="btn btn-link btn-block text-muted mt-2 btn-sm" id="skipPpdbModal">
+            Lanjut Membaca Website &rarr;
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (function() {
+      // Check if user already closed modal in this browsing session
+      var modal = document.getElementById('ppdbModal');
+      var closeBtn = document.getElementById('closePpdbModal');
+      var skipBtn = document.getElementById('skipPpdbModal');
+
+      if (!sessionStorage.getItem('sdlab_ppdb_2027_seen')) {
+        // Show modal smoothly after 800ms
+        setTimeout(function() {
+          if (modal) {
+            modal.classList.add('show');
+          }
+        }, 800);
+      }
+
+      function closeModal() {
+        if (modal) {
+          modal.classList.remove('show');
+          sessionStorage.setItem('sdlab_ppdb_2027_seen', 'true');
+        }
+      }
+
+      if (closeBtn) closeBtn.addEventListener('click', closeModal);
+      if (skipBtn) skipBtn.addEventListener('click', closeModal);
+
+      // Close when clicking on backdrop outside modal dialog
+      if (modal) {
+        modal.addEventListener('click', function(e) {
+          if (e.target === modal) {
+            closeModal();
+          }
+        });
+      }
+
+      // Close on ESC key
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && modal && modal.classList.contains('show')) {
+          closeModal();
+        }
+      });
+    })();
+  </script>
+
   </body>
 
 
