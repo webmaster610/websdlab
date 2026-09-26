@@ -119,3 +119,23 @@ Untuk menjaga relevansi informasi dan kapasitas memori repositori git:
 ### 5.2 Standar Kerahasiaan Kredensial
 - Seluruh token (`TELEGRAM_BOT_TOKEN`, `ADMIN_CHAT_ID`) disimpan di file `.env`.
 - File `.env` **wajib** terdaftar di `.gitignore` dan **dilarang keras** di-push ke repositori GitHub publik.
+
+---
+
+## 6. INFRASTRUKTUR SERVER & OPERASIONAL 24/7
+
+### 6.1 Spesifikasi Server & Hosting
+- **Host**: Server Ubuntu Sekolah (`sdlabubuntuserver`) di lingkungan SD Kristen Satya Wacana / UKSW.
+- **Direktori Kerja**: `/home/sdlab/websdlab`.
+- **Runtime**: Node.js LTS (v20+).
+- **Process Manager**: PM2 (`sdlab-prestasi-bot`).
+
+### 6.2 Ketahanan Sistem (High Availability & Auto-Boot)
+1. **Daemon Background**: Bot berjalan sebagai service background hening tanpa memerlukan terminal aktif.
+2. **Auto-Recovery on Reboot**: Terdaftar pada daemon init `systemd` via perintah `pm2 startup` dan `pm2 save`. Jika server mengalami mati lampu atau restart fisik, bot otomatis menyala kembali sejak detik pertama server aktif.
+3. **Network Resilience (IPv4 Forcing)**:
+   - Node.js secara bawaan di Linux mencoba resolusi IPv6 yang sering kali menggantung (*hang*) pada infrastruktur ISP Indonesia.
+   - Bot dikonfigurasi wajib menggunakan `family: 4` (IPv4 murni) dengan socket timeout 35 detik untuk memastikan long-polling Telegram API stabil tanpa jeda.
+4. **Git Remote Authentication**:
+   - Remote URL di server Ubuntu dikonfigurasikan dengan GitHub Personal Access Token (PAT) resmi untuk kelancaran eksekusi `git push origin main` otomatis saat Admin menekan tombol persetujuan di Telegram.
+

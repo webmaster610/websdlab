@@ -61,6 +61,10 @@
 4. **Tampilan Kartu & Lightbox Modal**:
    - Foto thumbnail menggunakan `object-position: top center;` dengan wadah `height: 275px;` agar wajah siswa tidak terpotong.
    - Saat kartu diklik, membuka Lightbox Modal (`#modalDetailPrestasi`) menampilkan foto ukuran penuh asli tanpa crop dan informasi lomba lengkap.
+5. **Infrastruktur Produksi 24/7 (Server Ubuntu Sekolah & PM2)**:
+   - Dijalankan di server fisik Ubuntu sekolah (`sdlabubuntuserver`) via PM2 (`sdlab-prestasi-bot`) dengan auto-recovery reboot via `systemd` (`pm2 startup` & `pm2 save`).
+   - Wajib memaksa protokol socket IPv4 (`family: 4`) dan timeout pada koneksi HTTP/HTTPS Node.js untuk mencegah *hang* jaringan pada infrastruktur ISP server Linux di Indonesia.
+
 
 ---
 

@@ -126,3 +126,14 @@ Format pencatatan perubahan berdasar prinsip [Keep a Changelog](https://keepacha
 - **Changed**: Menyembunyikan Sub-Kategori Lomba dari kartu depan agar kartu tetap ringkas dan tidak sesak.
 - **Added**: Menampilkan Sub-Kategori Khusus Ajang Lomba (contoh: *Juara Best Costume & Juara Umum 2*) secara lengkap di dalam jendela Modal Popup.
 - **Changed**: Melengkapi tanggal pelaksanaan prestasi Isabella Leticia Aqueena & Leona Andara Suprapto menjadi **10 September 2026** (Lomba Dance Ajang GIHN UKSW di Kampus UKSW Salatiga).
+
+---
+
+### 12. TAHAP 8: DEPLOYMENT SERVER UBUNTU SEKOLAH & OTOMASI 24/7 (PM2 & AUTO-BOOT)
+- **Added**: Deployment produksi sistem bot Telegram ke server fisik Ubuntu sekolah (`sdlabubuntuserver`) di lingkungan SD Kristen Satya Wacana / UKSW Salatiga (`/home/sdlab/websdlab`).
+- **Added**: Konfigurasi Process Manager PM2 (`sdlab-prestasi-bot`) dalam mode daemon hening (*background process*) sehingga bot tetap aktif meskipun terminal/SSH ditutup.
+- **Added**: Fitur Auto-Recovery & High Availability: Mendaftarkan PM2 ke daemon `systemd` via `pm2 startup` dan `pm2 save`, menjamin bot otomatis langsung hidup kembali setelah server restart atau pemadaman listrik.
+- **Fixed**: Mengatasi kendala jaringan server Linux di ISP Indonesia di mana panggilan Telegram API menggantung (*hang*) pada rute IPv6, dengan mengonfigurasi `family: 4` (IPv4 murni) dan batas *timeout* 35 detik pada modul HTTP Node.js.
+- **Added**: Pencatatan log aktivitas realtime pada `scripts/bot.js` (`[Telegram Update]`, `[Pesan Masuk]`, `[Laporan Valid]`) untuk kemudahan monitoring via `pm2 logs sdlab-prestasi-bot`.
+- **Security**: Konfigurasi remote URL GitHub di server Ubuntu menggunakan Personal Access Token (PAT) resmi terotentikasi untuk eksekusi `git push origin main` otomatis saat persetujuan Admin.
+

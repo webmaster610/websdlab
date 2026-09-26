@@ -30,3 +30,9 @@
 - Dilarang menyentuh `git config --global`.
 - Dilarang men-commit file `.env` (berisi token Telegram & Admin Chat ID).
 
+## 6. INFRASTRUKTUR PRODUKSI & PM2 24/7
+- Host: Server Ubuntu Sekolah (`sdlabubuntuserver`) di UKSW Salatiga.
+- Service: PM2 daemon (`sdlab-prestasi-bot`) dengan auto-boot via `systemd` (`pm2 startup` & `pm2 save`).
+- Jaringan: Wajib memaksa IPv4 (`family: 4`) pada Node.js HTTP request agar tidak hang di jaringan server ISP Indonesia.
+
+
