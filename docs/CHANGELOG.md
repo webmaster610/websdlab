@@ -165,6 +165,17 @@ Format pencatatan perubahan berdasar prinsip [Keep a Changelog](https://keepacha
 - **Added**: Pernyataan kepuasan orang tua terhadap lingkungan belajar yang *happy*, mandiri, penguatan karakter, serta guru yang kreatif dan penuh kasih di SD Kristen Satya Wacana.
 - **Added**: Pencatatan riwayat penambahan testimoni secara otomatis ke `docs/ACTIVITY_LOG.md` dan `data/activity_log.json`.
 
+---
+
+### 16. TAHAP 12: OPTIMASI KONTEN TESTIMONI AUTENTIK & AUTO-ADAPTIVE CAROUSEL
+- **Removed**: Menghapus seluruh komentar palsu/generik bawaan template di `index.html` dan `about.html`.
+- **Changed**: Memfokuskan tampilan testimoni hanya pada ulasan nyata dan kredibel dari Pak Jasson (Orang Tua Siswa Kelas 4 & 6).
+- **Added**: Fitur *Smart Adaptive Carousel* pada `js/main.js`:
+  - Jika item testimoni hanya berjumlah 1 (`testimonyCount === 1`), carousel otomatis berpusat di tengah tanpa duplikasi/glitch.
+  - Begitu ada komentar ortu ke-2 dan ke-3 yang masuk nantinya (`testimonyCount > 1`), carousel otomatis mengaktifkan kembali rotasi geser berputar (*autoplay loop sliding*) secara mandiri tanpa perlu perubahan kode.
+- **Added**: Pencatatan riwayat pembersihan di `docs/ACTIVITY_LOG.md` dan `data/activity_log.json`.
+
+
 
 
 

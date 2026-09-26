@@ -63,11 +63,12 @@
 	      }
 	    }
 		});
+		var testimonyCount = $('.carousel-testimony .item').length;
 		$('.carousel-testimony').owlCarousel({
-			autoplay: true,
-			center: true,
-			loop: true,
-			items:1,
+			autoplay: testimonyCount > 1,
+			center: testimonyCount > 1,
+			loop: testimonyCount > 1,
+			items: 1,
 			margin: 30,
 			stagePadding: 0,
 			nav: false,
@@ -80,7 +81,7 @@
 					items: 1
 				},
 				1000:{
-					items: 2
+					items: testimonyCount > 1 ? 2 : 1
 				}
 			}
 		});
