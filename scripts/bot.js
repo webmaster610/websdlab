@@ -74,6 +74,7 @@ function callTelegram(method, payload) {
       port: 443,
       path: `/bot${BOT_TOKEN}/${method}`,
       method: 'POST',
+      family: 4, // Paksa IPv4 untuk stabilitas jaringan server Linux / ISP Indonesia
       headers: {
         'Content-Type': 'application/json',
         'Content-Length': Buffer.byteLength(postData)
@@ -91,7 +92,15 @@ function callTelegram(method, payload) {
       });
     });
 
-    req.on('error', err => reject(err));
+    req.setTimeout(35000, () => {
+      req.destroy(new Error('Koneksi ke Telegram API timeout (35 detik)'));
+    });
+
+    req.on('error', err => {
+      console.error(`[Telegram Network Error on ${method}]:`, err.message);
+      reject(err);
+    });
+
     req.write(postData);
     req.end();
   });
@@ -156,7 +165,7 @@ async function downloadTelegramPhoto(fileId, targetRelativePath) {
 
   return new Promise((resolve, reject) => {
     const file = fs.createWriteStream(targetFullPath);
-    https.get(fileUrl, response => {
+    https.get(fileUrl, { family: 4 }, response => {
       response.pipe(file);
       file.on('finish', () => {
         file.close(() => resolve(targetRelativePath));
@@ -717,10 +726,13 @@ async function pollUpdates() {
   try {
     const res = await callTelegram('getUpdates', {
       offset: lastUpdateId + 1,
-      timeout: 25
+      timeout: 20
     });
 
-    if (res.ok && res.result && res.result.length > 0) {
+    if (!res.ok) {
+      console.error('[Telegram API getUpdates Error]:', res);
+    } else if (res.result && res.result.length > 0) {
+      console.log(`[Telegram Update] Menerima ${res.result.length} update baru...`);
       for (const update of res.result) {
         lastUpdateId = update.update_id;
 
