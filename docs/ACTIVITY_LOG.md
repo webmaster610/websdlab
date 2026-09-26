@@ -21,6 +21,7 @@ Setiap kali Admin menyetujui, menolak, atau menghapus prestasi melalui Bot Teleg
 
 | Waktu (WIB) | Aksi | ID | Nama Subjek / Entri | Ajang / Capaian | Kategori & Bidang | Aktor / Eksekutor | Keterangan & Masa Aktif |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| **2026-09-26 22:06** | `TESTIMONI` | **-** | **Pak Jasson** (Orang Tua Siswa Kelas 4 & 6) | Kesan & Testimoni Orang Tua Murid (*Orang Tua Kelas 4 & 6*) | Testimoni | Webmaster / Admin | Penambahan testimoni autentik Pak Jasson pada carousel beranda dan profil sekolah. |
 | **2026-09-26 14:27** | `TAMBAH` | **#7** | **Damara Aqila Kiandra** (Kelas 6A) | Gelar Inovasi Harmoni Nusantara (*Juara 3 • Tingkat Kota*) | IPTEK & Robotika | Admin (`7187970534`) | Otomatis via Ubuntu Server. Exp: 2026-12-26 |
 | **2026-09-26 13:48** | `TAMBAH` | **#6** | **Isabella Leticia Aqueena & Leona Andara Suprapto** (Kelas 6A) | Lomba Dance Ajang GIHN UKSW (*Juara 2 • Tingkat Kota*) | Seni & Kreativitas | Admin (`7187970534`) | Sub-Kategori: Best Costume & Juara 2. Exp: 2026-12-26 |
 | **2026-09-26 10:15** | `TAMBAH` | **#5** | **Nathaniel Timothy** (Kelas 5) | Kompetisi Robotika Cilik (*Harapan 1 • Regional*) | IPTEK & Robotika | Sistem (Inisialisasi) | Laboratorium FTI UKSW. Exp: 2026-12-26 |

@@ -13,8 +13,9 @@ const LOG_MD_FILE = path.join(__dirname, '..', 'docs', 'ACTIVITY_LOG.md');
 function recordActivity(action, details = {}, actor = 'Admin') {
   try {
     const now = new Date();
-    // Offset UTC+7 WIB
-    const wib = new Date(now.getTime() + (7 * 60 - now.getTimezoneOffset()) * 60 * 1000);
+    // UTC+7 (WIB) conversion
+    const utc = now.getTime() + (now.getTimezoneOffset() * 60000);
+    const wib = new Date(utc + (7 * 3600000));
     const dateStr = wib.toISOString().split('T')[0];
     const timeStr = wib.toISOString().split('T')[1].substring(0, 5);
     const displayTime = `${dateStr} ${timeStr} WIB`;

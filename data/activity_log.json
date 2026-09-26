@@ -1,5 +1,22 @@
 [
   {
+    "id": "act_1790435200652",
+    "timestamp": "2026-09-27T05:06:40.642Z",
+    "display_time": "2026-09-27 05:06 WIB",
+    "action": "TESTIMONI",
+    "category_tag": "KONTEN",
+    "target_id": null,
+    "student_name": "Pak Jasson",
+    "student_class": "Orang Tua Siswa Kelas 4 & 6",
+    "competition": "Kesan & Testimoni Orang Tua Murid",
+    "badge": "Orang Tua Kelas 4 & 6",
+    "category": "Testimoni",
+    "actor": "Webmaster / Admin",
+    "expires_at": null,
+    "image": "images/pak_Jasson.webp",
+    "notes": "Penambahan testimoni autentik Pak Jasson pada carousel beranda dan profil sekolah."
+  },
+  {
     "id": "act_1790407670000",
     "timestamp": "2026-09-26T14:27:50+07:00",
     "display_time": "2026-09-26 14:27 WIB",

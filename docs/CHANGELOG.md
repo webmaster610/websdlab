@@ -157,5 +157,14 @@ Format pencatatan perubahan berdasar prinsip [Keep a Changelog](https://keepacha
 - **Fixed**: Mengatasi potensi *Malformed HTML error* pada notifikasi Telegram dengan menerapkan `escapeTelegramHtml`.
 - **Security**: Verifikasi riwayat Git (`git log -S`) mengonfirmasi 0 kebocoran kredensial rahasia (Token Telegram & PAT GitHub 100% aman).
 
+---
+
+### 15. TAHAP 11: TESTIMONI RESMI ORANG TUA SISWA (PAK JASSON)
+- **Added**: Penambahan testimoni autentik dari **Pak Jasson (Orang Tua Siswa Kelas 4 & 6)** sebagai kartu testimoni pertama di carousel `index.html` dan `about.html`.
+- **Added**: Penggunaan foto profil resmi `images/pak_Jasson.webp` dengan penyesuaian posisi wajah presisi (`background-position: center 20%;`).
+- **Added**: Pernyataan kepuasan orang tua terhadap lingkungan belajar yang *happy*, mandiri, penguatan karakter, serta guru yang kreatif dan penuh kasih di SD Kristen Satya Wacana.
+- **Added**: Pencatatan riwayat penambahan testimoni secara otomatis ke `docs/ACTIVITY_LOG.md` dan `data/activity_log.json`.
+
+
 
 
