@@ -464,9 +464,12 @@ async function handleApproval(subId, adminChatId, messageId, callbackQueryId) {
       list = JSON.parse(fs.readFileSync(DATA_FILE, 'utf8'));
     }
 
-    // 3. Tambahkan ke Daftar Prestasi
+    // 3. Tambahkan ke Daftar Prestasi (Sequential Clean ID)
+    const existingIds = list.map(item => Number(item.id) || 0);
+    const nextId = existingIds.length > 0 ? Math.max(...existingIds) + 1 : 1;
+
     const newEntry = {
-      id: Date.now(),
+      id: nextId,
       title: `${sub.badge} - ${sub.competition}`,
       badge: sub.badge,
       badge_class: sub.badge_class,
@@ -579,6 +582,98 @@ Mohon maaf, pengajuan prestasi untuk <b>${sub.student_name}</b> (${sub.competiti
   }
 }
 
+// 9.5 MANUAL DELETE & KELOLA HANDLERS
+async function handleDeletePrompt(targetId, adminChatId, callbackQueryId) {
+  if (!fs.existsSync(DATA_FILE)) return;
+  const list = JSON.parse(fs.readFileSync(DATA_FILE, 'utf8'));
+  const item = list.find(p => String(p.id) === String(targetId));
+
+  if (!item) {
+    if (callbackQueryId) await answerCallbackQuery(callbackQueryId, 'Prestasi dengan ID tersebut tidak ditemukan.', true);
+    return;
+  }
+
+  if (callbackQueryId) await answerCallbackQuery(callbackQueryId);
+
+  const confirmMsg = `
+⚠️ <b>KONFIRMASI HAPUS PRESTASI</b>
+
+Apakah Anda yakin ingin menghapus prestasi berikut:
+🆔 <b>ID: #${item.id}</b>
+🎓 <b>Siswa:</b> ${item.student_name} (${item.student_class})
+🏅 <b>Capaian:</b> ${item.badge}
+🏆 <b>Lomba:</b> ${item.competition}
+
+Data dan foto fisik akan dihapus secara permanen dari website.
+`.trim();
+
+  await sendMessage(adminChatId, confirmMsg, {
+    reply_markup: {
+      inline_keyboard: [
+        [
+          { text: `🚨 Ya, Hapus #${item.id}`, callback_data: `confirm_delete:${item.id}` },
+          { text: '❌ Batal', callback_data: 'cancel_delete' }
+        ]
+      ]
+    }
+  });
+}
+
+async function handleConfirmDelete(targetId, adminChatId, messageId, callbackQueryId) {
+  if (!fs.existsSync(DATA_FILE)) return;
+  let list = JSON.parse(fs.readFileSync(DATA_FILE, 'utf8'));
+  const item = list.find(p => String(p.id) === String(targetId));
+
+  if (!item) {
+    await answerCallbackQuery(callbackQueryId, 'Prestasi ini sudah tidak ada.', true);
+    return;
+  }
+
+  await answerCallbackQuery(callbackQueryId, 'Menghapus dari website...');
+
+  // 1. Hapus Foto dari images/prestasi/ jika ada
+  if (item.image && item.image.startsWith('images/prestasi/')) {
+    const fullImgPath = path.join(__dirname, '..', item.image);
+    if (fs.existsSync(fullImgPath)) {
+      try {
+        fs.unlinkSync(fullImgPath);
+        console.log(`[Storage Deleted] Foto terhapus: ${item.image}`);
+      } catch (e) {
+        console.error('Gagal hapus foto:', e.message);
+      }
+    }
+  }
+
+  // 2. Hapus entri dari data/prestasi.json
+  list = list.filter(p => String(p.id) !== String(targetId));
+  fs.writeFileSync(DATA_FILE, JSON.stringify(list, null, 2), 'utf8');
+
+  // 3. Git commit & push otomatis
+  try {
+    execSync('git config --local user.name "webmaster"', { cwd: path.join(__dirname, '..') });
+    execSync('git config --local user.email "webmaster@sdlabuksw.sch.id"', { cwd: path.join(__dirname, '..') });
+    execSync('git add data/prestasi.json images/prestasi/', { cwd: path.join(__dirname, '..') });
+    execSync(`git commit -m "chore(prestasi): hapus prestasi #${item.id} (${item.student_name}) [skip ci]"`, { cwd: path.join(__dirname, '..') });
+    execSync('git push origin main', { cwd: path.join(__dirname, '..') });
+    console.log(`[Git Delete Success] Prestasi #${item.id} berhasil dihapus dari GitHub!`);
+  } catch (gitErr) {
+    console.error('[Git Delete Warning]:', gitErr.message);
+  }
+
+  // 4. Update status pesan
+  const deletedText = `
+🗑️ <b>PRESTASI BERHASIL DIHAPUS</b>
+
+ID: <b>#${item.id}</b>
+Siswa: <b>${item.student_name}</b>
+Lomba: <i>${item.competition}</i>
+
+Status: <i>Data dan foto telah dibersihkan dari website.</i>
+`.trim();
+
+  await editMessageText(adminChatId, messageId, deletedText);
+}
+
 // 10. MAIN LONG-POLLING ENGINE
 let lastUpdateId = 0;
 
@@ -610,6 +705,15 @@ async function pollUpdates() {
           } else if (data.startsWith('reject:')) {
             const subId = data.replace('reject:', '');
             await handleRejection(subId, cb.message.chat.id, cb.message.message_id, cb.id);
+          } else if (data.startsWith('delete_prompt:')) {
+            const targetId = data.replace('delete_prompt:', '');
+            await handleDeletePrompt(targetId, cb.message.chat.id, cb.id);
+          } else if (data.startsWith('confirm_delete:')) {
+            const targetId = data.replace('confirm_delete:', '');
+            await handleConfirmDelete(targetId, cb.message.chat.id, cb.message.message_id, cb.id);
+          } else if (data === 'cancel_delete') {
+            await editMessageText(cb.message.chat.id, cb.message.message_id, 'ℹ️ Penghapusan dibatalkan. Data tetap aman.');
+            await answerCallbackQuery(cb.id, 'Dibatalkan.');
           }
           continue;
         }
@@ -646,23 +750,66 @@ Sistem cerdas bot akan otomatis merapikan data dan meneruskannya ke Admin untuk 
             if (isAdmin) {
               helpText += `
 \n👑 <b>Menu Khusus Admin:</b>
-• <b>/list</b> : Menampilkan prestasi aktif di website
-• <b>/cleanup</b> : Membersihkan prestasi yang sudah habis masa aktifnya
+• <b>/kelola</b> : Kelola & Hapus prestasi aktif via tombol
+• <b>/list</b> : Daftar ringkas prestasi aktif
+• <b>/hapus &lt;ID&gt;</b> : Hapus prestasi berdasar ID (contoh: /hapus 6)
+• <b>/cleanup</b> : Pembersihan prestasi kadaluarsa (auto-prune)
 `;
             }
             await sendMessage(chatId, helpText.trim());
             continue;
           }
 
-          if (text.startsWith('/list')) {
-            if (fs.existsSync(DATA_FILE)) {
-              const list = JSON.parse(fs.readFileSync(DATA_FILE, 'utf8'));
-              let out = `🏆 <b>Daftar 5 Prestasi Aktif Terbaru:</b>\n\n`;
+          if (text.startsWith('/kelola') || text.startsWith('/list')) {
+            if (!fs.existsSync(DATA_FILE)) {
+              await sendMessage(chatId, 'Belum ada data prestasi.');
+              continue;
+            }
+            const list = JSON.parse(fs.readFileSync(DATA_FILE, 'utf8'));
+            const isAdmin = String(chatId) === ADMIN_CHAT_ID;
+
+            if (isAdmin) {
+              let out = `👑 <b>PANEL KELOLA PRESTASI WEBSITE</b>\n\n`;
+              out += `Pilih tombol <b>[🗑️ Hapus]</b> pada prestasi yang ingin Anda hapus:\n\n`;
+
+              const inlineKeyboard = [];
+              list.forEach(p => {
+                out += `🆔 <b>[ID #${p.id}] ${p.student_name}</b> (${p.student_class})\n`;
+                out += `🏅 ${p.badge}\n`;
+                out += `🏆 ${p.competition}\n\n`;
+
+                inlineKeyboard.push([
+                  { text: `🗑️ Hapus #${p.id} - ${p.student_name.split(' ')[0]}`, callback_data: `delete_prompt:${p.id}` }
+                ]);
+              });
+
+              out += `🌐 webmaster610.github.io/websdlab/prestasi.html`;
+
+              await sendMessage(chatId, out, {
+                reply_markup: { inline_keyboard: inlineKeyboard }
+              });
+            } else {
+              let out = `🏆 <b>Daftar Prestasi Aktif di Website:</b>\n\n`;
               list.slice(0, 5).forEach((p, i) => {
                 out += `${i + 1}. <b>${p.student_name}</b> (${p.student_class})\n   ${p.badge}\n   Lomba: ${p.competition}\n\n`;
               });
               out += `🌐 webmaster610.github.io/websdlab/prestasi.html`;
               await sendMessage(chatId, out);
+            }
+            continue;
+          }
+
+          if (text.startsWith('/hapus')) {
+            if (String(chatId) !== ADMIN_CHAT_ID) {
+              await sendMessage(chatId, 'Hanya Admin yang dapat menjalankan perintah ini.');
+              continue;
+            }
+            const parts = text.split(' ');
+            const targetId = parts[1] ? parts[1].replace('#', '').trim() : '';
+            if (!targetId) {
+              await sendMessage(chatId, '⚠️ Silakan sertakan ID prestasi. Contoh: <code>/hapus 6</code>\nKetik <b>/kelola</b> untuk melihat daftar ID.');
+            } else {
+              await handleDeletePrompt(targetId, chatId);
             }
             continue;
           }

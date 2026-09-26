@@ -2165,6 +2165,24 @@
         	<div class="col-md-12">
         		<div class="carousel-prestasi owl-carousel" id="prestasiCarousel">
         			<div class="item">
+        				<div class="prestasi-card shadow-sm" data-id="6" data-img="images/prestasi/prestasi_1790401747509.jpg" data-badge="Juara Harapan 1 • Tingkat Provinsi" data-badge-class="badge-bronze" data-student="Isabella Leticia Aqueena" data-class="Kelas 6A" data-competition="Fashion Show Sion Bajuku Klambi" data-organizer="Pakuwon Mall Yogya" data-category="Seni &amp; Kreativitas" title="Klik untuk melihat foto ukuran penuh">
+        					<div class="prestasi-img-wrap">
+        						<img src="images/prestasi/prestasi_1790401747509.jpg" alt="Juara Harapan 1 Fashion Show Sion Bajuku Klambi" class="prestasi-img">
+        						<span class="prestasi-pill-badge badge-bronze"><i class="icon-trophy mr-1"></i> Harapan 1 • Provinsi</span>
+        						<span class="prestasi-zoom-hint"><i class="ion-ios-expand"></i></span>
+        					</div>
+        					<div class="prestasi-body">
+        						<div>
+        							<span class="prestasi-category-tag">Seni &amp; Kreativitas</span>
+        							<h4 class="prestasi-student">Isabella Leticia Aqueena</h4>
+        							<span class="prestasi-class">Kelas 6A</span>
+        							<p class="prestasi-competition">Fashion Show Sion Bajuku Klambi</p>
+        						</div>
+        						<p class="prestasi-organizer"><span class="icon-award mr-1"></span> Pakuwon Mall Yogya</p>
+        					</div>
+        				</div>
+        			</div>
+        			<div class="item">
         				<div class="prestasi-card shadow-sm">
         					<div class="prestasi-img-wrap">
         						<img src="images/prestasi_piala_1.webp" alt="Juara 1 OSN Sains SD" class="prestasi-img">
@@ -2947,6 +2965,38 @@
 
   
   <!-- ============================================================== -->
+  
+  <!-- MODAL DETAIL PRESTASI (FOTO UKURAN PENUH & DETAIL LOMBA) -->
+  <div class="modal fade" id="modalDetailPrestasi" tabindex="-1" role="dialog" aria-labelledby="modalDetailPrestasiLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+      <div class="modal-content" style="border-radius: 20px; overflow: hidden; border: none; box-shadow: 0 20px 50px rgba(0,0,0,0.3);">
+        <div class="modal-header border-0 pb-0" style="background: #ffffff; padding: 20px 24px 10px;">
+          <span id="modalPrestasiBadge" class="prestasi-pill-badge badge-gold" style="position: static; font-size: 13px;"></span>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="font-size: 28px; outline: none;">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body text-center p-3 p-md-4">
+          <div style="background: #f8fafc; border-radius: 14px; overflow: hidden; margin-bottom: 20px; max-height: 520px; display: flex; align-items: center; justify-content: center; border: 1px solid #e2e8f0;">
+            <img id="modalPrestasiImg" src="" alt="" style="max-width: 100%; max-height: 520px; object-fit: contain; border-radius: 12px;">
+          </div>
+          <div class="text-left px-2">
+            <span id="modalPrestasiCat" class="prestasi-category-tag mb-2"></span>
+            <h3 id="modalPrestasiStudent" class="font-weight-bold text-dark mb-1" style="font-size: 24px;"></h3>
+            <span id="modalPrestasiClass" class="text-muted font-weight-bold mb-3 d-block" style="font-size: 15px;"></span>
+            <div class="p-3 bg-light rounded-lg border mb-2">
+              <h5 class="text-dark font-weight-bold mb-1" style="font-size: 16px;"><i class="icon-trophy text-warning mr-2"></i> <span id="modalPrestasiComp"></span></h5>
+              <p class="text-muted mb-0" style="font-size: 14px;"><i class="icon-award text-primary mr-2"></i> Penyelenggara: <strong id="modalPrestasiOrg" class="text-dark"></strong></p>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer border-0 pt-0" style="background: #ffffff; padding: 10px 24px 20px;">
+          <button type="button" class="btn btn-secondary px-4 py-2" data-dismiss="modal" style="border-radius: 20px;">Tutup</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- POPUP PENGUMUMAN PPDB (CANVA-OPTIMIZED & HIGH CONVERTING)       -->
   <!-- ============================================================== -->
   <div id="ppdbModal" class="ppdb-modal-overlay" role="dialog" aria-modal="true" aria-labelledby="ppdbModalTitle">
@@ -3031,7 +3081,32 @@
     })();
   </script>
 
-  </body>
+  
+  <script>
+    (function($) {
+      $(document).on('click', '.prestasi-card', function() {
+        const img = $(this).data('img') || $(this).find('.prestasi-img').attr('src');
+        const badge = $(this).data('badge') || $(this).find('.prestasi-pill-badge').text().trim();
+        const badgeClass = $(this).data('badge-class') || 'badge-gold';
+        const student = $(this).data('student') || $(this).find('.prestasi-student').text().trim();
+        const sclass = $(this).data('class') || $(this).find('.prestasi-class').text().trim();
+        const comp = $(this).data('competition') || $(this).find('.prestasi-competition').text().trim();
+        const org = $(this).data('organizer') || $(this).find('.prestasi-organizer').text().replace(/Award/i, '').trim();
+        const cat = $(this).data('category') || $(this).find('.prestasi-category-tag').text().trim();
+
+        $('#modalPrestasiImg').attr('src', img);
+        $('#modalPrestasiBadge').text(badge).attr('class', 'prestasi-pill-badge ' + badgeClass);
+        $('#modalPrestasiCat').text(cat);
+        $('#modalPrestasiStudent').text(student);
+        $('#modalPrestasiClass').text(sclass);
+        $('#modalPrestasiComp').text(comp);
+        $('#modalPrestasiOrg').text(org);
+
+        $('#modalDetailPrestasi').modal('show');
+      });
+    })(jQuery);
+  </script>
+</body>
 
 
 
