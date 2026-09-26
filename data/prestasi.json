@@ -9,7 +9,13 @@
     "competition": "Olimpiade Sains Nasional (OSN) Tingkat Kota Salatiga",
     "organizer": "Dinas Pendidikan & Kemitraan FSM UKSW",
     "category": "Akademik & Sains",
-    "image": "images/prestasi_piala_1.webp"
+    "category_key": "akademik",
+    "level": "kota",
+    "rank": 1,
+    "created_at": "2026-09-26",
+    "expires_at": "2027-03-26",
+    "image": "images/prestasi_piala_1.webp",
+    "featured": true
   },
   {
     "id": 2,
@@ -21,7 +27,13 @@
     "competition": "Festival & Lomba Seni Siswa Nasional (FLS2N) Tingkat Kota Salatiga",
     "organizer": "Balai Pengembangan Talenta Indonesia (BPTI)",
     "category": "Seni Vokal & Musik",
-    "image": "images/prestasi_piala_2.webp"
+    "category_key": "seni",
+    "level": "kota",
+    "rank": 1,
+    "created_at": "2026-09-26",
+    "expires_at": "2027-03-26",
+    "image": "images/prestasi_piala_2.webp",
+    "featured": true
   },
   {
     "id": 3,
@@ -33,7 +45,13 @@
     "competition": "Kejuaraan Renang Antar-Sekolah Dasar Jawa Tengah",
     "organizer": "Akuatik Indonesia Cabang Salatiga",
     "category": "Olahraga Prestasi",
-    "image": "images/student_single.webp"
+    "category_key": "olahraga",
+    "level": "provinsi",
+    "rank": 1,
+    "created_at": "2026-09-26",
+    "expires_at": null,
+    "image": "images/student_single.webp",
+    "featured": true
   },
   {
     "id": 4,
@@ -45,7 +63,13 @@
     "competition": "Kejuaraan Bola Basket Pelajar Tingkat Karesidenan",
     "organizer": "Perbasi & GOR Kridanggo Salatiga",
     "category": "Olahraga Tim",
-    "image": "images/hero_3.webp"
+    "category_key": "olahraga",
+    "level": "kota",
+    "rank": 2,
+    "created_at": "2026-09-26",
+    "expires_at": "2026-12-26",
+    "image": "images/hero_3.webp",
+    "featured": true
   },
   {
     "id": 5,
@@ -57,6 +81,12 @@
     "competition": "Kompetisi Robotika Cilik & Creative Coding Kids",
     "organizer": "Fakultas Teknologi Informasi (FTI) UKSW",
     "category": "IPTEK & Robotika",
-    "image": "images/prestasi_tangga.webp"
+    "category_key": "robotika",
+    "level": "kota",
+    "rank": 4,
+    "created_at": "2026-09-26",
+    "expires_at": "2026-12-26",
+    "image": "images/prestasi_tangga.webp",
+    "featured": true
   }
 ]
