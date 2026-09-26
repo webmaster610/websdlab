@@ -4,6 +4,7 @@
 - Rujuk file `GEMINI.md` untuk identitas sekolah, visi misi, dan pedoman kurikulum KSP 2025/2026.
 - Rujuk `docs/PRD.md` untuk arsitektur sistem, aturan retensi TTL, dan alur kerja bot.
 - Rujuk `docs/CHANGELOG.md` untuk riwayat dan log perubahan fitur, GTK, serta konfigurasi.
+- Rujuk `docs/ACTIVITY_LOG.md` & `data/activity_log.json` untuk buku log audit trail aktivitas mutasi prestasi.
 
 ## 2. STRICT CONSTRAINTS (ATURAN MUTLAK)
 - **TANGGAL KEGIATAN**: DILARANG KERAS menyematkan tanggal pada kartu kegiatan/berita sekolah. Gunakan badge kategori tematik. Khusus kartu prestasi siswa, tanggal pelaksanaan lomba (`competition_date`) dan tempat lomba (`location`) ditampilkan dinamis dari `data/prestasi.json`.

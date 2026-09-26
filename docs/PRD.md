@@ -139,3 +139,23 @@ Untuk menjaga relevansi informasi dan kapasitas memori repositori git:
 4. **Git Remote Authentication**:
    - Remote URL di server Ubuntu dikonfigurasikan dengan GitHub Personal Access Token (PAT) resmi untuk kelancaran eksekusi `git push origin main` otomatis saat Admin menekan tombol persetujuan di Telegram.
 
+---
+
+## 7. SISTEM AUDIT LOG & PELAPORAN AKTIVITAS OTOMATIS
+
+### 7.1 Tujuan & Arsitektur Log
+Untuk menjaga transparansi, riwayat perubahan, dan akuntabilitas pengelolaan website sekolah, sistem dilengkapi engine audit log otomatis (`scripts/audit-logger.js`):
+1. **Database Audit Mesin (`data/activity_log.json`)**: Menyimpan seluruh riwayat terstruktur dalam format JSON (Timestamp WIB, Tipe Aksi, ID, Nama Siswa, Ajang, Kategori, Aktor, File Foto, dan Catatan).
+2. **Buku Log Markdown Terbuka (`docs/ACTIVITY_LOG.md`)**: Dokumen tabel audit yang mudah dibaca langsung di GitHub, menampilkan ringkasan statistik dan detail riwayat secara kronologis (terbaru di atas).
+
+### 7.2 Klasifikasi Aksi yang Dicatat Otomatis
+- `TAMBAH`: Prestasi baru disetujui Admin via Telegram Bot dan ditayangkan langsung ke website.
+- `HAPUS`: Prestasi dihapus manual oleh Admin via perintah `/hapus <ID>` atau tombol inline `/kelola`.
+- `TOLAK`: Draf laporan prestasi ditolak oleh Admin saat tahap verifikasi.
+- `AUTO_PRUNE`: Prestasi kadaluarsa dibersihkan otomatis oleh skrip retensi berkala beserta pemusnahan foto fisiknya.
+- `UPDATE_GTK` / `KOREKSI`: Pencatatan perubahan data guru dan profil kurikulum sekolah.
+
+### 7.3 Sinkronisasi Git Otomatis
+Setiap kali aksi mutasi data terjadi, berkas `data/activity_log.json` dan `docs/ACTIVITY_LOG.md` otomatis diikutsertakan dalam `git commit & push` ke GitHub `main` sehingga seluruh riwayat terdokumentasi abadi di cloud.
+
+

@@ -16,6 +16,7 @@ const fs = require('fs');
 const path = require('path');
 const https = require('https');
 const { execSync } = require('child_process');
+const { recordActivity } = require('./audit-logger');
 
 // 1. LOAD CONFIG DARI .ENV
 const envPath = path.join(__dirname, '..', '.env');
@@ -534,11 +535,24 @@ async function handleApproval(subId, adminChatId, messageId, callbackQueryId) {
     list.unshift(newEntry);
     fs.writeFileSync(DATA_FILE, JSON.stringify(list, null, 2), 'utf8');
 
+    // 3.5 Catat Audit Log Otomatis
+    recordActivity('TAMBAH', {
+      id: newEntry.id,
+      student_name: newEntry.student_name,
+      student_class: newEntry.student_class,
+      competition: newEntry.competition,
+      badge: newEntry.badge,
+      category: newEntry.category,
+      expires_at: newEntry.expires_at,
+      image: newEntry.image,
+      notes: `Disetujui Admin. Masa aktif: ${newEntry.expires_at ? 's.d ' + newEntry.expires_at : 'Abadi (Evergreen)'}`
+    }, `Admin (${adminChatId})`);
+
     // 4. Git Push Otomatis
     try {
       execSync('git config --local user.name "webmaster"', { cwd: path.join(__dirname, '..') });
       execSync('git config --local user.email "webmaster@sdlabuksw.sch.id"', { cwd: path.join(__dirname, '..') });
-      execSync('git add data/prestasi.json images/prestasi/', { cwd: path.join(__dirname, '..') });
+      execSync('git add data/prestasi.json images/prestasi/ data/activity_log.json docs/ACTIVITY_LOG.md', { cwd: path.join(__dirname, '..') });
       execSync(`git commit -m "feat(prestasi): tayangkan prestasi #${newEntry.id} ${sub.student_name} [skip ci]"`, { cwd: path.join(__dirname, '..') });
       execSync('git push origin main', { cwd: path.join(__dirname, '..') });
       console.log(`[Git Push Success] Prestasi #${newEntry.id} ${sub.student_name} berhasil tayang di GitHub!`);
@@ -608,6 +622,17 @@ async function handleRejection(subId, adminChatId, messageId, callbackQueryId) {
 
   delete pending[subId];
   savePendingSubmissions(pending);
+
+  // Catat Audit Log Otomatis
+  recordActivity('TOLAK', {
+    id: subId,
+    student_name: sub.student_name,
+    student_class: sub.student_class,
+    competition: sub.competition,
+    badge: sub.badge,
+    category: sub.category,
+    notes: 'Pengajuan ditolak oleh Admin.'
+  }, `Admin (${adminChatId})`);
 
   await answerCallbackQuery(callbackQueryId, 'Pengajuan prestasi telah ditolak.');
 
@@ -693,11 +718,23 @@ async function handleConfirmDelete(targetId, adminChatId, messageId, callbackQue
   list = list.filter(p => String(p.id) !== String(targetId));
   fs.writeFileSync(DATA_FILE, JSON.stringify(list, null, 2), 'utf8');
 
+  // 2.5 Catat Audit Log Otomatis
+  recordActivity('HAPUS', {
+    id: item.id,
+    student_name: item.student_name,
+    student_class: item.student_class,
+    competition: item.competition,
+    badge: item.badge,
+    category: item.category,
+    image: item.image,
+    notes: 'Dihapus manual oleh Admin via Telegram.'
+  }, `Admin (${adminChatId})`);
+
   // 3. Git commit & push otomatis
   try {
     execSync('git config --local user.name "webmaster"', { cwd: path.join(__dirname, '..') });
     execSync('git config --local user.email "webmaster@sdlabuksw.sch.id"', { cwd: path.join(__dirname, '..') });
-    execSync('git add data/prestasi.json images/prestasi/', { cwd: path.join(__dirname, '..') });
+    execSync('git add data/prestasi.json images/prestasi/ data/activity_log.json docs/ACTIVITY_LOG.md', { cwd: path.join(__dirname, '..') });
     execSync(`git commit -m "chore(prestasi): hapus prestasi #${item.id} (${item.student_name}) [skip ci]"`, { cwd: path.join(__dirname, '..') });
     execSync('git push origin main', { cwd: path.join(__dirname, '..') });
     console.log(`[Git Delete Success] Prestasi #${item.id} berhasil dihapus dari GitHub!`);

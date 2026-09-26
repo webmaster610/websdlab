@@ -25,6 +25,7 @@
 - **Dokumentasi Lengkap Proyek**:
   - Dokumen Kebutuhan Produk: `docs/PRD.md`
   - Catatan Riwayat Perubahan: `docs/CHANGELOG.md`
+  - Buku Log Audit Trail Otomatis: `docs/ACTIVITY_LOG.md` (Database: `data/activity_log.json`)
 
 ---
 

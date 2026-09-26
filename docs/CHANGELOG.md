@@ -137,3 +137,15 @@ Format pencatatan perubahan berdasar prinsip [Keep a Changelog](https://keepacha
 - **Added**: Pencatatan log aktivitas realtime pada `scripts/bot.js` (`[Telegram Update]`, `[Pesan Masuk]`, `[Laporan Valid]`) untuk kemudahan monitoring via `pm2 logs sdlab-prestasi-bot`.
 - **Security**: Konfigurasi remote URL GitHub di server Ubuntu menggunakan Personal Access Token (PAT) resmi terotentikasi untuk eksekusi `git push origin main` otomatis saat persetujuan Admin.
 
+---
+
+### 13. TAHAP 9: SISTEM AUDIT LOG OTOMATIS & ACTIVITY TRAIL (TAMBAH/HAPUS/AUTO-PRUNE)
+- **Added**: Modul pencatatan audit otomatis `scripts/audit-logger.js` (`recordActivity`).
+- **Added**: Database log aktivitas JSON terstruktur di `data/activity_log.json`.
+- **Added**: Buku Log Terbuka format Markdown di `docs/ACTIVITY_LOG.md` lengkap dengan ringkasan statistik dan tabel kronologis aksi.
+- **Added**: Integrasi pencatatan otomatis pada alur persetujuan Admin (`TAMBAH`), penolakan draf (`TOLAK`), dan penghapusan mandiri via Telegram (`HAPUS`) di `scripts/bot.js`.
+- **Added**: Integrasi pencatatan otomatis pada skrip retensi kadaluarsa (`AUTO_PRUNE`) di `scripts/cleanup-prestasi.js`.
+- **Added**: Backfilling seluruh riwayat mutasi awal: prestasi #1 s.d #7 (termasuk #7 Damara Aqila Kiandra), pembaruan 26 personil GTK, koreksi konteks Kak Kempo, dan integrasi TikTok.
+- **Added**: Sinkronisasi otomatis berkas log ke git commit dan push setiap kali ada penambahan atau penghapusan data.
+
+
