@@ -12,6 +12,7 @@
   - WhatsApp: 081390304093 (WA Only)
   - Email: sdlab.uksw@gmail.com
   - Instagram: @sdksatyawacana
+  - TikTok: @sdkristen.satyawa
 - **Visi Resmi**:
   *"Terwujudnya Peserta Didik yang Inovatif, Berkembang secara Holistik, dan Berwawasan Global dengan Kasih."*
 - **Tagline Utama**:
