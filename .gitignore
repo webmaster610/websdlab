@@ -3,3 +3,10 @@ Thumbs.db
 desktop.ini
 .vscode/
 .idea/
+
+# Environment Variables & Secrets (CONFIDENTIAL)
+.env
+.env.*
+bot/.env
+bot/node_modules/
+node_modules/
