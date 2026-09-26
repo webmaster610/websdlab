@@ -15,8 +15,23 @@
 const fs = require('fs');
 const path = require('path');
 const https = require('https');
-const { execSync } = require('child_process');
+const { execSync, execFileSync } = require('child_process');
 const { recordActivity } = require('./audit-logger');
+
+// SECURITY: Sanitize string to prevent command injection & shell escaping
+function sanitizeForCommit(str) {
+  if (!str) return 'Siswa';
+  return String(str).replace(/[^\w\s.,&'-]/g, '').trim().substring(0, 80);
+}
+
+// SECURITY: Escape HTML for Telegram parse_mode: HTML
+function escapeTelegramHtml(str) {
+  if (!str) return '';
+  return String(str)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;');
+}
 
 // 1. LOAD CONFIG DARI .ENV
 const envPath = path.join(__dirname, '..', '.env');
@@ -553,9 +568,10 @@ async function handleApproval(subId, adminChatId, messageId, callbackQueryId) {
       execSync('git config --local user.name "webmaster"', { cwd: path.join(__dirname, '..') });
       execSync('git config --local user.email "webmaster@sdlabuksw.sch.id"', { cwd: path.join(__dirname, '..') });
       execSync('git add data/prestasi.json images/prestasi/ data/activity_log.json docs/ACTIVITY_LOG.md', { cwd: path.join(__dirname, '..') });
-      execSync(`git commit -m "feat(prestasi): tayangkan prestasi #${newEntry.id} ${sub.student_name} [skip ci]"`, { cwd: path.join(__dirname, '..') });
+      const safeName = sanitizeForCommit(sub.student_name);
+      execFileSync('git', ['commit', '-m', `feat(prestasi): tayangkan prestasi #${newEntry.id} ${safeName} [skip ci]`], { cwd: path.join(__dirname, '..') });
       execSync('git push origin main', { cwd: path.join(__dirname, '..') });
-      console.log(`[Git Push Success] Prestasi #${newEntry.id} ${sub.student_name} berhasil tayang di GitHub!`);
+      console.log(`[Git Push Success] Prestasi #${newEntry.id} ${safeName} berhasil tayang di GitHub!`);
     } catch (gitErr) {
       console.error('[Git Commit/Push Warning]:', gitErr.message);
     }
@@ -735,7 +751,8 @@ async function handleConfirmDelete(targetId, adminChatId, messageId, callbackQue
     execSync('git config --local user.name "webmaster"', { cwd: path.join(__dirname, '..') });
     execSync('git config --local user.email "webmaster@sdlabuksw.sch.id"', { cwd: path.join(__dirname, '..') });
     execSync('git add data/prestasi.json images/prestasi/ data/activity_log.json docs/ACTIVITY_LOG.md', { cwd: path.join(__dirname, '..') });
-    execSync(`git commit -m "chore(prestasi): hapus prestasi #${item.id} (${item.student_name}) [skip ci]"`, { cwd: path.join(__dirname, '..') });
+    const safeName = sanitizeForCommit(item.student_name);
+    execFileSync('git', ['commit', '-m', `chore(prestasi): hapus prestasi #${item.id} (${safeName}) [skip ci]`], { cwd: path.join(__dirname, '..') });
     execSync('git push origin main', { cwd: path.join(__dirname, '..') });
     console.log(`[Git Delete Success] Prestasi #${item.id} berhasil dihapus dari GitHub!`);
   } catch (gitErr) {

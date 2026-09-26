@@ -277,6 +277,16 @@
         return expiry < today;
       }
 
+      function escapeHtml(str) {
+        if (!str) return '';
+        return String(str)
+          .replace(/&/g, '&amp;')
+          .replace(/</g, '&lt;')
+          .replace(/>/g, '&gt;')
+          .replace(/"/g, '&quot;')
+          .replace(/'/g, '&#039;');
+      }
+
       function renderCards(data) {
         const $grid = $('#prestasiGrid');
         const $empty = $('#prestasiEmptyState');
@@ -296,29 +306,42 @@
         $counter.text(data.length);
 
         data.forEach(function(item) {
+          const sId = escapeHtml(item.id);
+          const sImg = escapeHtml(item.image);
+          const sBadge = escapeHtml(item.badge);
+          const sBadgeClass = escapeHtml(item.badge_class || 'badge-gold');
+          const sStudent = escapeHtml(item.student_name);
+          const sClass = escapeHtml(item.student_class);
+          const sComp = escapeHtml(item.competition);
+          const sDate = escapeHtml(item.competition_date || '');
+          const sLoc = escapeHtml(item.location || '');
+          const sSubCat = escapeHtml(item.sub_category || '');
+          const sOrg = escapeHtml(item.organizer);
+          const sCat = escapeHtml(item.category);
+
           const cardHtml = `
             <div class="col-md-6 col-lg-4 mb-4 d-flex align-items-stretch">
-              <div class="prestasi-card w-100" data-id="${item.id}" data-img="${item.image}" data-badge="${item.badge}" data-badge-class="${item.badge_class || 'badge-gold'}" data-student="${item.student_name}" data-class="${item.student_class}" data-competition="${item.competition}" data-date="${item.competition_date || ''}" data-location="${item.location || ''}" data-sub-category="${item.sub_category || ''}" data-organizer="${item.organizer}" data-category="${item.category}" title="Klik untuk melihat foto ukuran penuh">
+              <div class="prestasi-card w-100" data-id="${sId}" data-img="${sImg}" data-badge="${sBadge}" data-badge-class="${sBadgeClass}" data-student="${sStudent}" data-class="${sClass}" data-competition="${sComp}" data-date="${sDate}" data-location="${sLoc}" data-sub-category="${sSubCat}" data-organizer="${sOrg}" data-category="${sCat}" title="Klik untuk melihat foto ukuran penuh">
                 <div class="prestasi-img-wrap">
-                  <img src="${item.image}" alt="${item.title}" class="prestasi-img" onerror="this.src='images/prestasi_piala_1.webp';">
-                  <span class="prestasi-pill-badge ${item.badge_class || 'badge-gold'}">
-                    <i class="icon-trophy mr-1"></i> ${item.badge}
+                  <img src="${sImg}" alt="${sComp}" class="prestasi-img" onerror="this.src='images/prestasi_piala_1.webp';">
+                  <span class="prestasi-pill-badge ${sBadgeClass}">
+                    <i class="icon-trophy mr-1"></i> ${sBadge}
                   </span>
                   <span class="prestasi-zoom-hint"><i class="ion-ios-expand"></i></span>
                 </div>
                 <div class="prestasi-body">
                   <div>
-                    <span class="prestasi-category-tag">${item.category}</span>
-                    <h4 class="prestasi-student">${item.student_name}</h4>
-                    <span class="prestasi-class">${item.student_class}</span>
-                    <p class="prestasi-competition">${item.competition}</p>
+                    <span class="prestasi-category-tag">${sCat}</span>
+                    <h4 class="prestasi-student">${sStudent}</h4>
+                    <span class="prestasi-class">${sClass}</span>
+                    <p class="prestasi-competition">${sComp}</p>
                     <div class="prestasi-meta-row">
-                      ${item.competition_date ? `<span class="prestasi-meta-item"><i class="icon-calendar text-primary"></i> ${item.competition_date}</span>` : ''}
-                      ${item.location ? `<span class="prestasi-meta-item"><i class="icon-map-marker text-danger"></i> ${item.location}</span>` : ''}
+                      ${sDate ? `<span class="prestasi-meta-item"><i class="icon-calendar text-primary"></i> ${sDate}</span>` : ''}
+                      ${sLoc ? `<span class="prestasi-meta-item"><i class="icon-map-marker text-danger"></i> ${sLoc}</span>` : ''}
                     </div>
                   </div>
                   <p class="prestasi-organizer">
-                    <span class="icon-award mr-1"></span> ${item.organizer}
+                    <span class="icon-award mr-1"></span> ${sOrg}
                   </p>
                 </div>
               </div>

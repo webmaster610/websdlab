@@ -148,4 +148,14 @@ Format pencatatan perubahan berdasar prinsip [Keep a Changelog](https://keepacha
 - **Added**: Backfilling seluruh riwayat mutasi awal: prestasi #1 s.d #7 (termasuk #7 Damara Aqila Kiandra), pembaruan 26 personil GTK, koreksi konteks Kak Kempo, dan integrasi TikTok.
 - **Added**: Sinkronisasi otomatis berkas log ke git commit dan push setiap kali ada penambahan atau penghapusan data.
 
+---
+
+### 14. TAHAP 10: AUDIT PENETRASI KEAMANAN & HARDENING SISTEM (SECURITY AUDIT)
+- **Security**: Penyusunan dokumen audit keamanan resmi komprehensif di `docs/SECURITY_AUDIT.md`.
+- **Fixed**: Mengatasi potensi *OS Command Injection* (CWE-78) pada `scripts/bot.js` dengan mengganti pemanggilan shell `execSync` menjadi `execFileSync` (parameter array murni tanpa pemanggilan shell) serta menambahkan filter sanitasi `sanitizeForCommit`.
+- **Fixed**: Mengatasi potensi *Stored DOM Cross-Site Scripting (DOM XSS)* (CWE-79) pada `prestasi.html` dengan menambahkan fungsi sanitasi entitas `escapeHtml` sebelum data disuntikkan ke DOM.
+- **Fixed**: Mengatasi potensi *Malformed HTML error* pada notifikasi Telegram dengan menerapkan `escapeTelegramHtml`.
+- **Security**: Verifikasi riwayat Git (`git log -S`) mengonfirmasi 0 kebocoran kredensial rahasia (Token Telegram & PAT GitHub 100% aman).
+
+
 
