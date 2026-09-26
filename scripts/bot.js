@@ -762,6 +762,8 @@ async function pollUpdates() {
           const from = msg.from || {};
           const photo = msg.photo;
 
+          console.log(`[Pesan Masuk] Dari: ${from.first_name || 'User'} (ID: ${chatId}) | Teks: "${text.replace(/\n/g, ' ').substring(0, 70)}" | Foto: ${Boolean(photo)}`);
+
           // Perintah Dasar
           if (text.startsWith('/start') || text.startsWith('/help')) {
             const isAdmin = String(chatId) === ADMIN_CHAT_ID;
