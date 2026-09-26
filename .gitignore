@@ -10,3 +10,6 @@ desktop.ini
 bot/.env
 bot/node_modules/
 node_modules/
+
+# Local cache & temporary bot files
+data/pending_submissions.json

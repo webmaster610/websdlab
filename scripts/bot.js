@@ -308,12 +308,19 @@ function calculateRetentionAndBadge(level, rank) {
   let badgeClass = 'badge-gold';
 
   const rankStr = String(rank).toLowerCase();
-  const isJuara1 = rankStr === '1' || rankStr.includes('1') || rankStr.includes('emas') || rankStr.includes('pertama');
-  const isJuara2 = rankStr === '2' || rankStr.includes('2') || rankStr.includes('perak') || rankStr.includes('kedua');
-  const isJuara3 = rankStr === '3' || rankStr.includes('3') || rankStr.includes('perunggu') || rankStr.includes('ketiga');
+  const isHarapan = rankStr.includes('harapan');
+  const isJuara1 = !isHarapan && (rankStr === '1' || rankStr.includes('1') || rankStr.includes('emas') || rankStr.includes('pertama'));
+  const isJuara2 = !isHarapan && (rankStr === '2' || rankStr.includes('2') || rankStr.includes('perak') || rankStr.includes('kedua'));
+  const isJuara3 = !isHarapan && (rankStr === '3' || rankStr.includes('3') || rankStr.includes('perunggu') || rankStr.includes('ketiga'));
 
   let rankLabel = 'Juara 1';
-  if (isJuara1) {
+  if (isHarapan) {
+    if (rankStr.includes('1') || rankStr.includes('satu')) rankLabel = 'Juara Harapan 1';
+    else if (rankStr.includes('2') || rankStr.includes('dua')) rankLabel = 'Juara Harapan 2';
+    else if (rankStr.includes('3') || rankStr.includes('tiga')) rankLabel = 'Juara Harapan 3';
+    else rankLabel = 'Juara Harapan';
+    badgeClass = 'badge-bronze';
+  } else if (isJuara1) {
     rankLabel = 'Juara 1';
     badgeClass = 'badge-gold';
   } else if (isJuara2) {
@@ -323,32 +330,32 @@ function calculateRetentionAndBadge(level, rank) {
     rankLabel = 'Juara 3';
     badgeClass = 'badge-bronze';
   } else {
-    rankLabel = 'Juara Harapan';
+    rankLabel = 'Juara Prestasi';
     badgeClass = 'badge-bronze';
   }
 
   let levelLabel = 'Tingkat Kota';
   const lvl = (level || '').toLowerCase();
-  if (lvl.includes('kecamatan')) {
+  if (lvl.includes('kecamatan') || lvl.includes('korwil')) {
     levelLabel = 'Tingkat Kecamatan';
-  } else if (lvl.includes('kota') || lvl.includes('kabupaten') || lvl.includes('ambarawa') || lvl.includes('salatiga')) {
-    levelLabel = 'Tingkat Kota';
-  } else if (lvl.includes('provinsi') || lvl.includes('jateng') || lvl.includes('jawa tengah')) {
+  } else if (lvl.includes('prov') || lvl.includes('jateng') || lvl.includes('jawa tengah') || lvl.includes('diy') || lvl.includes('daerah')) {
     levelLabel = 'Tingkat Provinsi';
-    badgeClass = isJuara1 ? 'badge-gold' : 'badge-blue';
-  } else if (lvl.includes('nasional')) {
+    badgeClass = isJuara1 ? 'badge-gold' : (isHarapan ? 'badge-bronze' : 'badge-blue');
+  } else if (lvl.includes('nasional') || lvl.includes('indonesia')) {
     levelLabel = 'Tingkat Nasional';
     badgeClass = 'badge-gold';
-  } else if (lvl.includes('internasional')) {
+  } else if (lvl.includes('internasional') || lvl.includes('global') || lvl.includes('dunia')) {
     levelLabel = 'Internasional';
     badgeClass = 'badge-gold';
+  } else {
+    levelLabel = 'Tingkat Kota';
   }
 
   badgeText = `${rankLabel} • ${levelLabel}`;
 
   // Hitung Masa Aktif
   const now = new Date();
-  if (lvl.includes('provinsi') || lvl.includes('jateng') || lvl.includes('jawa tengah') || lvl.includes('nasional') || lvl.includes('internasional')) {
+  if (lvl.includes('prov') || lvl.includes('jateng') || lvl.includes('jawa tengah') || lvl.includes('diy') || lvl.includes('nasional') || lvl.includes('internasional')) {
     // Abadi / Evergreen
     expiresAt = null;
   } else {
