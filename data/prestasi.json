@@ -1,5 +1,26 @@
 [
   {
+    "id": 7,
+    "title": "Juara 3 • Tingkat Kota - Gelar Inovasi Harmoni Nusantara",
+    "badge": "Juara 3 • Tingkat Kota",
+    "badge_class": "badge-bronze",
+    "student_name": "Damara Aqila Kiandra",
+    "student_class": "Kelas 6A",
+    "competition": "Gelar Inovasi Harmoni Nusantara",
+    "sub_category": "",
+    "competition_date": "Tgl 10 September 2026",
+    "location": "Bu Uksw",
+    "organizer": "Bu Uksw",
+    "category": "IPTEK & Robotika",
+    "category_key": "robotika",
+    "level": "Kota Salatiga",
+    "rank": "3",
+    "created_at": "2026-09-26",
+    "expires_at": "2026-12-26",
+    "image": "images/prestasi/prestasi_1790407270396.jpg",
+    "featured": true
+  },
+  {
     "id": 6,
     "title": "Juara 2 • Tingkat Kota - Lomba Dance Ajang GIHN UKSW",
     "badge": "Juara 2 • Tingkat Kota",
