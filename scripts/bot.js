@@ -193,6 +193,9 @@ function smartParseReport(rawText) {
     student_class: '',
     competition: '',
     organizer: '',
+    location: '',
+    competition_date: '',
+    sub_category: '',
     level: '',
     rank: '',
     category: ''
@@ -215,34 +218,63 @@ function smartParseReport(rawText) {
 
       if (!val) return;
 
-      // 0. ABAIKAN WAKTU, TANGGAL & FOTO (Strict Rule: Bebas Tanggal)
-      if (key.includes('waktu') || key.includes('tanggal') || key.includes('hari') || key.includes('jam') || key.includes('foto') || key.includes('lampir') || key.includes('dokumentasi')) {
+      // 0. FOTO & DOKUMENTASI (Abaikan)
+      if (key.includes('foto') || key.includes('lampir') || key.includes('dokumentasi')) {
         return;
       }
 
-      // 1. NAMA SISWA
+      // WAKTU / TANGGAL PELAKSANAAN
+      if (key.includes('waktu') || key.includes('tanggal') || key.includes('hari') || key.includes('tgl')) {
+        data.competition_date = toTitleCase(val);
+        return;
+      }
+
+      // TEMPAT / LOKASI PELAKSANAAN
+      if (key.includes('tempat') || key.includes('lokasi')) {
+        data.location = toTitleCase(val);
+        if (!data.organizer) data.organizer = toTitleCase(val);
+        return;
+      }
+
+      // PENYELENGGARA
+      if (key.includes('penyelenggara') || key.includes('pelaksana') || key.includes('panitia') || key.includes('oleh')) {
+        data.organizer = toTitleCase(val);
+        return;
+      }
+
+      // NAMA SISWA
       if (key.includes('nama siswa') || key.includes('nama murid') || key.includes('nama anak') || key.includes('nama peserta') || key === 'nama') {
         data.student_name = toTitleCase(val);
+        return;
       }
-      // 2. KELAS
-      else if (key.includes('kelas') || key.includes('kls')) {
+
+      // KELAS
+      if (key.includes('kelas') || key.includes('kls')) {
         data.student_class = normalizeClass(val);
+        return;
       }
-      // 3. JUARA / PERINGKAT
-      else if (key.includes('juara') || key.includes('peringkat') || key.includes('capaian') || key.includes('perolehan')) {
+
+      // JUARA / PERINGKAT
+      if (key.includes('juara') || key.includes('peringkat') || key.includes('capaian') || key.includes('perolehan')) {
         data.rank = val;
+        return;
       }
-      // 4. TEMPAT / PENYELENGGARA (Cek sebelum lomba, misal: "tempat pelaksanaan lomba")
-      else if (key.includes('penyelenggara') || key.includes('pelaksana') || key.includes('panitia') || key.includes('oleh') || key.includes('tempat') || key.includes('lokasi')) {
-        data.organizer = toTitleCase(val);
+
+      // KATEGORI KHUSUS LOMBA ATAU TINGKAT
+      if (key.includes('kategori') || key.includes('tingkat') || key.includes('lingkup') || key.includes('wilayah') || key.includes('skala') || key.includes('divisi') || key.includes('kelompok') || key.includes('nomor')) {
+        const vLower = val.toLowerCase();
+        if (vLower.includes('prov') || vLower.includes('jateng') || vLower.includes('kota') || vLower.includes('kecamatan') || vLower.includes('nasional') || vLower.includes('internasional') || vLower.includes('kabupaten')) {
+          data.level = val;
+        } else {
+          data.sub_category = toTitleCase(val);
+        }
+        return;
       }
-      // 5. KATEGORI / TINGKAT (Cek sebelum lomba, misal: "tingkat lomba")
-      else if (key.includes('kategori') || key.includes('tingkat') || key.includes('lingkup') || key.includes('wilayah') || key.includes('skala')) {
-        data.level = val;
-      }
-      // 6. NAMA LOMBA / AJANG
-      else if (key.includes('nama ajang') || key.includes('ajang') || key.includes('nama lomba') || key.includes('kejuaraan') || key.includes('lomba') || key.includes('kompetisi') || key.includes('turnamen') || key.includes('event')) {
+
+      // NAMA LOMBA / AJANG
+      if (key.includes('nama ajang') || key.includes('ajang') || key.includes('nama lomba') || key.includes('kejuaraan') || key.includes('lomba') || key.includes('kompetisi') || key.includes('turnamen') || key.includes('event')) {
         data.competition = toTitleCase(val);
+        return;
       }
     }
   });
@@ -398,9 +430,9 @@ Pengirim: <b>${senderName}</b>
 🎓 <b>Siswa:</b> ${parsedData.student_name} (${parsedData.student_class})
 🏅 <b>Capaian:</b> ${parsedData.badge}
 🏆 <b>Lomba:</b> ${parsedData.competition}
-🏛️ <b>Penyelenggara:</b> ${parsedData.organizer}
-🏷️ <b>Kategori:</b> ${parsedData.category}
-⏳ <b>Masa Aktif:</b> ${parsedData.expires_at ? `Aktif s.d ${parsedData.expires_at} (Auto-Prune)` : '<b>Abadi (Evergreen - Tingkat Provinsi)</b>'}
+${parsedData.sub_category ? `🏷️ <b>Kategori Khusus:</b> ${parsedData.sub_category}\n` : ''}${parsedData.competition_date ? `📅 <b>Waktu:</b> ${parsedData.competition_date}\n` : ''}${parsedData.location ? `📍 <b>Tempat:</b> ${parsedData.location}\n` : ''}🏛️ <b>Penyelenggara:</b> ${parsedData.organizer}
+🎨 <b>Rumpun Web:</b> ${parsedData.category}
+⏳ <b>Masa Aktif:</b> ${parsedData.expires_at ? `Aktif s.d ${parsedData.expires_at} (Auto-Prune)` : '<b>Abadi (Evergreen)</b>'}
 
 Mohon konfirmasi untuk penayangan di website:
 `.trim();
@@ -476,6 +508,9 @@ async function handleApproval(subId, adminChatId, messageId, callbackQueryId) {
       student_name: sub.student_name,
       student_class: sub.student_class,
       competition: sub.competition,
+      sub_category: sub.sub_category || '',
+      competition_date: sub.competition_date || '',
+      location: sub.location || sub.organizer || '',
       organizer: sub.organizer,
       category: sub.category,
       category_key: sub.category_key,
@@ -495,9 +530,9 @@ async function handleApproval(subId, adminChatId, messageId, callbackQueryId) {
       execSync('git config --local user.name "webmaster"', { cwd: path.join(__dirname, '..') });
       execSync('git config --local user.email "webmaster@sdlabuksw.sch.id"', { cwd: path.join(__dirname, '..') });
       execSync('git add data/prestasi.json images/prestasi/', { cwd: path.join(__dirname, '..') });
-      execSync(`git commit -m "feat(prestasi): tayangkan prestasi ${sub.student_name} [skip ci]"`, { cwd: path.join(__dirname, '..') });
+      execSync(`git commit -m "feat(prestasi): tayangkan prestasi #${newEntry.id} ${sub.student_name} [skip ci]"`, { cwd: path.join(__dirname, '..') });
       execSync('git push origin main', { cwd: path.join(__dirname, '..') });
-      console.log(`[Git Push Success] Prestasi ${sub.student_name} berhasil tayang di GitHub!`);
+      console.log(`[Git Push Success] Prestasi #${newEntry.id} ${sub.student_name} berhasil tayang di GitHub!`);
     } catch (gitErr) {
       console.error('[Git Commit/Push Warning]:', gitErr.message);
     }
@@ -509,10 +544,11 @@ async function handleApproval(subId, adminChatId, messageId, callbackQueryId) {
     const successCaption = `
 🎉 <b>PRESTASI TELAH DISETUJUI & TAYANG DI WEBSITE!</b>
 
+🆔 <b>ID: #${newEntry.id}</b>
 🎓 <b>Siswa:</b> ${sub.student_name} (${sub.student_class})
 🏅 <b>Capaian:</b> ${sub.badge}
 🏆 <b>Lomba:</b> ${sub.competition}
-🏛️ <b>Penyelenggara:</b> ${sub.organizer}
+${sub.sub_category ? `🏷️ <b>Kategori Khusus:</b> ${sub.sub_category}\n` : ''}${sub.competition_date ? `📅 <b>Waktu:</b> ${sub.competition_date}\n` : ''}${sub.location ? `📍 <b>Tempat:</b> ${sub.location}\n` : ''}🏛️ <b>Penyelenggara:</b> ${sub.organizer}
 ⏳ <b>Masa Aktif:</b> ${sub.expires_at ? `Aktif s.d ${sub.expires_at}` : '<b>Abadi (Evergreen)</b>'}
 🌐 <b>Status:</b> Live di https://webmaster610.github.io/websdlab/prestasi.html
 `.trim();

@@ -10233,8 +10233,25 @@ textarea.form-control {
   font-weight: 600;
   color: #1e293b;
   line-height: 1.45;
-  margin-bottom: 12px;
+  margin-bottom: 8px;
   min-height: 42px;
+}
+
+.prestasi-meta-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  font-size: 12px;
+  color: #64748b;
+  margin-bottom: 12px;
+}
+
+.prestasi-meta-item {
+  display: inline-flex;
+  align-items: center;
+  font-weight: 500;
+  gap: 4px;
 }
 
 .prestasi-organizer {

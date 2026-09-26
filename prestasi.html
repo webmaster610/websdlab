@@ -213,8 +213,25 @@
             <h3 id="modalPrestasiStudent" class="font-weight-bold text-dark mb-1" style="font-size: 24px;"></h3>
             <span id="modalPrestasiClass" class="text-muted font-weight-bold mb-3 d-block" style="font-size: 15px;"></span>
             <div class="p-3 bg-light rounded-lg border mb-2">
-              <h5 class="text-dark font-weight-bold mb-1" style="font-size: 16px;"><i class="icon-trophy text-warning mr-2"></i> <span id="modalPrestasiComp"></span></h5>
-              <p class="text-muted mb-0" style="font-size: 14px;"><i class="icon-award text-primary mr-2"></i> Penyelenggara: <strong id="modalPrestasiOrg" class="text-dark"></strong></p>
+              <h5 class="text-dark font-weight-bold mb-3" style="font-size: 16px;"><i class="icon-trophy text-warning mr-2"></i> <span id="modalPrestasiComp"></span></h5>
+              <div class="row text-left" style="font-size: 13.5px;">
+                <div class="col-md-6 mb-2" id="modalWrapSubCat" style="display:none;">
+                  <span class="text-muted d-block" style="font-size: 12px;"><i class="icon-tag text-info mr-1"></i> Kategori Ajang Lomba:</span>
+                  <strong class="text-dark" id="modalPrestasiSubCat"></strong>
+                </div>
+                <div class="col-md-6 mb-2" id="modalWrapDate" style="display:none;">
+                  <span class="text-muted d-block" style="font-size: 12px;"><i class="icon-calendar text-primary mr-1"></i> Waktu Pelaksanaan:</span>
+                  <strong class="text-dark" id="modalPrestasiDate"></strong>
+                </div>
+                <div class="col-md-6 mb-2" id="modalWrapLoc" style="display:none;">
+                  <span class="text-muted d-block" style="font-size: 12px;"><i class="icon-map-marker text-danger mr-1"></i> Tempat Pelaksanaan:</span>
+                  <strong class="text-dark" id="modalPrestasiLoc"></strong>
+                </div>
+                <div class="col-md-6 mb-2" id="modalWrapOrg">
+                  <span class="text-muted d-block" style="font-size: 12px;"><i class="icon-award text-success mr-1"></i> Penyelenggara:</span>
+                  <strong class="text-dark" id="modalPrestasiOrg"></strong>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -281,7 +298,7 @@
         data.forEach(function(item) {
           const cardHtml = `
             <div class="col-md-6 col-lg-4 mb-4 d-flex align-items-stretch">
-              <div class="prestasi-card w-100" data-id="${item.id}" data-img="${item.image}" data-badge="${item.badge}" data-badge-class="${item.badge_class || 'badge-gold'}" data-student="${item.student_name}" data-class="${item.student_class}" data-competition="${item.competition}" data-organizer="${item.organizer}" data-category="${item.category}" title="Klik untuk melihat foto ukuran penuh">
+              <div class="prestasi-card w-100" data-id="${item.id}" data-img="${item.image}" data-badge="${item.badge}" data-badge-class="${item.badge_class || 'badge-gold'}" data-student="${item.student_name}" data-class="${item.student_class}" data-competition="${item.competition}" data-date="${item.competition_date || ''}" data-location="${item.location || ''}" data-sub-category="${item.sub_category || ''}" data-organizer="${item.organizer}" data-category="${item.category}" title="Klik untuk melihat foto ukuran penuh">
                 <div class="prestasi-img-wrap">
                   <img src="${item.image}" alt="${item.title}" class="prestasi-img" onerror="this.src='images/prestasi_piala_1.webp';">
                   <span class="prestasi-pill-badge ${item.badge_class || 'badge-gold'}">
@@ -295,6 +312,10 @@
                     <h4 class="prestasi-student">${item.student_name}</h4>
                     <span class="prestasi-class">${item.student_class}</span>
                     <p class="prestasi-competition">${item.competition}</p>
+                    <div class="prestasi-meta-row">
+                      ${item.competition_date ? `<span class="prestasi-meta-item"><i class="icon-calendar text-primary"></i> ${item.competition_date}</span>` : ''}
+                      ${item.location ? `<span class="prestasi-meta-item"><i class="icon-map-marker text-danger"></i> ${item.location}</span>` : ''}
+                    </div>
                   </div>
                   <p class="prestasi-organizer">
                     <span class="icon-award mr-1"></span> ${item.organizer}
@@ -407,6 +428,9 @@
         const comp = $(this).data('competition') || $(this).find('.prestasi-competition').text().trim();
         const org = $(this).data('organizer') || $(this).find('.prestasi-organizer').text().replace(/Award/i, '').trim();
         const cat = $(this).data('category') || $(this).find('.prestasi-category-tag').text().trim();
+        const date = $(this).data('date');
+        const loc = $(this).data('location');
+        const subCat = $(this).data('sub-category');
 
         $('#modalPrestasiImg').attr('src', img);
         $('#modalPrestasiBadge').text(badge).attr('class', 'prestasi-pill-badge ' + badgeClass);
@@ -415,6 +439,30 @@
         $('#modalPrestasiClass').text(sclass);
         $('#modalPrestasiComp').text(comp);
         $('#modalPrestasiOrg').text(org);
+
+        // Sub-Kategori Lomba
+        if (subCat && subCat.trim() !== '') {
+          $('#modalPrestasiSubCat').text(subCat);
+          $('#modalWrapSubCat').show();
+        } else {
+          $('#modalWrapSubCat').hide();
+        }
+
+        // Tanggal Pelaksanaan
+        if (date && date.trim() !== '') {
+          $('#modalPrestasiDate').text(date);
+          $('#modalWrapDate').show();
+        } else {
+          $('#modalWrapDate').hide();
+        }
+
+        // Tempat Pelaksanaan
+        if (loc && loc.trim() !== '') {
+          $('#modalPrestasiLoc').text(loc);
+          $('#modalWrapLoc').show();
+        } else {
+          $('#modalWrapLoc').hide();
+        }
 
         $('#modalDetailPrestasi').modal('show');
       });
