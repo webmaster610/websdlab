@@ -175,6 +175,15 @@ Format pencatatan perubahan berdasar prinsip [Keep a Changelog](https://keepacha
   - Begitu ada komentar ortu ke-2 dan ke-3 yang masuk nantinya (`testimonyCount > 1`), carousel otomatis mengaktifkan kembali rotasi geser berputar (*autoplay loop sliding*) secara mandiri tanpa perlu perubahan kode.
 - **Added**: Pencatatan riwayat pembersihan di `docs/ACTIVITY_LOG.md` dan `data/activity_log.json`.
 
+---
+
+### 17. TAHAP 13: RESTORASI KARTU PENDAMPING TESTIMONI SEMENTARA
+- **Changed**: Mengembalikan kartu testimoni pendamping di `index.html` dan `about.html` atas arahan pengguna agar slider carousel tetap terlihat penuh, variatif, dan bergerak dinamis (*multi-card autoplay loop*).
+- **Changed**: Menempatkan testimoni autentik **Pak Jasson (Orang Tua Siswa Kelas 4 & 6)** sebagai kartu nomor 1 (posisi utama di depan).
+- **Strategy**: Kartu-kartu pendamping ini akan digantikan secara bertahap begitu testimoni orang tua murid yang baru telah terkumpul dalam beberapa hari ke depan.
+- **Added**: Pencatatan riwayat restorasi di `docs/ACTIVITY_LOG.md` dan `data/activity_log.json`.
+
+
 
 
 
