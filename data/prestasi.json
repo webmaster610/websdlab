@@ -1,5 +1,23 @@
 [
   {
+    "id": 1790401749165,
+    "title": "Juara 1 • Tingkat Kota - Fashion Show Sion Bajuku Klambi",
+    "badge": "Juara 1 • Tingkat Kota",
+    "badge_class": "badge-gold",
+    "student_name": "Isabella Leticia Aqueena",
+    "student_class": "Kelas 6A",
+    "competition": "Fashion Show Sion Bajuku Klambi",
+    "organizer": "Pakuwon Mall Yogya",
+    "category": "Seni Vokal & Musik",
+    "category_key": "seni",
+    "level": "Prov",
+    "rank": "Juara Harapan 1",
+    "created_at": "2026-09-26",
+    "expires_at": "2027-03-26",
+    "image": "images/prestasi/prestasi_1790401747509.jpg",
+    "featured": true
+  },
+  {
     "id": 1,
     "title": "Juara 1 OSN Sains SD",
     "badge": "Juara 1 • Tingkat Kota",
