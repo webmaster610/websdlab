@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "title": "Juara 1 OSN Sains SD",
+    "badge": "Juara 1 • Tingkat Kota",
+    "badge_class": "badge-gold",
+    "student_name": "Kezia Aurelia",
+    "student_class": "Kelas 5",
+    "competition": "Olimpiade Sains Nasional (OSN) Tingkat Kota Salatiga",
+    "organizer": "Dinas Pendidikan & Kemitraan FSM UKSW",
+    "category": "Akademik & Sains",
+    "image": "images/prestasi_piala_1.webp"
+  },
+  {
+    "id": 2,
+    "title": "Juara 1 Solo Vokal FLS2N",
+    "badge": "Juara 1 • Tingkat Kota",
+    "badge_class": "badge-gold",
+    "student_name": "Jonathan Putra",
+    "student_class": "Kelas 4",
+    "competition": "Festival & Lomba Seni Siswa Nasional (FLS2N) Tingkat Kota Salatiga",
+    "organizer": "Balai Pengembangan Talenta Indonesia (BPTI)",
+    "category": "Seni Vokal & Musik",
+    "image": "images/prestasi_piala_2.webp"
+  },
+  {
+    "id": 3,
+    "title": "Medali Emas Kejurda Renang",
+    "badge": "Medali Emas • Tingkat Provinsi",
+    "badge_class": "badge-blue",
+    "student_name": "David Chris Immanuel",
+    "student_class": "Kelas 4",
+    "competition": "Kejuaraan Renang Antar-Sekolah Dasar Jawa Tengah",
+    "organizer": "Akuatik Indonesia Cabang Salatiga",
+    "category": "Olahraga Prestasi",
+    "image": "images/student_single.webp"
+  },
+  {
+    "id": 4,
+    "title": "Juara 2 Turnamen Basket Pelajar",
+    "badge": "Juara 2 • Tingkat Karesidenan",
+    "badge_class": "badge-silver",
+    "student_name": "Tim Basket SD Satya Wacana",
+    "student_class": "Tim Prestasi",
+    "competition": "Kejuaraan Bola Basket Pelajar Tingkat Karesidenan",
+    "organizer": "Perbasi & GOR Kridanggo Salatiga",
+    "category": "Olahraga Tim",
+    "image": "images/hero_3.webp"
+  },
+  {
+    "id": 5,
+    "title": "Juara Harapan 1 Robotika Cilik",
+    "badge": "Harapan 1 • Regional",
+    "badge_class": "badge-bronze",
+    "student_name": "Nathaniel Timothy",
+    "student_class": "Kelas 5",
+    "competition": "Kompetisi Robotika Cilik & Creative Coding Kids",
+    "organizer": "Fakultas Teknologi Informasi (FTI) UKSW",
+    "category": "IPTEK & Robotika",
+    "image": "images/prestasi_tangga.webp"
+  }
+]

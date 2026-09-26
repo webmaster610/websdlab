@@ -85,6 +85,29 @@
 			}
 		});
 
+		$('.carousel-prestasi').owlCarousel({
+			autoplay: true,
+			autoplayTimeout: 4500,
+			autoplayHoverPause: true,
+			loop: true,
+			margin: 24,
+			stagePadding: 0,
+			nav: true,
+			dots: true,
+			navText: ['<span class="ion-ios-arrow-back">', '<span class="ion-ios-arrow-forward">'],
+			responsive:{
+				0:{
+					items: 1
+				},
+				768:{
+					items: 2
+				},
+				1000:{
+					items: 3
+				}
+			}
+		});
+
 	};
 	carousel();
 

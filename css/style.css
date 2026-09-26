@@ -10070,3 +10070,181 @@ textarea.form-control {
   color: #0d83ff;
   text-decoration: underline;
 }
+
+/* =========================================================================
+   DYNAMIC PRESTASI CAROUSEL (EQUAL-HEIGHT & HIGH CONVERTING)
+   ========================================================================= */
+.carousel-prestasi .owl-stage {
+  display: flex !important;
+}
+
+.carousel-prestasi .owl-item {
+  display: flex !important;
+  height: auto !important;
+}
+
+.carousel-prestasi .item {
+  width: 100%;
+  display: flex;
+  margin-bottom: 15px;
+}
+
+.prestasi-card {
+  background: #ffffff;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid #e2e8f0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 15px -3px rgba(15, 23, 42, 0.07);
+}
+
+.prestasi-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 35px -8px rgba(15, 23, 42, 0.16) !important;
+}
+
+.prestasi-img-wrap {
+  position: relative;
+  width: 100%;
+  height: 230px;
+  overflow: hidden;
+  background-color: #f1f5f9;
+}
+
+.prestasi-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.prestasi-card:hover .prestasi-img {
+  transform: scale(1.06);
+}
+
+.prestasi-pill-badge {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  font-size: 11.5px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  padding: 5px 14px;
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  z-index: 5;
+}
+
+.prestasi-pill-badge.badge-gold {
+  background: linear-gradient(135deg, #f59f00 0%, #fd5f00 100%);
+  color: #ffffff;
+}
+
+.prestasi-pill-badge.badge-silver {
+  background: linear-gradient(135deg, #64748b 0%, #475569 100%);
+  color: #ffffff;
+}
+
+.prestasi-pill-badge.badge-blue {
+  background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
+  color: #ffffff;
+}
+
+.prestasi-pill-badge.badge-bronze {
+  background: linear-gradient(135deg, #d97706 0%, #b45309 100%);
+  color: #ffffff;
+}
+
+.prestasi-body {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px 22px 22px;
+  background: #ffffff;
+}
+
+.prestasi-category-tag {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 800;
+  color: #0d83ff;
+  background: #eff6ff;
+  border: 1px solid #dbeafe;
+  padding: 3px 10px;
+  border-radius: 12px;
+  margin-bottom: 10px;
+  align-self: flex-start;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.prestasi-student {
+  font-size: 18px;
+  font-weight: 800;
+  color: #0f172a;
+  line-height: 1.3;
+  margin-bottom: 2px;
+}
+
+.prestasi-class {
+  font-size: 13px;
+  font-weight: 600;
+  color: #64748b;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.prestasi-competition {
+  font-size: 14.5px;
+  font-weight: 600;
+  color: #1e293b;
+  line-height: 1.45;
+  margin-bottom: 12px;
+  min-height: 42px;
+}
+
+.prestasi-organizer {
+  font-size: 12px;
+  color: #64748b;
+  border-top: 1px dashed #e2e8f0;
+  padding-top: 10px;
+  margin-bottom: 0;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.carousel-prestasi .owl-nav {
+  margin-top: 24px;
+  text-align: center;
+}
+
+.carousel-prestasi .owl-nav button.owl-prev,
+.carousel-prestasi .owl-nav button.owl-next {
+  width: 44px;
+  height: 44px;
+  border-radius: 50% !important;
+  background: #ffffff !important;
+  border: 1px solid #cbd5e1 !important;
+  color: #0f172a !important;
+  margin: 0 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  transition: all 0.25s ease;
+  font-size: 18px !important;
+  line-height: 44px !important;
+}
+
+.carousel-prestasi .owl-nav button.owl-prev:hover,
+.carousel-prestasi .owl-nav button.owl-next:hover {
+  background: #0d83ff !important;
+  color: #ffffff !important;
+  border-color: #0d83ff !important;
+  transform: scale(1.08);
+}
+
