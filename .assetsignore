@@ -1,0 +1,9 @@
+.git
+.git/**
+.github
+.github/**
+.agents
+.agents/**
+.gemini
+.gemini/**
+*.md
