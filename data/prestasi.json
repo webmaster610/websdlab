@@ -1,26 +1,5 @@
 [
   {
-    "id": 6,
-    "title": "Juara 2 • Tingkat Kota - Lomba Dance Ajang GIHN UKSW",
-    "badge": "Juara 2 • Tingkat Kota",
-    "badge_class": "badge-silver",
-    "student_name": "Isabella Leticia Aqueena & Leona Andara Suprapto",
-    "student_class": "Kelas 6A",
-    "competition": "Lomba Dance Ajang GIHN UKSW",
-    "sub_category": "Juara Best Costume & Juara Umum 2",
-    "competition_date": "10 September 2026",
-    "location": "UKSW Salatiga",
-    "organizer": "UKSW Salatiga",
-    "category": "Seni & Kreativitas",
-    "category_key": "seni",
-    "level": "kota",
-    "rank": 2,
-    "created_at": "2026-09-26",
-    "expires_at": "2026-12-26",
-    "image": "images/prestasi/prestasi_1790404097667.jpg",
-    "featured": true
-  },
-  {
     "id": 1,
     "title": "Juara 1 OSN Sains SD",
     "badge": "Juara 1 • Tingkat Kota",

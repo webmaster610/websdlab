@@ -1,5 +1,22 @@
 [
   {
+    "id": "act_1790518398396",
+    "timestamp": "2026-09-27T14:13:18.391Z",
+    "display_time": "2026-09-27 14:13 WIB",
+    "action": "HAPUS",
+    "category_tag": "PRESTASI",
+    "target_id": 6,
+    "student_name": "Isabella Leticia Aqueena & Leona Andara Suprapto",
+    "student_class": "Kelas 6A",
+    "competition": "Lomba Dance Ajang GIHN UKSW",
+    "badge": "Juara 2 • Tingkat Kota",
+    "category": "Seni & Kreativitas",
+    "actor": "Admin (7187970534)",
+    "expires_at": null,
+    "image": "images/prestasi/prestasi_1790404097667.jpg",
+    "notes": "Dihapus manual oleh Admin via Telegram."
+  },
+  {
     "id": "act_1790436100000",
     "timestamp": "2026-09-27T14:00:00.000Z",
     "display_time": "2026-09-27 21:00 WIB",

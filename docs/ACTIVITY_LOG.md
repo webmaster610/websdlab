@@ -21,6 +21,7 @@ Setiap kali Admin menyetujui, menolak, atau menghapus prestasi melalui Bot Teleg
 
 | Waktu (WIB) | Aksi | ID | Nama Subjek / Entri | Ajang / Capaian | Kategori & Bidang | Aktor / Eksekutor | Keterangan & Masa Aktif |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| **2026-09-27 14:13 WIB** | `HAPUS` | **#6** | **Isabella Leticia Aqueena & Leona Andara Suprapto** (Kelas 6A) | Lomba Dance Ajang GIHN UKSW (*Juara 2 • Tingkat Kota*) | Seni & Kreativitas | Admin (7187970534) | Dihapus manual oleh Admin via Telegram. |
 | **2026-09-27 21:00 WIB** | `HAPUS` | **#7** | **Damara Aqila Kiandra** (Kelas 6A) | Gelar Inovasi Harmoni Nusantara (*Juara 3 • Tingkat Kota*) | IPTEK & Robotika | Admin (`7187970534`) | Dihapus manual oleh Admin via Telegram. Data dan foto dibersihkan. |
 | **2026-09-26 15:20 WIB** | `PULIHKAN` | **#-** | **Pak Jasson & Kartu Pendamping** (-) | Restorasi Kartu Testimoni Pendamping Sementara (*Testimoni Aktif*) | Testimoni | Webmaster / Admin | Mengembalikan kartu testimoni pendamping sementara agar slider carousel tetap penuh, berputar, dan dinamis, dengan Pak Jasson tetap di posisi utama. |
 | **2026-09-26 15:14 WIB** | `BERSIHKAN` | **#-** | **Testimoni Template Generik** (-) | Pembersihan Komentar Template Non-Autentik (*Testimoni Bersih*) | Testimoni | Webmaster / Admin | Menghapus seluruh komentar template bawaan di beranda dan profil, menyisakan testimoni asli Pak Jasson dengan carousel auto-adaptif. |
