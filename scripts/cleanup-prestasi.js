@@ -56,6 +56,16 @@ function sendTelegramNotification(message) {
 }
 
 function runCleanup() {
+  const rootDir = path.join(__dirname, '..');
+  try {
+    execSync('git config --local user.name "webmaster"', { cwd: rootDir });
+    execSync('git config --local user.email "webmaster@sdlabuksw.sch.id"', { cwd: rootDir });
+    execSync('git pull origin main', { cwd: rootDir });
+    console.log('[Git Sync Cleanup] Berhasil sinkronisasi pull sebelum cleanup.');
+  } catch (syncErr) {
+    console.warn('[Git Sync Cleanup Warning]:', syncErr.message);
+  }
+
   if (!fs.existsSync(DATA_FILE)) {
     console.log('File data/prestasi.json tidak ditemukan.');
     return;
@@ -120,16 +130,23 @@ function runCleanup() {
       }, 'Sistem (Auto-Prune)');
     });
 
-    // Git commit & push
+    // Git commit & push dengan auto-rebase fallback
     try {
-      execSync('git config --local user.name "webmaster"', { cwd: path.join(__dirname, '..') });
-      execSync('git config --local user.email "webmaster@sdlabuksw.sch.id"', { cwd: path.join(__dirname, '..') });
-      execSync('git add data/prestasi.json images/prestasi/ data/activity_log.json docs/ACTIVITY_LOG.md', { cwd: path.join(__dirname, '..') });
-      execSync(`git commit -m "chore(cleanup): pembersihan otomatis ${removedItems.length} prestasi kadaluarsa [skip ci]"`, { cwd: path.join(__dirname, '..') });
-      execSync('git push origin main', { cwd: path.join(__dirname, '..') });
+      execSync('git config --local user.name "webmaster"', { cwd: rootDir });
+      execSync('git config --local user.email "webmaster@sdlabuksw.sch.id"', { cwd: rootDir });
+      execSync('git add data/prestasi.json images/prestasi/ data/activity_log.json docs/ACTIVITY_LOG.md', { cwd: rootDir });
+      execSync(`git commit -m "chore(cleanup): pembersihan otomatis ${removedItems.length} prestasi kadaluarsa [skip ci]"`, { cwd: rootDir });
+      execSync('git push origin main', { cwd: rootDir });
       console.log('[Git Push Cleanup Success] Perubahan pembersihan berhasil dipush ke GitHub.');
     } catch (gitErr) {
-      console.error('[Git Push Cleanup Warning]:', gitErr.message);
+      console.warn('[Git Push Cleanup Initial Failed] Mencoba rebase & push ulang...', gitErr.message);
+      try {
+        execSync('git pull --rebase origin main', { cwd: rootDir });
+        execSync('git push origin main', { cwd: rootDir });
+        console.log('[Git Rebase & Push Cleanup Success] Berhasil dipush setelah rebase.');
+      } catch (retryErr) {
+        console.error('[Git Push Cleanup Warning]:', retryErr.message);
+      }
     }
 
     let reportMsg = `🧹 <b>Laporan Pembersihan Otomatis (Auto-Prune) Prestasi</b>\n`;

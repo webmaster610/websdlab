@@ -1,5 +1,22 @@
 [
   {
+    "id": "act_1790436100000",
+    "timestamp": "2026-09-27T14:00:00.000Z",
+    "display_time": "2026-09-27 21:00 WIB",
+    "action": "HAPUS",
+    "category_tag": "PRESTASI",
+    "target_id": 7,
+    "student_name": "Damara Aqila Kiandra",
+    "student_class": "Kelas 6A",
+    "competition": "Gelar Inovasi Harmoni Nusantara",
+    "badge": "Juara 3 • Tingkat Kota",
+    "category": "IPTEK & Robotika",
+    "actor": "Admin (7187970534)",
+    "expires_at": "2026-12-26",
+    "image": "images/prestasi/prestasi_1790407270396.jpg",
+    "notes": "Dihapus manual oleh Admin via Telegram."
+  },
+  {
     "id": "act_1790435800000",
     "timestamp": "2026-09-26T15:20:00.000Z",
     "display_time": "2026-09-26 15:20 WIB",

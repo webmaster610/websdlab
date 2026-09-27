@@ -9,11 +9,11 @@ Setiap kali Admin menyetujui, menolak, atau menghapus prestasi melalui Bot Teleg
 
 ## 📊 RINGKASAN STATISTIK AKTIVITAS
 
-- **Total Prestasi Aktif di Website**: 7 Prestasi
-- **Total Riwayat Tercatat**: 12 Log Aktivitas
+- **Total Prestasi Aktif di Website**: 6 Prestasi
+- **Total Riwayat Tercatat**: 13 Log Aktivitas
 - **Status Server Produksi**: Online 24/7 (`sdlabubuntuserver` di UKSW Salatiga)
 - **Engine Otomasi**: Node.js Long-Polling Telegram Bot & PM2 Daemon (`sdlab-prestasi-bot`)
-- **Pembaruan Terakhir**: 26 September 2026
+- **Pembaruan Terakhir**: 27 September 2026
 
 ---
 
@@ -21,6 +21,7 @@ Setiap kali Admin menyetujui, menolak, atau menghapus prestasi melalui Bot Teleg
 
 | Waktu (WIB) | Aksi | ID | Nama Subjek / Entri | Ajang / Capaian | Kategori & Bidang | Aktor / Eksekutor | Keterangan & Masa Aktif |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| **2026-09-27 21:00 WIB** | `HAPUS` | **#7** | **Damara Aqila Kiandra** (Kelas 6A) | Gelar Inovasi Harmoni Nusantara (*Juara 3 • Tingkat Kota*) | IPTEK & Robotika | Admin (`7187970534`) | Dihapus manual oleh Admin via Telegram. Data dan foto dibersihkan. |
 | **2026-09-26 15:20 WIB** | `PULIHKAN` | **#-** | **Pak Jasson & Kartu Pendamping** (-) | Restorasi Kartu Testimoni Pendamping Sementara (*Testimoni Aktif*) | Testimoni | Webmaster / Admin | Mengembalikan kartu testimoni pendamping sementara agar slider carousel tetap penuh, berputar, dan dinamis, dengan Pak Jasson tetap di posisi utama. |
 | **2026-09-26 15:14 WIB** | `BERSIHKAN` | **#-** | **Testimoni Template Generik** (-) | Pembersihan Komentar Template Non-Autentik (*Testimoni Bersih*) | Testimoni | Webmaster / Admin | Menghapus seluruh komentar template bawaan di beranda dan profil, menyisakan testimoni asli Pak Jasson dengan carousel auto-adaptif. |
 | **2026-09-26 22:06** | `TESTIMONI` | **-** | **Pak Jasson** (Orang Tua Siswa Kelas 4 & 6) | Kesan & Testimoni Orang Tua Murid (*Orang Tua Kelas 4 & 6*) | Testimoni | Webmaster / Admin | Penambahan testimoni autentik Pak Jasson pada carousel beranda dan profil sekolah. |

@@ -169,6 +169,46 @@ async function answerCallbackQuery(callbackQueryId, text, showAlert = false) {
   });
 }
 
+// 2.5 GIT SYNC HELPERS (PULL SEBELUM BACA/TULIS & PUSH DENGAN AUTO-REBASE)
+function gitPrePull() {
+  const rootDir = path.join(__dirname, '..');
+  try {
+    execSync('git config --local user.name "webmaster"', { cwd: rootDir });
+    execSync('git config --local user.email "webmaster@sdlabuksw.sch.id"', { cwd: rootDir });
+    execSync('git pull origin main', { cwd: rootDir });
+    console.log('[Git Sync] Berhasil sinkronisasi pull dari GitHub origin main.');
+  } catch (err) {
+    console.warn('[Git Sync Warning] Gagal git pull otomatis:', err.message);
+  }
+}
+
+async function gitCommitAndPush(commitMessage, adminChatId) {
+  const rootDir = path.join(__dirname, '..');
+  try {
+    execSync('git config --local user.name "webmaster"', { cwd: rootDir });
+    execSync('git config --local user.email "webmaster@sdlabuksw.sch.id"', { cwd: rootDir });
+    execSync('git add data/prestasi.json images/prestasi/ data/activity_log.json docs/ACTIVITY_LOG.md', { cwd: rootDir });
+    execFileSync('git', ['commit', '-m', commitMessage], { cwd: rootDir });
+    execSync('git push origin main', { cwd: rootDir });
+    console.log(`[Git Push Success] ${commitMessage}`);
+    return true;
+  } catch (err) {
+    console.warn('[Git Push Initial Failed] Mencoba pull --rebase & push ulang...', err.message);
+    try {
+      execSync('git pull --rebase origin main', { cwd: rootDir });
+      execSync('git push origin main', { cwd: rootDir });
+      console.log(`[Git Rebase & Push Success] Berhasil push setelah rebase!`);
+      return true;
+    } catch (retryErr) {
+      console.error('[Git Push Retry Failed]:', retryErr.message);
+      if (adminChatId) {
+        await sendMessage(adminChatId, `⚠️ <b>Peringatan Sinkronisasi:</b> Data tersimpan di server lokal, tetapi gagal dikirim ke website GitHub:\n<code>${escapeTelegramHtml(retryErr.message.substring(0, 150))}</code>`);
+      }
+      return false;
+    }
+  }
+}
+
 // 3. DOWNLOAD PHOTO DARI TELEGRAM
 async function downloadTelegramPhoto(fileId, targetRelativePath) {
   const fileInfo = await callTelegram('getFile', { file_id: fileId });
@@ -516,6 +556,9 @@ async function handleApproval(subId, adminChatId, messageId, callbackQueryId) {
     }
 
     // 2. Baca data/prestasi.json
+    // 2. Pre-pull sinkronisasi repositori terlebih dahulu dari GitHub
+    gitPrePull();
+
     let list = [];
     if (fs.existsSync(DATA_FILE)) {
       list = JSON.parse(fs.readFileSync(DATA_FILE, 'utf8'));
@@ -563,18 +606,12 @@ async function handleApproval(subId, adminChatId, messageId, callbackQueryId) {
       notes: `Disetujui Admin. Masa aktif: ${newEntry.expires_at ? 's.d ' + newEntry.expires_at : 'Abadi (Evergreen)'}`
     }, `Admin (${adminChatId})`);
 
-    // 4. Git Push Otomatis
-    try {
-      execSync('git config --local user.name "webmaster"', { cwd: path.join(__dirname, '..') });
-      execSync('git config --local user.email "webmaster@sdlabuksw.sch.id"', { cwd: path.join(__dirname, '..') });
-      execSync('git add data/prestasi.json images/prestasi/ data/activity_log.json docs/ACTIVITY_LOG.md', { cwd: path.join(__dirname, '..') });
-      const safeName = sanitizeForCommit(sub.student_name);
-      execFileSync('git', ['commit', '-m', `feat(prestasi): tayangkan prestasi #${newEntry.id} ${safeName} [skip ci]`], { cwd: path.join(__dirname, '..') });
-      execSync('git push origin main', { cwd: path.join(__dirname, '..') });
-      console.log(`[Git Push Success] Prestasi #${newEntry.id} ${safeName} berhasil tayang di GitHub!`);
-    } catch (gitErr) {
-      console.error('[Git Commit/Push Warning]:', gitErr.message);
-    }
+    // 4. Git Push Otomatis dengan auto-rebase & fallback alert
+    const safeName = sanitizeForCommit(sub.student_name);
+    await gitCommitAndPush(
+      `feat(prestasi): tayangkan prestasi #${newEntry.id} ${safeName} [skip ci]`,
+      adminChatId
+    );
 
     delete pending[subId];
     savePendingSubmissions(pending);
@@ -706,6 +743,9 @@ Data dan foto fisik akan dihapus secara permanen dari website.
 }
 
 async function handleConfirmDelete(targetId, adminChatId, messageId, callbackQueryId) {
+  // Pre-pull sinkronisasi sebelum hapus data
+  gitPrePull();
+
   if (!fs.existsSync(DATA_FILE)) return;
   let list = JSON.parse(fs.readFileSync(DATA_FILE, 'utf8'));
   const item = list.find(p => String(p.id) === String(targetId));
@@ -746,18 +786,12 @@ async function handleConfirmDelete(targetId, adminChatId, messageId, callbackQue
     notes: 'Dihapus manual oleh Admin via Telegram.'
   }, `Admin (${adminChatId})`);
 
-  // 3. Git commit & push otomatis
-  try {
-    execSync('git config --local user.name "webmaster"', { cwd: path.join(__dirname, '..') });
-    execSync('git config --local user.email "webmaster@sdlabuksw.sch.id"', { cwd: path.join(__dirname, '..') });
-    execSync('git add data/prestasi.json images/prestasi/ data/activity_log.json docs/ACTIVITY_LOG.md', { cwd: path.join(__dirname, '..') });
-    const safeName = sanitizeForCommit(item.student_name);
-    execFileSync('git', ['commit', '-m', `chore(prestasi): hapus prestasi #${item.id} (${safeName}) [skip ci]`], { cwd: path.join(__dirname, '..') });
-    execSync('git push origin main', { cwd: path.join(__dirname, '..') });
-    console.log(`[Git Delete Success] Prestasi #${item.id} berhasil dihapus dari GitHub!`);
-  } catch (gitErr) {
-    console.error('[Git Delete Warning]:', gitErr.message);
-  }
+  // 3. Git commit & push otomatis dengan auto-rebase & fallback alert
+  const safeName = sanitizeForCommit(item.student_name);
+  await gitCommitAndPush(
+    `chore(prestasi): hapus prestasi #${item.id} (${safeName}) [skip ci]`,
+    adminChatId
+  );
 
   // 4. Update status pesan
   const deletedText = `
