@@ -1,5 +1,22 @@
 [
   {
+    "id": "act_1790518725802",
+    "timestamp": "2026-09-27T14:18:45.802Z",
+    "display_time": "2026-09-27 14:18 WIB",
+    "action": "TAMBAH",
+    "category_tag": "PRESTASI",
+    "target_id": 6,
+    "student_name": "Isabella Leticia Aqueena Dan Leona Andara Suprapto",
+    "student_class": "Kelas 6A",
+    "competition": "Lomba Dance Ajang Gihn Uksw",
+    "badge": "Juara 2 • Tingkat Kota",
+    "category": "Seni Vokal & Musik",
+    "actor": "Admin (7187970534)",
+    "expires_at": "2026-12-27",
+    "image": "images/prestasi/prestasi_1790518723409.jpg",
+    "notes": "Disetujui Admin. Masa aktif: s.d 2026-12-27"
+  },
+  {
     "id": "act_1790518398396",
     "timestamp": "2026-09-27T14:13:18.391Z",
     "display_time": "2026-09-27 14:13 WIB",
