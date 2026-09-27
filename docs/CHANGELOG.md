@@ -192,6 +192,15 @@ Format pencatatan perubahan berdasar prinsip [Keep a Changelog](https://keepacha
 - **Added**: Notifikasi peringatan instan via Telegram ke Admin jika sinkronisasi git mengalami kendala jaringan atau otentikasi.
 - **Added**: Pencatatan audit trail aksi `HAPUS` di `docs/ACTIVITY_LOG.md` dan `data/activity_log.json`.
 
+---
+
+### 19. TAHAP 15: TESTIMONI RESMI ORANG TUA SISWA (BU DEVINA)
+- **Added**: Penambahan testimoni autentik dari **Bu Devina (Orang Tua Siswa Kelas 3)** di `index.html` dan `about.html`, menggantikan kartu placeholder generik secara bertahap.
+- **Added**: Pemasangan foto profil `images/bu_devina.webp` dengan pemosisian wajah optimal (`background-position: center 30%;`).
+- **Added**: Pernyataan kepuasan terkait pengalaman belajar yang menyenangkan, kreatif, membangun karakter, serta apresiasi pada lingkungan sekolah yang nyaman dan guru yang ramah dan penuh kasih.
+- **Added**: Pencatatan audit log penambahan testimoni di `docs/ACTIVITY_LOG.md` dan `data/activity_log.json`.
+
+
 
 
 

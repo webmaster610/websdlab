@@ -1,5 +1,22 @@
 [
   {
+    "id": "act_1790436400000",
+    "timestamp": "2026-09-27T14:30:00.000Z",
+    "display_time": "2026-09-27 21:30 WIB",
+    "action": "TESTIMONI",
+    "category_tag": "KONTEN",
+    "target_id": null,
+    "student_name": "Bu Devina",
+    "student_class": "Orang Tua Siswa Kelas 3",
+    "competition": "Kesan & Testimoni Orang Tua Murid",
+    "badge": "Orang Tua Kelas 3",
+    "category": "Testimoni",
+    "actor": "Webmaster / Admin",
+    "expires_at": null,
+    "image": "images/bu_devina.webp",
+    "notes": "Penambahan testimoni autentik Bu Devina pada carousel beranda dan profil sekolah."
+  },
+  {
     "id": "act_1790518815408",
     "timestamp": "2026-09-27T14:20:15.408Z",
     "display_time": "2026-09-27 14:20 WIB",
