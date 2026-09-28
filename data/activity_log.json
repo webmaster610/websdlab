@@ -1,5 +1,22 @@
 [
   {
+    "id": "act_1790562300000",
+    "timestamp": "2026-09-28T03:26:00.000Z",
+    "display_time": "2026-09-28 10:26 WIB",
+    "action": "TESTIMONI",
+    "category_tag": "KONTEN",
+    "target_id": null,
+    "student_name": "Y.B. Indrianto, ST",
+    "student_class": "Orang Tua Siswa Kelas 6",
+    "competition": "Kesan & Testimoni Orang Tua Murid",
+    "badge": "Orang Tua Kelas 6",
+    "category": "Testimoni",
+    "actor": "Webmaster / Admin",
+    "expires_at": null,
+    "image": "images/pak_yus.webp",
+    "notes": "Penambahan testimoni autentik Y.B. Indrianto, ST pada carousel beranda dan profil sekolah."
+  },
+  {
     "id": "act_1790436400000",
     "timestamp": "2026-09-27T14:30:00.000Z",
     "display_time": "2026-09-27 21:30 WIB",

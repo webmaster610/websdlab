@@ -196,9 +196,19 @@ Format pencatatan perubahan berdasar prinsip [Keep a Changelog](https://keepacha
 
 ### 19. TAHAP 15: TESTIMONI RESMI ORANG TUA SISWA (BU DEVINA)
 - **Added**: Penambahan testimoni autentik dari **Bu Devina (Orang Tua Siswa Kelas 3)** di `index.html` dan `about.html`, menggantikan kartu placeholder generik secara bertahap.
-- **Added**: Pemasangan foto profil `images/bu_devina.webp` dengan pemosisian wajah optimal (`background-position: center 30%;`).
+- **Added**: Pemasangan foto profil `images/bu_Devina.webp` dengan pemosisian wajah optimal (`background-position: center 20%;`).
 - **Added**: Pernyataan kepuasan terkait pengalaman belajar yang menyenangkan, kreatif, membangun karakter, serta apresiasi pada lingkungan sekolah yang nyaman dan guru yang ramah dan penuh kasih.
 - **Added**: Pencatatan audit log penambahan testimoni di `docs/ACTIVITY_LOG.md` dan `data/activity_log.json`.
+
+---
+
+### 20. TAHAP 16: TESTIMONI RESMI ORANG TUA SISWA (Y.B. INDRIANTO, ST)
+- **Added**: Penambahan testimoni autentik dari **Y.B. Indrianto, ST (Orang Tua Siswa Kelas 6)** di `index.html` dan `about.html`.
+- **Added**: Pemasangan foto profil `images/pak_yus.webp` dengan pemosisian wajah optimal (`background-position: center 20%;`).
+- **Added**: Pernyataan apresiasi kepuasan orang tua: *"Kedua anak saya bersekolah di SD Lab, dan keduanya bertumbuh kembang dengan baik dari sisi akademis & kreativitasnya. Well-balanced education. Labschool…you rock 🤟🏻"*.
+- **Changed**: Halaman profil `about.html` kini 100% memuat testimoni autentik orang tua siswa (Pak Jasson, Bu Devina, Pak Y.B. Indrianto, ST).
+- **Added**: Pencatatan riwayat audit log di `docs/ACTIVITY_LOG.md` dan `data/activity_log.json`.
+
 
 
 
