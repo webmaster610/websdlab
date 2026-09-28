@@ -1,5 +1,22 @@
 [
   {
+    "id": "act_1790563000000",
+    "timestamp": "2026-09-28T14:45:00.000Z",
+    "display_time": "2026-09-28 21:45 WIB",
+    "action": "UPDATE_GTK",
+    "category_tag": "KEPEGAWAIAN",
+    "target_id": null,
+    "student_name": "28 Pendidik & Tenaga Kependidikan",
+    "student_class": "-",
+    "competition": "Peremajaan Profil & Foto Resmi 28 GTK",
+    "badge": "28 Personil Resmi",
+    "category": "Kepegawaian",
+    "actor": "Webmaster / Admin",
+    "expires_at": null,
+    "image": "images/amrih.webp",
+    "notes": "Pemasangan foto asli dan penataan hierarki 28 GTK: Kepala Sekolah, Koordinator & Tim Kurikulum/Kesiswaan di barisan terdepan, disusul Dewan Guru dan Tendik."
+  },
+  {
     "id": "act_1790566545096",
     "timestamp": "2026-09-28T03:35:45.095Z",
     "display_time": "2026-09-28 03:35 WIB",

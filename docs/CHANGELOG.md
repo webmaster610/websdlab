@@ -209,6 +209,19 @@ Format pencatatan perubahan berdasar prinsip [Keep a Changelog](https://keepacha
 - **Changed**: Halaman profil `about.html` kini 100% memuat testimoni autentik orang tua siswa (Pak Jasson, Bu Devina, Pak Y.B. Indrianto, ST).
 - **Added**: Pencatatan riwayat audit log di `docs/ACTIVITY_LOG.md` dan `data/activity_log.json`.
 
+---
+
+### 21. TAHAP 17: PEREMAJAAN PROFIL & PEMASANGAN FOTO ASLI 28 GTK RESMI
+- **Added**: Pemasangan 28 foto asli resmi pendidik dan tenaga kependidikan di `teacher.html` dan `index.html` menggantikan seluruh foto placeholder template.
+- **Fixed**: Mengoreksi orientasi 8 foto yang berotasi miring (EXIF orientation 8) menjadi tegak murni (*lossless upright rotation*).
+- **Changed**: Penataan hierarki organisasi resmi sekolah sesuai arahan penempatan pejabat di barisan terdepan:
+  1. **Pimpinan & Tim Inti (Terdepan)**: Kepala Sekolah (Amrih Gunarto, S.Sn., M.Pd.), Koordinator Kurikulum (Dian Perdana Riatri, S.Pd., M.Pd.), Koordinator Kesiswaan (Maria M. Deti Irmawanti, S.Pd.), Tim Kurikulum (Dyah Kusumawardhani, S.Pd. & Maria Cristiana, S.Pd., M.Pd.), serta Tim Kesiswaan (Ari Pujianto, S.Pd., M.Pd. & Lanni Intan Permata, S.Pd.).
+  2. **Dewan Guru**: Rah Seto Sumirat, S.Pd., M.Pd., Albert Deo Saputra, Arum Dwi Utari, S.Pd., Estining Dwi, S.Pd., Hesti Agustianingrum, S.Pd., Ivan Arif Efendi, S.Pd., Nimas Perdana Fortuna Dewi, S.Pd., Anju Petravita, S.Si.Teol., Yohana Balambeu, S.Si.Teol., Ardi Purwa Nugraha, S.Pd., M.Pd., Daniel Ristanto, S.Pd., dan Gani Ardi.
+  3. **Tenaga Kependidikan & Penunjang**: Abed Nego Wisnu Murdoko, S.S.I (Pustakawan), Meimonita Krisetiawati, S.I.Kom & Guntur Wicaksono (Administrasi), Yehuda Suparno Putra (Pekarya), serta 5 Petugas Keamanan (Bagus Setiaji, Hartanto, Surya Wijaya, Prasetyo, dan Tri).
+- **Changed**: Penyesuaian total personil resmi menjadi 28 GTK dengan tata letak *equal-height cards* yang presisi di semua kartu.
+- **Added**: Pencatatan riwayat audit log di `docs/ACTIVITY_LOG.md` dan `data/activity_log.json`.
+
+
 
 
 
