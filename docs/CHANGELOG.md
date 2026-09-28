@@ -230,12 +230,12 @@ Format pencatatan perubahan berdasar prinsip [Keep a Changelog](https://keepacha
 
 ---
 
-### 23. TAHAP 19: STANDARISASI KUNCIAN TINGGI KARTU (405PX) & KALIBRASI SKALA FOTO 29 GTK
+### 23. TAHAP 19: STANDARISASI KUNCIAN TINGGI KARTU (405PX) & FRAMING BUST LEGA (ANTI-SEMPIT) 29 GTK
 - **Changed**: Mengunci dimensi seluruh kartu profil GTK secara matematis pada `css/style.css` (Tinggi Kartu: 405px seragam di semua baris, Tinggi Foto: 280px, Wadah Teks: 125px, Wadah Nama: 48px, Wadah Jabatan: 38px).
-- **Fixed**: Mengkalibrasi ulang seluruh 29 foto GTK dari arsip asli resolusi tinggi dengan normalisasi skala wajah (*Face Scale Normalization*):
-  - Melakukan *zoom-in* pada foto yang tampak terlalu jauh/kecil (**Bu Esti, Pak Abed, Pak Guntur, Pak Bagus, Bu Tri**) agar proporsi kepala dan bahunya seimbang dengan rekan sejawat.
-  - Melakukan *zoom-out* proporsional pada foto yang terlalu rapat (**Pak Seto, Pak Deo, Pak Daniel**) agar bidang dada dan seragam batik lebih terbuka.
-  - Menyelaraskan *headroom* (12-15%) sehingga garis tatapan mata (*eye-line*) guru di setiap baris berada di ketinggian yang sejajar lurus.
+- **Fixed**: Mengkalibrasi ulang seluruh 29 foto GTK dari arsip asli resolusi tinggi dengan formula *Relaxed Bust Portrait* (Portret Dada Proporsional):
+  - Memperluas *headroom* menjadi **18%–24%** di atas kepala sehingga rambut tidak mepet ke batas atas kotak (mengatasi keluhan foto terasa "sempit" pada Bu Esti, Pak Ivan, dan guru lainnya).
+  - Menstandarisasi lebar wajah di angka **32.5%** dari lebar bingkai, menyisakan ruang lega di kiri-kanan bahu serta memperlihatkan seragam batik dan gestur tangan dengan leluasa.
+  - Menyelaraskan garis tatapan mata (*eye-line*) guru di setiap baris sehingga sejajar lurus secara horizontal.
 - **Added**: Pencatatan riwayat audit log di `docs/ACTIVITY_LOG.md` dan `data/activity_log.json`.
 
 
