@@ -228,6 +228,16 @@ Format pencatatan perubahan berdasar prinsip [Keep a Changelog](https://keepacha
 - **Changed**: Mengganti figur ke-4 di Beranda (`index.html`) menjadi **Ari Pujianto, S.Pd., M.Pd.** (Wali Kelas / Tim Kesiswaan) sehingga 4 kartu depan murni mewakili pimpinan dan koordinator inti sekolah.
 - **Added**: Pencatatan riwayat audit log di `docs/ACTIVITY_LOG.md` dan `data/activity_log.json`.
 
+---
+
+### 23. TAHAP 19: STANDARISASI KUNCIAN TINGGI KARTU (405PX) & KALIBRASI SKALA FOTO 29 GTK
+- **Changed**: Mengunci dimensi seluruh kartu profil GTK secara matematis pada `css/style.css` (Tinggi Kartu: 405px seragam di semua baris, Tinggi Foto: 280px, Wadah Teks: 125px, Wadah Nama: 48px, Wadah Jabatan: 38px).
+- **Fixed**: Mengkalibrasi ulang seluruh 29 foto GTK dari arsip asli resolusi tinggi dengan normalisasi skala wajah (*Face Scale Normalization*):
+  - Melakukan *zoom-in* pada foto yang tampak terlalu jauh/kecil (**Bu Esti, Pak Abed, Pak Guntur, Pak Bagus, Bu Tri**) agar proporsi kepala dan bahunya seimbang dengan rekan sejawat.
+  - Melakukan *zoom-out* proporsional pada foto yang terlalu rapat (**Pak Seto, Pak Deo, Pak Daniel**) agar bidang dada dan seragam batik lebih terbuka.
+  - Menyelaraskan *headroom* (12-15%) sehingga garis tatapan mata (*eye-line*) guru di setiap baris berada di ketinggian yang sejajar lurus.
+- **Added**: Pencatatan riwayat audit log di `docs/ACTIVITY_LOG.md` dan `data/activity_log.json`.
+
 
 
 
