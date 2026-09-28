@@ -1,5 +1,22 @@
 [
   {
+    "id": "act_1790564200000",
+    "timestamp": "2026-09-28T15:15:00.000Z",
+    "display_time": "2026-09-28 22:15 WIB",
+    "action": "UPDATE_GTK",
+    "category_tag": "KEPEGAWAIAN",
+    "target_id": null,
+    "student_name": "Grid 4 Kolom & Desain Ringkas GTK",
+    "student_class": "-",
+    "competition": "Redesain Kartu GTK 4 Kolom & Figur Beranda",
+    "badge": "29 Profil Minimalis",
+    "category": "Kepegawaian",
+    "actor": "Webmaster / Admin",
+    "expires_at": null,
+    "image": "images/ari.webp",
+    "notes": "Penerapan grid 4 kolom (col-lg-3) di teacher.html agar porsi dada tampak pas, penghapusan teks deskripsi naratif untuk tampilan bersih, dan pergantian kartu depan ke-4 ke Pak Ari Pujianto."
+  },
+  {
     "id": "act_1790563000000",
     "timestamp": "2026-09-28T14:58:00.000Z",
     "display_time": "2026-09-28 21:58 WIB",

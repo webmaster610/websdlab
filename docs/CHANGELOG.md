@@ -220,6 +220,14 @@ Format pencatatan perubahan berdasar prinsip [Keep a Changelog](https://keepacha
 - **Changed**: Penyesuaian total personil resmi menjadi 29 GTK dengan tata letak *equal-height cards* yang presisi di semua kartu.
 - **Added**: Pencatatan riwayat audit log di `docs/ACTIVITY_LOG.md` dan `data/activity_log.json`.
 
+---
+
+### 22. TAHAP 18: PENYEMPURNAAN GRID 4 KOLOM & DESAIN MINIMALIS KARTU GTK
+- **Changed**: Mengubah tata letak kartu pada `teacher.html` dari 3 kolom (`col-lg-4`) menjadi **4 kolom (`col-lg-3`)** serasi dengan Beranda, sehingga rasio kartu pas dan porsi dada serta seragam batik guru tampil utuh dan proporsional.
+- **Removed**: Menghapus seluruh kalimat deskripsi naratif di bawah kartu GTK pada `teacher.html` dan `index.html` demi tampilan yang bersih (*clean minimalist*), tidak padat, dan seragam.
+- **Changed**: Mengganti figur ke-4 di Beranda (`index.html`) menjadi **Ari Pujianto, S.Pd., M.Pd.** (Wali Kelas / Tim Kesiswaan) sehingga 4 kartu depan murni mewakili pimpinan dan koordinator inti sekolah.
+- **Added**: Pencatatan riwayat audit log di `docs/ACTIVITY_LOG.md` dan `data/activity_log.json`.
+
 
 
 
