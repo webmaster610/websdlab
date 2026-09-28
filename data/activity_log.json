@@ -1,5 +1,22 @@
 [
   {
+    "id": "act_1790565900000",
+    "timestamp": "2026-09-28T15:45:00.000Z",
+    "display_time": "2026-09-28 22:45 WIB",
+    "action": "UPDATE_GTK",
+    "category_tag": "KEPEGAWAIAN",
+    "target_id": null,
+    "student_name": "Kuncian Lebar 100% & Struktur Jabatan 2 Baris",
+    "student_class": "-",
+    "competition": "Redesain 2-Tier Role Box & Kuncian Lebar Card 100% Anti-Penyok",
+    "badge": "29 Card Sempurna",
+    "category": "Kepegawaian",
+    "actor": "Webmaster / Admin",
+    "expires_at": null,
+    "image": "images/ari.webp",
+    "notes": "Pemberian width: 100% !important pada .staff mencegah card menyusut/melebar akibat panjang nama, pemisahan jabatan ke format 2 tingkat (.primary-role & .sub-role) tanpa karakter slash, dan pembaruan profil Pak Rah Seto Sumirat murni sebagai Wali Kelas."
+  },
+  {
     "id": "act_1790564800000",
     "timestamp": "2026-09-28T15:30:00.000Z",
     "display_time": "2026-09-28 22:30 WIB",

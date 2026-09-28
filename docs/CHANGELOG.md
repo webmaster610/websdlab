@@ -238,6 +238,19 @@ Format pencatatan perubahan berdasar prinsip [Keep a Changelog](https://keepacha
   - Menyelaraskan garis tatapan mata (*eye-line*) guru di setiap baris sehingga sejajar lurus secara horizontal.
 - **Added**: Pencatatan riwayat audit log di `docs/ACTIVITY_LOG.md` dan `data/activity_log.json`.
 
+---
+
+### 24. TAHAP 20: REDESAIN 2-TIER ROLE BOX, KUNCIAN LEBAR CARD 100% & PEMBARUAN PROFIL PAK SETO
+- **Fixed**: Mengatasi inkonsistensi lebar kartu profil yang menyusut/melebar akibat panjang teks nama (seperti kartu Bu Esti dan Pak Ivan) dengan menerapkan `width: 100% !important;` pada elemen `.staff` dan pembungkus dalamnya di `css/style.css`.
+- **Changed**: Merombak tampilan deskripsi jabatan dan tugas khusus dari format miring berslash (`/`) menjadi struktur **2 Baris Bertingkat (2-Tier Role Box)**:
+  - **Baris 1 (`.primary-role`)**: Jabatan / Penugasan Pokok (misal: *WALI KELAS*, *KEPALA SEKOLAH*, *GURU BAHASA INGGRIS*) dengan warna Biru Satya Wacana (`#0d83ff`).
+  - **Baris 2 (`.sub-role`)**: Tugas Tambahan / Peran Tim Khusus (misal: *Koord. Kurikulum*, *Koord. Kesiswaan*, *Tim Kurikulum*, *Tim Kesiswaan*) dengan warna Oranye-Emas Satya Wacana (`#fd5f00`).
+  - Menyediakan *reserved space* proporsional bagi personil tanpa tugas tambahan agar tinggi seluruh kotak tetap 100% presisi dan sejajar.
+- **Changed**: Memperbarui profil **Rah Seto Sumirat, S.Pd.** dengan menghapus predikat "Guru Penggerak", sehingga murni tercantum sebagai **Wali Kelas**.
+- **Changed**: Menyelaraskan seluruh 29 kartu GTK di `teacher.html` dan 4 kartu utama di Beranda `index.html` dengan struktur baru ini.
+- **Added**: Pencatatan riwayat audit log di `docs/ACTIVITY_LOG.md` dan `data/activity_log.json`.
+
+
 
 
 

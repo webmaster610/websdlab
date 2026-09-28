@@ -10,7 +10,7 @@ Setiap kali Admin menyetujui, menolak, atau menghapus prestasi melalui Bot Teleg
 ## 📊 RINGKASAN STATISTIK AKTIVITAS
 
 - **Total Prestasi Aktif di Website**: 7 Prestasi
-- **Total Riwayat Tercatat**: 23 Log Aktivitas
+- **Total Riwayat Tercatat**: 24 Log Aktivitas
 - **Status Server Produksi**: Online 24/7 (`sdlabubuntuserver` di UKSW Salatiga)
 - **Engine Otomasi**: Node.js Long-Polling Telegram Bot & PM2 Daemon (`sdlab-prestasi-bot`)
 - **Pembaruan Terakhir**: 28 September 2026
@@ -21,6 +21,7 @@ Setiap kali Admin menyetujui, menolak, atau menghapus prestasi melalui Bot Teleg
 
 | Waktu (WIB) | Aksi | ID | Nama Subjek / Entri | Ajang / Capaian | Kategori & Bidang | Aktor / Eksekutor | Keterangan & Masa Aktif |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| **2026-09-28 22:45 WIB** | `UPDATE_GTK` | **#-** | **Kuncian Lebar 100% & Struktur Jabatan 2 Baris** (-) | Redesain 2-Tier Role Box & Kuncian Lebar Card 100% Anti-Penyok (*29 Card Sempurna*) | Kepegawaian GTK | Webmaster / Admin | Pemberian width: 100% !important pada .staff mencegah card menyusut/melebar akibat panjang nama, pemisahan jabatan ke format 2 tingkat (.primary-role & .sub-role) tanpa karakter slash, dan pembaruan profil Pak Rah Seto Sumirat murni sebagai Wali Kelas. |
 | **2026-09-28 22:30 WIB** | `UPDATE_GTK` | **#-** | **Framing Lega 29 Foto & Kuncian 405px** (-) | Kalibrasi Relaxed Bust Portrait (Anti-Sempit) & Kuncian 405px (*29 Foto Kalibrasi Lega*) | Kepegawaian GTK | Webmaster / Admin | Pelegaan ruang udara atas (headroom 18-24%) dan rasio wajah 32.5% pada ke-29 foto sehingga tidak sempit/mepet, bahu dan dada seragam batik tampak utuh, dan kartu terkunci 405px seragam. |
 | **2026-09-28 22:15 WIB** | `UPDATE_GTK` | **#-** | **Grid 4 Kolom & Desain Ringkas GTK** (-) | Redesain Kartu GTK 4 Kolom & Figur Beranda (*29 Profil Minimalis*) | Kepegawaian GTK | Webmaster / Admin | Penerapan grid 4 kolom di teacher.html agar dada tampak pas, hapus teks deskripsi naratif untuk tampilan bersih, dan ganti kartu depan ke-4 ke Pak Ari Pujianto. |
 | **2026-09-28 22:05 WIB** | `UPDATE_GTK` | **#-** | **29 Pendidik & Tenaga Kependidikan** (-) | Optimalisasi Framing Foto 29 GTK & Gelar Pak Deo (*29 Personil Resmi*) | Kepegawaian GTK | Webmaster / Admin | Optimalisasi framing foto 29 GTK via AI Face Detection (bebas terbalik & bebas terpotong), penambahan gelar Albert Deo Saputra, S.Pd., dan penataan pimpinan terdepan. |
