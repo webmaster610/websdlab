@@ -213,18 +213,10 @@ Format pencatatan perubahan berdasar prinsip [Keep a Changelog](https://keepacha
 
 ### 21. TAHAP 17: PEREMAJAAN PROFIL & PEMASANGAN FOTO ASLI 29 GTK RESMI
 - **Added**: Pemasangan 29 foto asli resmi pendidik dan tenaga kependidikan di `teacher.html` dan `index.html` menggantikan seluruh foto placeholder template.
-- **Fixed**: Mengoreksi orientasi 8 foto yang berotasi miring (EXIF orientation 8) menjadi tegak murni (*lossless upright rotation*).
-- **Changed**: Penataan hierarki organisasi resmi sekolah sesuai arahan pimpinan terdepan:
-  1. **Pimpinan & Tim Inti (Terdepan)**:
-     - Amrih Gunarto, S.Sn., M.Pd. — Kepala Sekolah (`amrih.webp`)
-     - Dian Perdana Riatri, S.Pd., M.Pd. — Wali Kelas / Koordinator Kurikulum (`ria.webp`)
-     - Maria M. Deti Irmawanti, S.Pd. — Wali Kelas / Koordinator Kesiswaan (`deti.webp`)
-     - Ari Pujianto, S.Pd., M.Pd. — Wali Kelas / Tim Kesiswaan (`ari.webp`)
-     - Maria Cristiana, S.Pd., M.Pd. — Wali Kelas / Tim Kurikulum (`maria.webp`)
-     - Lanni Intan Permata, S.Pd. — Wali Kelas / Tim Kesiswaan (`lani.webp`)
-     - Dyah Kusumawardhani, S.Pd. — Guru Bahasa Inggris / Tim Kurikulum (`dyah.webp`)
-  2. **Dewan Guru (12 Pendidik)**: Rah Seto Sumirat, S.Pd., M.Pd., Albert Deo Saputra, Arum Dwi Utari, S.Pd., Estining Dwi, S.Pd., Hesti Agustianingrum, S.Pd., Ivan Arif Efendi, S.Pd., Nimas Perdana Fortuna Dewi, S.Pd., Anju Petravita, S.Si.Teol., Yohana Balambeu, S.Si.Teol., Ardi Purwa Nugraha, S.Pd., M.Pd., Daniel Ristanto, S.Pd., dan Gani Ardi.
-  3. **Tenaga Kependidikan & Penunjang (10 Tendik)**: Abed Nego Wisnu Murdoko, S.S.I (Pustakawan), Meimonita Krisetiawati, S.I.Kom (Staf Keuangan), Guntur Wicaksono (Staf Tata Usaha), Yehuda Suparno Putra (Tenaga Penunjang / Kebersihan), serta 6 Tenaga Keamanan/Security (Bagus Setiaji, Hartanto, Surya Wijaya, Prasetyo, Tri, dan Sandy).
+- **Fixed**: Mengoreksi dan membersihkan seluruh metadata tag EXIF orientation yang membuat foto terputar ke samping di browser web.
+- **Fixed**: Menerapkan *smart facial cropping* presisi berbasis deteksi wajah (AI Face Detection) pada seluruh 29 foto GTK untuk memangkas ruang kosong plafon/dinding atas, sehingga wajah dan postur dada guru tampil terpusat, sejajar (*golden ratio*), dan tidak lagi terpotong ("hanya kelihatan ujung rambut").
+- **Changed**: Penambahan gelar akademik pada nama **Albert Deo Saputra, S.Pd.** sesuai data resmi.
+- **Changed**: Penyesuaian aturan CSS `.staff .img` (`background-position: center top !important;`) pada `css/style.css` agar konsisten di seluruh perangkat desktop dan mobile.
 - **Changed**: Penyesuaian total personil resmi menjadi 29 GTK dengan tata letak *equal-height cards* yang presisi di semua kartu.
 - **Added**: Pencatatan riwayat audit log di `docs/ACTIVITY_LOG.md` dan `data/activity_log.json`.
 

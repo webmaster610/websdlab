@@ -9712,7 +9712,7 @@ textarea.form-control {
   width: 100% !important;
   height: 100% !important;
   background-size: cover !important;
-  background-position: top center !important;
+  background-position: center top !important;
   transition: transform 0.4s ease !important;
 }
 .staff:hover .img {
