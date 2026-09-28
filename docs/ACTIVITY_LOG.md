@@ -21,6 +21,7 @@ Setiap kali Admin menyetujui, menolak, atau menghapus prestasi melalui Bot Teleg
 
 | Waktu (WIB) | Aksi | ID | Nama Subjek / Entri | Ajang / Capaian | Kategori & Bidang | Aktor / Eksekutor | Keterangan & Masa Aktif |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| **2026-09-28 03:35 WIB** | `TAMBAH` | **#6** | **Kaleb Deven Kristyanto** (Kelas 6A) | Kejuaraan Catur Museum Ambarawa Cup 1 (*Juara 2 • Tingkat Provinsi*) | Olahraga Prestasi | Admin (7187970534) | Disetujui Admin. Masa aktif: Abadi (Evergreen) |
 | **2026-09-28 10:26 WIB** | `TESTIMONI` | **#-** | **Y.B. Indrianto, ST** (Orang Tua Siswa Kelas 6) | Kesan & Testimoni Orang Tua Murid (*Orang Tua Kelas 6*) | Testimoni | Webmaster / Admin | Penambahan testimoni autentik Y.B. Indrianto, ST menggantikan kartu template di beranda dan profil sekolah. |
 | **2026-09-27 21:30 WIB** | TESTIMONI | **#-** | **Bu Devina** (Orang Tua Siswa Kelas 3) | Kesan & Testimoni Orang Tua Murid (*Orang Tua Kelas 3*) | Testimoni | Webmaster / Admin | Penambahan testimoni autentik Bu Devina menggantikan kartu template di beranda dan profil sekolah. |
 | **2026-09-27 14:20 WIB** | `HAPUS` | **#6** | **Isabella Leticia Aqueena Dan Leona Andara Suprapto** (Kelas 6A) | Lomba Dance Ajang Gihn Uksw (*Juara 2 • Tingkat Kota*) | Seni Vokal & Musik | Admin (7187970534) | Dihapus manual oleh Admin via Telegram. |

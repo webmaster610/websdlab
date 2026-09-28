@@ -1,5 +1,22 @@
 [
   {
+    "id": "act_1790566545096",
+    "timestamp": "2026-09-28T03:35:45.095Z",
+    "display_time": "2026-09-28 03:35 WIB",
+    "action": "TAMBAH",
+    "category_tag": "PRESTASI",
+    "target_id": 6,
+    "student_name": "Kaleb Deven Kristyanto",
+    "student_class": "Kelas 6A",
+    "competition": "Kejuaraan Catur Museum Ambarawa Cup 1",
+    "badge": "Juara 2 • Tingkat Provinsi",
+    "category": "Olahraga Prestasi",
+    "actor": "Admin (7187970534)",
+    "expires_at": null,
+    "image": "images/prestasi/prestasi_1790566542183.jpg",
+    "notes": "Disetujui Admin. Masa aktif: Abadi (Evergreen)"
+  },
+  {
     "id": "act_1790562300000",
     "timestamp": "2026-09-28T03:26:00.000Z",
     "display_time": "2026-09-28 10:26 WIB",

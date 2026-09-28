@@ -1,5 +1,26 @@
 [
   {
+    "id": 6,
+    "title": "Juara 2 • Tingkat Provinsi - Kejuaraan Catur Museum Ambarawa Cup 1",
+    "badge": "Juara 2 • Tingkat Provinsi",
+    "badge_class": "badge-blue",
+    "student_name": "Kaleb Deven Kristyanto",
+    "student_class": "Kelas 6A",
+    "competition": "Kejuaraan Catur Museum Ambarawa Cup 1",
+    "sub_category": "Tingkat Sd Se Jawa Tengah",
+    "competition_date": "Minggu 13 September 2026",
+    "location": "Pendopo Kantor Kecamatan Ambarawa",
+    "organizer": "Pendopo Kantor Kecamatan Ambarawa",
+    "category": "Olahraga Prestasi",
+    "category_key": "olahraga",
+    "level": "provinsi",
+    "rank": "2",
+    "created_at": "2026-09-28",
+    "expires_at": null,
+    "image": "images/prestasi/prestasi_1790566542183.jpg",
+    "featured": true
+  },
+  {
     "id": 1,
     "title": "Juara 1 OSN Sains SD",
     "badge": "Juara 1 • Tingkat Kota",
