@@ -10,7 +10,7 @@ Setiap kali Admin menyetujui, menolak, atau menghapus prestasi melalui Bot Teleg
 ## 📊 RINGKASAN STATISTIK AKTIVITAS
 
 - **Total Prestasi Aktif di Website**: 7 Prestasi
-- **Total Riwayat Tercatat**: 25 Log Aktivitas
+- **Total Riwayat Tercatat**: 26 Log Aktivitas
 - **Status Server Produksi**: Online 24/7 (`sdlabubuntuserver` di UKSW Salatiga)
 - **Engine Otomasi**: Node.js Long-Polling Telegram Bot & PM2 Daemon (`sdlab-prestasi-bot`)
 - **Pembaruan Terakhir**: 29 September 2026
@@ -21,6 +21,7 @@ Setiap kali Admin menyetujui, menolak, atau menghapus prestasi melalui Bot Teleg
 
 | Waktu (WIB) | Aksi | ID | Nama Subjek / Entri | Ajang / Capaian | Kategori & Bidang | Aktor / Eksekutor | Keterangan & Masa Aktif |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| **2026-09-29 21:35 WIB** | `UPDATE_GTK` | **#-** | **Eliminasi Distorsi & Framing Ramping Pak Seto** (-) | Zero-Distortion Aspect Ratio Guard (800:940) & Slim Framing Pak Seto (*29 Foto 100% Alami*) | Kepegawaian GTK | Webmaster / Admin | Perbaikan aspek rasio eksak 800:940 mencegah foto tertekan/bentet (Bu Lanni, Pak Gani, Pak Yudha), serta pemotongan di atas lingkar pinggang Pak Seto agar tampil lebih ramping, tegap, dan proporsional. |
 | **2026-09-29 21:25 WIB** | `UPDATE_GTK` | **#-** | **Framing Medium Bust 29 Foto & Gelar Bu Deti** (-) | Kalibrasi Foto Mundur & Naikkan Gestur, Koreksi Gelar, dan Switch Formasi (*29 Foto Medium Bust*) | Kepegawaian GTK | Webmaster / Admin | Penerapan framing medium bust (mundur ~15-20% & naikkan badan), pose victory Bu Lanni utuh, buku Bu Dyah terlihat jelas, Pak Seto dinaikkan sejajar berambut, penambahan gelar Bu Deti (M.Pd.), nama lengkap Bu Maria Cristiana Yulianti Djari, dan switch figur ke-4 di Beranda. |
 | **2026-09-28 22:45 WIB** | `UPDATE_GTK` | **#-** | **Kuncian Lebar 100% & Struktur Jabatan 2 Baris** (-) | Redesain 2-Tier Role Box & Kuncian Lebar Card 100% Anti-Penyok (*29 Card Sempurna*) | Kepegawaian GTK | Webmaster / Admin | Pemberian width: 100% !important pada .staff mencegah card menyusut/melebar akibat panjang nama, pemisahan jabatan ke format 2 tingkat (.primary-role & .sub-role) tanpa karakter slash, dan pembaruan profil Pak Rah Seto Sumirat murni sebagai Wali Kelas. |
 | **2026-09-28 22:30 WIB** | `UPDATE_GTK` | **#-** | **Framing Lega 29 Foto & Kuncian 405px** (-) | Kalibrasi Relaxed Bust Portrait (Anti-Sempit) & Kuncian 405px (*29 Foto Kalibrasi Lega*) | Kepegawaian GTK | Webmaster / Admin | Pelegaan ruang udara atas (headroom 18-24%) dan rasio wajah 32.5% pada ke-29 foto sehingga tidak sempit/mepet, bahu dan dada seragam batik tampak utuh, dan kartu terkunci 405px seragam. |

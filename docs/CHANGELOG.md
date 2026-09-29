@@ -266,6 +266,19 @@ Format pencatatan perubahan berdasar prinsip [Keep a Changelog](https://keepacha
   - Di `teacher.html`: Bu Maria menempati posisi #4 dan Pak Ari menempati posisi #5 agar 4 kartu pertama konsisten antara Beranda dan profil GTK.
 - **Added**: Pencatatan riwayat audit log di `docs/ACTIVITY_LOG.md` dan `data/activity_log.json`.
 
+---
+
+### 26. TAHAP 22: ELIMINASI DISTORSI "BANTET" (ZERO-DISTORTION) & FRAMING RAMPING PAK SETO
+- **Fixed**: Mengatasi masalah foto tampak "bentek-bentek / ditekan / melebar" (terutama pada Bu Lanni, Pak Gani, dan Pak Yudha) dengan menerapkan *Zero-Distortion Aspect Ratio Guard*:
+  - Memperbaiki kalkulasi pemotongan batas gambar agar rasio lebar terhadap tinggi selalu terkunci eksak di **800:940 (0.8511)** sebelum di-resize.
+  - Menghilangkan kompresi horizontal 100%, sehingga seluruh proporsi wajah, leher, pipi, dan bahu tampil alami, proporsional, dan anggun.
+- **Changed**: Mengkalibrasi ulang foto **Pak Rah Seto Sumirat, S.Pd., M.Pd. (`seto.webp`)** dengan memfokuskan pemotongan setinggi dada atas (di atas lingkar pinggang/perut):
+  - Area perut tidak lagi terlihat di dalam bingkai kartu.
+  - Sosok beliau tampil jauh lebih ramping (*slim*), berwibawa, tegap, dan senyum ramahnya menjadi daya tarik utama.
+- **Changed**: Menjaga pose dua tangan *victory* Bu Lanni dan pose buku Bu Dyah tetap utuh dan jelas dengan proporsi tubuh yang 100% alami.
+- **Added**: Pencatatan riwayat audit log di `docs/ACTIVITY_LOG.md` dan `data/activity_log.json`.
+
+
 
 
 

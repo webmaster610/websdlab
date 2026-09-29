@@ -1,5 +1,22 @@
 [
   {
+    "id": "act_1790648200000",
+    "timestamp": "2026-09-29T14:35:00.000Z",
+    "display_time": "2026-09-29 21:35 WIB",
+    "action": "UPDATE_GTK",
+    "category_tag": "KEPEGAWAIAN",
+    "target_id": null,
+    "student_name": "Eliminasi Distorsi & Framing Ramping Pak Seto",
+    "student_class": "-",
+    "competition": "Zero-Distortion Aspect Ratio Guard (800:940) & Slim Framing Pak Seto",
+    "badge": "29 Foto 100% Alami",
+    "category": "Kepegawaian",
+    "actor": "Webmaster / Admin",
+    "expires_at": null,
+    "image": "images/seto.webp",
+    "notes": "Perbaikan aspek rasio eksak 800:940 mencegah foto tertekan/bentet (Bu Lanni, Pak Gani, Pak Yudha), serta pemotongan di atas lingkar pinggang Pak Seto agar tampil lebih ramping, tegap, dan proporsional."
+  },
+  {
     "id": "act_1790647500000",
     "timestamp": "2026-09-29T14:25:00.000Z",
     "display_time": "2026-09-29 21:25 WIB",
