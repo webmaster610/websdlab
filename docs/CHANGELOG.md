@@ -278,6 +278,26 @@ Format pencatatan perubahan berdasar prinsip [Keep a Changelog](https://keepacha
 - **Changed**: Menjaga pose dua tangan *victory* Bu Lanni dan pose buku Bu Dyah tetap utuh dan jelas dengan proporsi tubuh yang 100% alami.
 - **Added**: Pencatatan riwayat audit log di `docs/ACTIVITY_LOG.md` dan `data/activity_log.json`.
 
+---
+
+### 27. TAHAP 23: INTEGRASI 13 FOTO OTENTIK KEGIATAN & EKSTRAKURIKULER (KEMITRAAN JEPANG, GELAR KARYA, EKSKUL)
+- **Added**: Mengintegrasikan 13 foto autentik resolusi tinggi ke seluruh ekosistem website:
+  1. `jepang ngajar.webp` s.d. `jepang ngajar3.webp` (Praktik Mengajar & Kemitraan Mahasiswa Kwansei Gakuin University Jepang)
+  2. `gelarkarya.webp` (Pameran Inovasi & Proyek P5 Siswa)
+  3. `outing.webp` (Outing Class & Konservasi Alam SAE Green Hills)
+  4. `eskulpaduan suara.webp` (Penampilan Paduan Suara di Panggung Balairung UKSW)
+  5. `eskulbasket.webp` (Tim Basket Siswa di Lapangan Indoor)
+  6. `eskul pramuka.webp` (Aktivitas Lapangan Pramuka Siaga & Penggalang)
+  7. `kirab budaya.webp` & `kartinian.webp` (Parade Busana Adat Nusantara / Indonesia Mini)
+  8. `natalan.webp` (Perayaan Natal Kasih & Karakter Siswa)
+  9. `bermain di perpuistakaan.webp` (Pojok Literasi Edukatif Perpustakaan Ramah Anak)
+- **Changed**: Pada `courses.html`, memasang foto otentik Paduan Suara, Bola Basket, Pramuka, serta menambahkan pilihan program resmi ke-17: **Kelas Bahasa & Budaya Jepang (Mitra Kwansei Gakuin University)**.
+- **Changed**: Pada `blog.html`, menambahkan 6 kartu kegiatan tematik baru tanpa tanggal (menggunakan badge tematik: `Kemitraan Global`, `Gelar Karya P5`, `Outdoor Learning`, `Kirab Budaya`, `Perayaan Karakter`, `Literasi Membaca`), sehingga genap menjadi 12 kartu kegiatan lengkap.
+- **Changed**: Pada `about.html`, memperbarui gallery strip dengan 4 foto representatif pilar keunggulan sekolah.
+- **Changed**: Pada `index.html`, memperkaya seksi kegiatan dan berita menjadi 6 entri unggulan.
+- **Added**: Pencatatan riwayat audit log di `docs/ACTIVITY_LOG.md` dan `data/activity_log.json`.
+
+
 
 
 
