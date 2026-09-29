@@ -250,6 +250,23 @@ Format pencatatan perubahan berdasar prinsip [Keep a Changelog](https://keepacha
 - **Changed**: Menyelaraskan seluruh 29 kartu GTK di `teacher.html` dan 4 kartu utama di Beranda `index.html` dengan struktur baru ini.
 - **Added**: Pencatatan riwayat audit log di `docs/ACTIVITY_LOG.md` dan `data/activity_log.json`.
 
+---
+
+### 25. TAHAP 21: KALIBRASI FRAMING MEDIUM BUST (MUNDUR & NAIKKAN BADAN), KOREKSI GELAR, & FORMASI TIM INTI
+- **Fixed**: Mengatasi persepsi foto terasa "terlalu maju/kebesaran" dengan menerapkan skala *Medium Bust* yang lebih mundur (*zoom out* ~15%-20%, rasio wajah ~24.5%):
+  - **Bu Lanni (`lani.webp`)**: Memperluas bidang potong sehingga pose kedua tangan yang membentuk simbol *victory/peace* tampil utuh dan jelas tanpa terpotong di tepi.
+  - **Bu Dyah (`dyah.webp`)**: Menyelaraskan bidang potong sehingga pose sedang memegang dan membaca buku terlihat alami dan proporsional.
+  - **Pak Rah Seto (`seto.webp`)**: Menaikkan posisi kepala dan badan (mengurangi ruang kosong atas/headroom) sehingga garis mata (*eye-line*) dan dagunya sejajar lurus dengan guru-guru berambut lebat.
+  - **26 Guru Lainnya**: Seluruh foto diselaraskan dengan skala mundur yang serasi sehingga postur dada, seragam batik, dan gestur tampil rileks dan anggun.
+- **Changed**: Memperbarui nama dan gelar resmi:
+  - **Maria Magdalena Deti Irmawanti, S.Pd., M.Pd.** (penyempurnaan nama baptis dan penambahan gelar M.Pd.).
+  - **Maria Cristiana Yulianti Djari, S.Pd., M.Pd.** (penyempurnaan nama lengkap resmi).
+- **Changed**: Melakukan pertukaran (*switch*) posisi figur:
+  - Di `index.html`: Kartu ke-4 pada figur Beranda digantikan oleh **Maria Cristiana Yulianti Djari, S.Pd., M.Pd.**.
+  - Di `teacher.html`: Bu Maria menempati posisi #4 dan Pak Ari menempati posisi #5 agar 4 kartu pertama konsisten antara Beranda dan profil GTK.
+- **Added**: Pencatatan riwayat audit log di `docs/ACTIVITY_LOG.md` dan `data/activity_log.json`.
+
+
 
 
 

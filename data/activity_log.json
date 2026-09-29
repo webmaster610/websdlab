@@ -1,5 +1,22 @@
 [
   {
+    "id": "act_1790647500000",
+    "timestamp": "2026-09-29T14:25:00.000Z",
+    "display_time": "2026-09-29 21:25 WIB",
+    "action": "UPDATE_GTK",
+    "category_tag": "KEPEGAWAIAN",
+    "target_id": null,
+    "student_name": "Framing Medium Bust 29 Foto & Gelar Bu Deti",
+    "student_class": "-",
+    "competition": "Kalibrasi Foto Mundur & Naikkan Gestur, Koreksi Gelar, dan Switch Formasi",
+    "badge": "29 Foto Medium Bust",
+    "category": "Kepegawaian",
+    "actor": "Webmaster / Admin",
+    "expires_at": null,
+    "image": "images/lani.webp",
+    "notes": "Penerapan framing medium bust (mundur ~15-20% & naikkan badan), pose victory Bu Lanni utuh, buku Bu Dyah terlihat jelas, Pak Seto dinaikkan sejajar berambut, penambahan gelar Bu Deti (M.Pd.), nama lengkap Bu Maria Cristiana Yulianti Djari, dan switch figur ke-4 di Beranda."
+  },
+  {
     "id": "act_1790565900000",
     "timestamp": "2026-09-28T15:45:00.000Z",
     "display_time": "2026-09-28 22:45 WIB",
