@@ -10,9 +10,23 @@ Format pencatatan perubahan berdasar prinsip [Keep a Changelog](https://keepacha
 
 ---
 
-## [Unreleased] - 2026-09-26
+## [Unreleased] - 2026-09-29
 
-### 1. PENGELOLAAN GURU & TENAGA KEPENDIDIKAN (GTK)
+### 1. KONSISTENSI KARTU PROGRAM & EKSTRAKURIKULER (EQUAL-HEIGHT GRID)
+- **Fixed**: Mengoreksi inkonsistensi tinggi kotak kartu pada seksi *Program & Ekstrakurikuler* di `index.html`.
+- **Changed**: Memisahkan kolom Bootstrap (`col-md-6 d-flex align-items-stretch mb-4`) dari kartu (`course w-100 d-lg-flex`) sehingga seluruh kartu memiliki tinggi dan rasio gambar yang seragam (Equal Height).
+- **Changed**: Menyempurnakan typography kartu `.course` dengan `min-height: 52px` pada judul `<h3>` agar subheading dan paragraf selalu sejajar horizontal.
+
+---
+
+### 2. OPTIMALISASI FRAMING & PROMOSI KARTU MAHASISWA JEPANG
+- **Added**: Menghasilkan banner foto horisontal terfokus `images/jepang_ngajar_banner.webp` (aspek rasio ~3:2) yang menonjolkan ekspresi hangat Mao Sensei membimbing siswa dan interaksi langsung anak-anak berseragam merah-putih Satya Wacana, tanpa terpotong atau tertutup plafon/lambang Garuda.
+- **Changed**: Mempromosikan cerita *Praktik Mengajar Mahasiswa Kwansei Gakuin University Jepang* ke **urutan pertama (#1)** pada rubrik *Kegiatan & Berita Terkini* di Beranda (`index.html`) serta di Halaman *Kegiatan Siswa* (`blog.html`).
+- **Fixed**: Membersihkan blok markup duplikat di bagian penutup file `index.html`.
+
+---
+
+### 3. PENGELOLAAN GURU & TENAGA KEPENDIDIKAN (GTK)
 - **Added**: Penambahan 9 Guru dan Tenaga Kependidikan baru ke dalam daftar GTK resmi di `teacher.html`:
   1. YOHANA BALAMBEU, S. Si. Teol. (Guru Agama Kristen)
   2. NIMAS PERDANA FORTUNA DEWI, S. Pd. (Wali Kelas 1)

@@ -9827,24 +9827,46 @@ textarea.form-control {
   overflow: hidden !important;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06) !important;
   border: 1px solid rgba(0, 0, 0, 0.05) !important;
-  margin-bottom: 30px !important;
+  margin-bottom: 25px !important;
+  background: #ffffff !important;
+}
+.d-flex > .course {
+  margin-bottom: 0 !important;
 }
 @media (min-width: 992px) {
   .course.d-lg-flex {
     flex-direction: row !important;
   }
   .course.d-lg-flex .img {
-    flex: 0 0 42% !important;
+    flex: 0 0 40% !important;
     min-height: 220px !important;
     background-size: cover !important;
     background-position: center center !important;
   }
   .course.d-lg-flex .text {
-    flex: 1 1 58% !important;
+    flex: 1 1 60% !important;
     display: flex !important;
     flex-direction: column !important;
     justify-content: center !important;
     padding: 1.5rem !important;
+  }
+  .course.d-lg-flex .text h3 {
+    font-size: 20px !important;
+    line-height: 1.35 !important;
+    margin-bottom: 8px !important;
+    min-height: 52px !important;
+    display: flex !important;
+    align-items: center !important;
+  }
+  .course.d-lg-flex .text .subheading {
+    margin-bottom: 10px !important;
+    font-size: 13.5px !important;
+  }
+  .course.d-lg-flex .text p:last-child {
+    margin-bottom: 0 !important;
+    font-size: 14.5px !important;
+    line-height: 1.6 !important;
+    color: #475569 !important;
   }
 }
 
