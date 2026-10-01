@@ -10,6 +10,15 @@ Format pencatatan perubahan berdasar prinsip [Keep a Changelog](https://keepacha
 
 ---
 
+## [Unreleased] - 2026-10-01
+
+### 1. INTEGRASI TESTIMONI AUTENTIK ORANG TUA: BU SEPTI
+- **Added**: Penambahan foto dan testimoni autentik dari **Bu Septi (Orang Tua Siswa Kelas 4)** pada carousel testimoni di `index.html` dan `about.html`.
+- **Changed**: Menggantikan entri placeholder generik terakhir di beranda sehingga seluruh 4 testimoni yang berputar kini 100% merupakan apresiasi autentik dari orang tua murid nyata (Pak Jasson, Bu Devina, Y.B. Indrianto, ST, dan Bu Septi).
+- **Added**: Penggunaan avatar portrait `images/bu_septi.webp` dengan kalibrasi *background-position: center 20%* yang pas dan anggun.
+
+---
+
 ## [Unreleased] - 2026-09-29
 
 ### 1. KONSISTENSI KARTU PROGRAM & EKSTRAKURIKULER (EQUAL-HEIGHT GRID)

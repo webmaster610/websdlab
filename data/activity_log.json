@@ -1,5 +1,22 @@
 [
   {
+    "id": "act_1790781000000",
+    "timestamp": "2026-10-01T02:18:00.000Z",
+    "display_time": "2026-10-01 09:18 WIB",
+    "action": "TESTIMONI",
+    "category_tag": "TESTIMONI",
+    "target_id": null,
+    "student_name": "Bu Septi",
+    "student_class": "Orang Tua Siswa Kelas 4",
+    "competition": "Kesan & Testimoni Orang Tua Murid",
+    "badge": "Testimoni Otentik",
+    "category": "Testimoni",
+    "actor": "Webmaster / Admin",
+    "expires_at": null,
+    "image": "images/bu_septi.webp",
+    "notes": "Penambahan testimoni autentik Bu Septi (Orang Tua Siswa Kelas 4) pada carousel testimoni di index.html dan about.html, melengkapi 4 suara apresiasi orang tua murid."
+  },
+  {
     "id": "act_1790652500000",
     "timestamp": "2026-09-29T15:45:00.000Z",
     "display_time": "2026-09-29 22:45 WIB",

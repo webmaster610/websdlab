@@ -10,10 +10,10 @@ Setiap kali Admin menyetujui, menolak, atau menghapus prestasi melalui Bot Teleg
 ## 📊 RINGKASAN STATISTIK AKTIVITAS
 
 - **Total Prestasi Aktif di Website**: 7 Prestasi
-- **Total Riwayat Tercatat**: 28 Log Aktivitas
+- **Total Riwayat Tercatat**: 29 Log Aktivitas
 - **Status Server Produksi**: Online 24/7 (`sdlabubuntuserver` di UKSW Salatiga)
 - **Engine Otomasi**: Node.js Long-Polling Telegram Bot & PM2 Daemon (`sdlab-prestasi-bot`)
-- **Pembaruan Terakhir**: 29 September 2026
+- **Pembaruan Terakhir**: 01 Oktober 2026
 
 ---
 
@@ -21,6 +21,7 @@ Setiap kali Admin menyetujui, menolak, atau menghapus prestasi melalui Bot Teleg
 
 | Waktu (WIB) | Aksi | ID | Nama Subjek / Entri | Ajang / Capaian | Kategori & Bidang | Aktor / Eksekutor | Keterangan & Masa Aktif |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| **2026-10-01 09:18 WIB** | `TESTIMONI` | **#-** | **Bu Septi** (Orang Tua Siswa Kelas 4) | Kesan & Testimoni Orang Tua Murid (*Orang Tua Kelas 4*) | Testimoni | Webmaster / Admin | Penambahan testimoni autentik Bu Septi (Orang Tua Siswa Kelas 4) pada carousel testimoni di index.html dan about.html, melengkapi 4 suara apresiasi orang tua murid. |
 | **2026-09-29 22:45 WIB** | `UPDATE_KONTEN` | **#-** | **Equal-Height Program & Framing Mahasiswa Jepang** (-) | Grid Equal Height Program & Promosi Mahasiswa Jepang ke Posisi #1 (*Equal Height & Hero #1*) | Desain & Tata Letak | Webmaster / Admin | Penyelarasan tinggi kartu Program & Ekstrakurikuler dengan equal-height flexbox, pemotongan horisontal fokus Mao Sensei & interaksi siswa (images/jepang_ngajar_banner.webp), pemindahan Berita Mahasiswa Jepang ke posisi #1 di Beranda dan Kegiatan Siswa, serta pembersihan markup duplikat di index.html. |
 | **2026-09-29 22:20 WIB** | `UPDATE_KONTEN` | **#-** | **13 Foto Otentik Kegiatan & Ekskul Baru** (-) | Integrasi Foto Kemitraan Jepang, Gelar Karya P5, Ekskul & Budaya (*13 Foto Otentik*) | Dokumentasi Sekolah | Webmaster / Admin | Pemasangan foto otentik pada courses.html (paduan suara, basket, pramuka, dan kelas jepang baru), penambahan 6 kegiatan tematik baru di blog.html, pembaruan galeri about.html, dan 6 entri berita unggulan di index.html. |
 | **2026-09-29 21:35 WIB** | `UPDATE_GTK` | **#-** | **Eliminasi Distorsi & Framing Ramping Pak Seto** (-) | Zero-Distortion Aspect Ratio Guard (800:940) & Slim Framing Pak Seto (*29 Foto 100% Alami*) | Kepegawaian GTK | Webmaster / Admin | Perbaikan aspek rasio eksak 800:940 mencegah foto tertekan/bentet (Bu Lanni, Pak Gani, Pak Yudha), serta pemotongan di atas lingkar pinggang Pak Seto agar tampil lebih ramping, tegap, dan proporsional. |
