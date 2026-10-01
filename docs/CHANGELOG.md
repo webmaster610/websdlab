@@ -19,6 +19,12 @@ Format pencatatan perubahan berdasar prinsip [Keep a Changelog](https://keepacha
 
 ---
 
+### 2. PENYELARASAN GALERI SEGARIS PENUH PROFIL SEKOLAH (ABOUT.HTML)
+- **Fixed**: Mengoreksi 2 slot gambar galeri di `about.html` yang sebelumnya gagal dimuat browser (tampil putih kosong) akibat penulisan spasi nama file pada inline CSS `url(...)` tanpa tanda kutip.
+- **Changed**: Menyematkan 4 foto representatif pilar sekolah dengan URL berkuotasi aman (`jepang_ngajar_banner.webp`, `about_perpus_2.webp`, `kartinian.webp`, `gelarkarya.webp`) sehingga galeri foto di bagian bawah Profil Sekolah kini tampil **penuh segaris (100% lebar layar, 4 kolom sempurna)** persis seperti halaman depan.
+
+---
+
 ## [Unreleased] - 2026-09-29
 
 ### 1. KONSISTENSI KARTU PROGRAM & EKSTRAKURIKULER (EQUAL-HEIGHT GRID)
