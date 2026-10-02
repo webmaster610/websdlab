@@ -10,10 +10,10 @@ Setiap kali Admin menyetujui, menolak, atau menghapus prestasi melalui Bot Teleg
 ## 📊 RINGKASAN STATISTIK AKTIVITAS
 
 - **Total Prestasi Aktif di Website**: 7 Prestasi
-- **Total Riwayat Tercatat**: 30 Log Aktivitas
+- **Total Riwayat Tercatat**: 31 Log Aktivitas
 - **Status Server Produksi**: Online 24/7 (`sdlabubuntuserver` di UKSW Salatiga)
 - **Engine Otomasi**: Node.js Long-Polling Telegram Bot & PM2 Daemon (`sdlab-prestasi-bot`)
-- **Pembaruan Terakhir**: 01 Oktober 2026
+- **Pembaruan Terakhir**: 02 Oktober 2026
 
 ---
 
@@ -21,6 +21,7 @@ Setiap kali Admin menyetujui, menolak, atau menghapus prestasi melalui Bot Teleg
 
 | Waktu (WIB) | Aksi | ID | Nama Subjek / Entri | Ajang / Capaian | Kategori & Bidang | Aktor / Eksekutor | Keterangan & Masa Aktif |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| **2026-10-02 08:16 WIB** | `UPDATE_KONTEN` | **#-** | **Redesain Tautan Baca Selengkapnya & Footer Kartu Berita** (-) | Penerapan Tautan Editorial Anggun (Opsi A) & Aliansi Tag Metadata (*Opsi A: Editorial Link*) | Desain & Tata Letak | Webmaster / Admin | Mengganti tombol kapsul oranye yang sempit/patah dengan tautan editorial modern "Baca Selengkapnya →" (#0d83ff dengan hover #fd5f00 dan animasi panah meluncur), menyeragamkan tag lokasi kanan (Jepang / UKSW, Solo Safari, Sangiran), dan menambahkan garis batas atas halus pada kartu berita di index.html dan blog.html. |
 | **2026-10-01 09:57 WIB** | `UPDATE_KONTEN` | **#-** | **Galeri Segaris Penuh Profil Sekolah** (-) | Restorasi 4 Foto Galeri Segaris Penuh di about.html (*Galeri Segaris Penuh*) | Desain & Tata Letak | Webmaster / Admin | Memperbaiki 2 slot gambar galeri yang sebelumnya gagal tampil akibat spasi URL tanpa tanda kutip di about.html, kini menampilkan 4 foto pilar sekolah secara penuh segaris (100% lebar) persis seperti halaman depan. |
 | **2026-10-01 09:18 WIB** | `TESTIMONI` | **#-** | **Bu Septi** (Orang Tua Siswa Kelas 4) | Kesan & Testimoni Orang Tua Murid (*Orang Tua Kelas 4*) | Testimoni | Webmaster / Admin | Penambahan testimoni autentik Bu Septi (Orang Tua Siswa Kelas 4) pada carousel testimoni di index.html dan about.html, melengkapi 4 suara apresiasi orang tua murid. |
 | **2026-09-29 22:45 WIB** | `UPDATE_KONTEN` | **#-** | **Equal-Height Program & Framing Mahasiswa Jepang** (-) | Grid Equal Height Program & Promosi Mahasiswa Jepang ke Posisi #1 (*Equal Height & Hero #1*) | Desain & Tata Letak | Webmaster / Admin | Penyelarasan tinggi kartu Program & Ekstrakurikuler dengan equal-height flexbox, pemotongan horisontal fokus Mao Sensei & interaksi siswa (images/jepang_ngajar_banner.webp), pemindahan Berita Mahasiswa Jepang ke posisi #1 di Beranda dan Kegiatan Siswa, serta pembersihan markup duplikat di index.html. |

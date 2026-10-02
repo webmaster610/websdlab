@@ -10409,4 +10409,55 @@ textarea.form-control {
   box-shadow: 0 4px 12px rgba(13, 131, 255, 0.28);
 }
 
+/* ------------------------------------------------------------- */
+/* 10. Sleek Editorial Read More Link (Opsi A)                  */
+/* ------------------------------------------------------------- */
+.btn-read-more {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  color: #0d83ff !important;
+  font-weight: 600 !important;
+  font-size: 13.5px !important;
+  text-decoration: none !important;
+  white-space: nowrap !important;
+  transition: all 0.25s ease !important;
+  line-height: 1.2 !important;
+  padding: 4px 0 !important;
+}
+
+.btn-read-more span.ion-ios-arrow-round-forward,
+.btn-read-more i.ion-ios-arrow-round-forward {
+  display: inline-block !important;
+  font-size: 17px !important;
+  transition: transform 0.25s ease !important;
+  line-height: 1 !important;
+}
+
+.btn-read-more:hover {
+  color: #fd5f00 !important;
+  text-decoration: none !important;
+}
+
+.btn-read-more:hover span.ion-ios-arrow-round-forward,
+.btn-read-more:hover i.ion-ios-arrow-round-forward {
+  transform: translateX(5px) !important;
+}
+
+.blog-entry-footer {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  margin-top: 1.25rem !important;
+  padding-top: 0.75rem !important;
+  border-top: 1px solid rgba(0, 0, 0, 0.06) !important;
+}
+
+.blog-entry-tag {
+  font-size: 12.5px !important;
+  color: #64748b !important;
+  white-space: nowrap !important;
+  font-weight: 500 !important;
+}
+
 

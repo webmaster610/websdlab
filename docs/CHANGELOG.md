@@ -10,6 +10,19 @@ Format pencatatan perubahan berdasar prinsip [Keep a Changelog](https://keepacha
 
 ---
 
+## [Unreleased] - 2026-10-02
+
+### 1. REDESAIN TAUTAN BACA SELENGKAPNYA & PENATAAN FOOTER KARTU BERITA (OPSI A)
+- **Changed**: Menggantikan tombol kapsul oranye tebal (`.btn.btn-secondary`) yang sebelumnya memicu text wrap dan pematahan panah (`Selengkapnya` terpisah dari icon) pada kartu beranda dengan tautan editorial modern nan anggun (`.btn-read-more`).
+- **Added**: Tautan editorial menggunakan warna brand biru Satya Wacana (`#0d83ff`), ketebalan font 600, `white-space: nowrap !important`, dan transisi hover interaktif meluncur ke kanan (+5px) berubah menjadi oranye (`#fd5f00`).
+- **Changed**: Menyeragamkan label/tag lokasi kanan pada footer kartu berita beranda:
+  - Kartu 1: `<i class="icon-globe text-primary"></i> Jepang / UKSW`
+  - Kartu 2: `<i class="icon-map-marker text-danger"></i> Solo Safari`
+  - Kartu 3: `<i class="icon-map-marker text-danger"></i> Sangiran`
+- **Added**: Membungkus footer kartu berita dalam kontainer `.blog-entry-footer` dengan garis pemisah tipis (`border-top: 1px solid rgba(0, 0, 0, 0.06)`) dan penataan `justify-content-between` sehingga seluruh tombol baca dan metadata tertata sejajar pada satu garis horizontal yang presisi di `index.html` dan `blog.html`.
+
+---
+
 ## [Unreleased] - 2026-10-01
 
 ### 1. INTEGRASI TESTIMONI AUTENTIK ORANG TUA: BU SEPTI
