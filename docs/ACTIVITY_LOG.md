@@ -10,10 +10,10 @@ Setiap kali Admin menyetujui, menolak, atau menghapus prestasi melalui Bot Teleg
 ## 📊 RINGKASAN STATISTIK AKTIVITAS
 
 - **Total Prestasi Aktif di Website**: 7 Prestasi
-- **Total Riwayat Tercatat**: 31 Log Aktivitas
+- **Total Riwayat Tercatat**: 33 Log Aktivitas
 - **Status Server Produksi**: Online 24/7 (`sdlabubuntuserver` di UKSW Salatiga)
 - **Engine Otomasi**: Node.js Long-Polling Telegram Bot & PM2 Daemon (`sdlab-prestasi-bot`)
-- **Pembaruan Terakhir**: 02 Oktober 2026
+- **Pembaruan Terakhir**: 06 Oktober 2026
 
 ---
 
@@ -21,6 +21,7 @@ Setiap kali Admin menyetujui, menolak, atau menghapus prestasi melalui Bot Teleg
 
 | Waktu (WIB) | Aksi | ID | Nama Subjek / Entri | Ajang / Capaian | Kategori & Bidang | Aktor / Eksekutor | Keterangan & Masa Aktif |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| **2026-10-06 16:40 WIB** | `UPDATE_PERFORMA` | **#-** | **Batch Resize 54 Gambar & Lazy Loading** (-) | Kompresi Aset Web & Peningkatan Kecepatan Mobile (*Hemat 23.58 MB / 72.8%*) | Performa & Kecepatan | Webmaster / Admin | Eksekusi batch resize dan re-encoding 54 file gambar raksasa (logo.png dari 758KB ke 73KB, hero slider, foto kegiatan 6K, avatar testimoni), memangkas folder images dari 32.39 MB ke 8.81 MB (hemat 23.58 MB / 72.8%), serta memasang native loading='lazy', dimensi logo anti-CLS, dan link preload LCP hero. |
 | **2026-10-06 08:30 WIB** | `HAPUS` | **#7** | **Team Basket Sd Kristen Satya Wacana (Shannon (Kelas 5a), Caelyn (Kelas 6a), Jevan (Kelas 6a), Jorell (Kelas 5a), Ernest (Kelas 4a), Kayla (Kelas 6b), Fidel (Kelas 6a), Samuel (Kelas 5a), Andrew (Kelas 6a), Eta (Kelas 5a), Jass (Kelas 6a), Dan Odel (Kelas 6b))** (Kelas 4-6) | Bank Jateng Liga Basket (Bjlb) (*Juara 3 • Tingkat Kota*) | Olahraga Prestasi | Admin (7187970534) | Dihapus manual oleh Admin via Telegram. |
 | **2026-10-06 08:28 WIB** | `TAMBAH` | **#7** | **Team Basket Sd Kristen Satya Wacana (Shannon (Kelas 5a), Caelyn (Kelas 6a), Jevan (Kelas 6a), Jorell (Kelas 5a), Ernest (Kelas 4a), Kayla (Kelas 6b), Fidel (Kelas 6a), Samuel (Kelas 5a), Andrew (Kelas 6a), Eta (Kelas 5a), Jass (Kelas 6a), Dan Odel (Kelas 6b))** (Kelas 4-6) | Bank Jateng Liga Basket (Bjlb) (*Juara 3 • Tingkat Kota*) | Olahraga Prestasi | Admin (7187970534) | Disetujui Admin. Masa aktif: s.d 2027-01-06 |
 | **2026-10-02 08:16 WIB** | `UPDATE_KONTEN` | **#-** | **Redesain Tautan Baca Selengkapnya & Footer Kartu Berita** (-) | Penerapan Tautan Editorial Anggun (Opsi A) & Aliansi Tag Metadata (*Opsi A: Editorial Link*) | Desain & Tata Letak | Webmaster / Admin | Mengganti tombol kapsul oranye yang sempit/patah dengan tautan editorial modern "Baca Selengkapnya →" (#0d83ff dengan hover #fd5f00 dan animasi panah meluncur), menyeragamkan tag lokasi kanan (Jepang / UKSW, Solo Safari, Sangiran), dan menambahkan garis batas atas halus pada kartu berita di index.html dan blog.html. |

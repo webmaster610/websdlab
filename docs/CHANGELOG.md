@@ -10,6 +10,26 @@ Format pencatatan perubahan berdasar prinsip [Keep a Changelog](https://keepacha
 
 ---
 
+## [Unreleased] - 2026-10-06
+
+### 1. BATCH RESIZE 54 GAMBAR & KOMPRESI ASET WEB (HEMAT 23.58 MB / 72.8%)
+- **Changed**: Mengoptimalkan 54 file gambar yang sebelumnya berukuran raksasa (6K / 4K / kamera mentah hingga 2.4 MB) menggunakan algoritma resampling kualitas tinggi LANCZOS dan WebP/PNG optimize:
+  - `images/logo.png`: dari **758 KB** (1013px) dipangkas ke **73 KB** (240px, hemat 90.3%), mencegah hambatan render-blocking pada seluruh halaman.
+  - Foto Kegiatan & Berita 6K (`pemadam 1-4`, `17an 1-4`, `outing`, `lomba di piala`, `kak kempo`, `kebencanaan`, `solo safari`): dibatasi ke dimensi proporsional max 1200px, turun dari 1-2.4 MB menjadi hanya ~70-150 KB per gambar (hemat ~85-91%).
+  - Hero Slider Beranda (`hero_1`, `hero_2`, `hero_3`): dikompresi ke 1440px WebP efisien, total berkurang dari ~907 KB ke ~460 KB.
+  - Avatar Testimoni Orang Tua (`pak_Jasson`, `bu_Devina`, `pak_yus`, `bu_septi`): di-resize proporsional ke max 320px, turun dari total ~490 KB ke hanya ~52 KB (hemat >88%).
+- **Removed**: Pembersihan file stock photo bawaan template yang tidak digunakan (`teacher-1..8.jpg`, `course-1..6.jpg`, `staff-1..4.jpg`, `person-1..4.jpg`, `image_1..6.jpg`).
+- **Changed**: Ukuran total folder `images/` berkurang drastis dari **32.39 MB** menjadi **8.81 MB** (penghematan bandwidth total **23.58 MB / 72.8%**).
+
+---
+
+### 2. PENERAPAN NATIVE LAZY LOADING & PRELOAD LCP HERO
+- **Added**: Memasang atribut `loading="lazy"` pada gambar di bawah layar lipat (*below the fold*) pada `index.html`, `about.html`, dan kartu dinamis di `prestasi.html`.
+- **Added**: Menyematkan `<link rel="preload" as="image" href="images/hero_1.webp" fetchpriority="high">` pada `<head>` di `index.html` untuk memprioritaskan Largest Contentful Paint (LCP) saat halaman dibuka.
+- **Added**: Memberikan atribut eksplisit `width="52" height="52"` pada logo navbar di seluruh 7 halaman utama (`index.html`, `about.html`, `blog.html`, `courses.html`, `teacher.html`, `prestasi.html`, `contact.html`) untuk mengeliminasi Cumulative Layout Shift (CLS).
+
+---
+
 ## [Unreleased] - 2026-10-02
 
 ### 1. REDESAIN TAUTAN BACA SELENGKAPNYA & PENATAAN FOOTER KARTU BERITA (OPSI A)
