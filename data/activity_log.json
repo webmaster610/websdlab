@@ -1,5 +1,22 @@
 [
   {
+    "id": "act_1791275430291",
+    "timestamp": "2026-10-06T08:30:30.291Z",
+    "display_time": "2026-10-06 08:30 WIB",
+    "action": "HAPUS",
+    "category_tag": "PRESTASI",
+    "target_id": 7,
+    "student_name": "Team Basket Sd Kristen Satya Wacana (Shannon (Kelas 5a), Caelyn (Kelas 6a), Jevan (Kelas 6a), Jorell (Kelas 5a), Ernest (Kelas 4a), Kayla (Kelas 6b), Fidel (Kelas 6a), Samuel (Kelas 5a), Andrew (Kelas 6a), Eta (Kelas 5a), Jass (Kelas 6a), Dan Odel (Kelas 6b))",
+    "student_class": "Kelas 4-6",
+    "competition": "Bank Jateng Liga Basket (Bjlb)",
+    "badge": "Juara 3 • Tingkat Kota",
+    "category": "Olahraga Prestasi",
+    "actor": "Admin (7187970534)",
+    "expires_at": null,
+    "image": "images/prestasi/prestasi_1791275290451.jpg",
+    "notes": "Dihapus manual oleh Admin via Telegram."
+  },
+  {
     "id": "act_1791275298706",
     "timestamp": "2026-10-06T08:28:18.706Z",
     "display_time": "2026-10-06 08:28 WIB",
