@@ -10460,4 +10460,25 @@ textarea.form-control {
   font-weight: 500 !important;
 }
 
+/* ------------------------------------------------------------- */
+/* 11. Layout Shift Guards (CLS Anti-Shift)                      */
+/* ------------------------------------------------------------- */
+.home-slider:not(.owl-loaded) {
+  height: 600px !important;
+  max-height: 600px !important;
+  overflow: hidden !important;
+  display: block !important;
+}
+
+.home-slider:not(.owl-loaded) .slider-item:not(:first-child) {
+  display: none !important;
+}
+
+.carousel-prestasi:not(.owl-loaded),
+.carousel-testimony:not(.owl-loaded) {
+  overflow: hidden !important;
+  min-height: 380px !important;
+}
+
+
 

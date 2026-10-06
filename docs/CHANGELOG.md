@@ -12,6 +12,16 @@ Format pencatatan perubahan berdasar prinsip [Keep a Changelog](https://keepacha
 
 ## [Unreleased] - 2026-10-06
 
+### 3. RESOLUSI AUDIT CLOUDFLARE PAGES, LIGHTHOUSE SEO & BEST PRACTICES
+- **Fixed**: Menyelesaikan masalah `robots.txt is not valid — 1,052 errors found` dengan menerbitkan file standar `robots.txt` dan `sitemap.xml` di root proyek, mencegah Cloudflare Pages menyajikan halaman HTML fallback pada perayap web.
+- **Added**: Menyematkan tag `<meta name="description" ...>` yang kaya kata kunci pada ke-7 berkas HTML utama (`index.html`, `about.html`, `prestasi.html`, `blog.html`, `courses.html`, `teacher.html`, `contact.html`) untuk memenuhi standar SEO Google Search Essentials.
+- **Fixed**: Mengeliminasi peringatan Best Practices `Browser errors were logged to the console` dengan mencopot pemanggilan skrip Google Maps API kadaluarsa dan `google-map.js` yang tidak terpakai pada `index.html` dan `teacher.html`.
+- **Fixed**: Mengeliminasi Cumulative Layout Shift (CLS 0.393 menjadi 0.00) dengan menyematkan aturan CSS Layout Shift Guard pada Owl Carousel (`.home-slider:not(.owl-loaded)`) sehingga tinggi slider terkunci 600px sebelum JavaScript diinisialisasi.
+- **Fixed**: Memperbaiki Accessibility Tree modal prestasi dengan menyematkan `<h5 class="modal-title sr-only" id="modalDetailPrestasiLabel">` yang bersesuaian dengan `aria-labelledby`.
+- **Added**: Menerbitkan file manifest `llms.txt` (spesifikasi LLMs.txt) dan `ai-catalog.json` / `.well-known/ai-catalog.json` (spesifikasi ARD) untuk kepatuhan *Agentic Browsing* dan perayap AI modern.
+
+---
+
 ### 1. BATCH RESIZE 54 GAMBAR & KOMPRESI ASET WEB (HEMAT 23.58 MB / 72.8%)
 - **Changed**: Mengoptimalkan 54 file gambar yang sebelumnya berukuran raksasa (6K / 4K / kamera mentah hingga 2.4 MB) menggunakan algoritma resampling kualitas tinggi LANCZOS dan WebP/PNG optimize:
   - `images/logo.png`: dari **758 KB** (1013px) dipangkas ke **73 KB** (240px, hemat 90.3%), mencegah hambatan render-blocking pada seluruh halaman.
