@@ -1,5 +1,22 @@
 [
   {
+    "id": "act_1791289815203",
+    "timestamp": "2026-10-06T12:30:15.203Z",
+    "display_time": "2026-10-06 19:30 WIB",
+    "action": "LANDMARK_DAN_REFLOW_GUARD",
+    "category_tag": "AKSESIBILITAS_BEST_PRACTICES",
+    "target_id": null,
+    "student_name": "Penerapan Main Landmark HTML5 & Eliminasi Forced Reflow",
+    "student_class": "-",
+    "competition": "Resolusi Landmark Aksesibilitas & Pencegahan Layout Thrashing",
+    "badge": "Main Landmark & Reflow Guard",
+    "category": "Aksesibilitas & Performa",
+    "actor": "Webmaster / Admin",
+    "expires_at": null,
+    "image": "images/logo.png",
+    "notes": "Menyelesaikan 2 catatan Lighthouse lanjutan: (1) Menyematkan elemen semantik <main id='main'> pada seluruh 9 berkas HTML untuk memenuhi standar Best Practices Aksesibilitas 'Document has a main landmark'; (2) Memasang guard pada fungsi fullHeight() di main.js agar tidak melakukan kueri layout paksa $(window).height() saat elemen .js-fullheight tidak ada di halaman, mengeliminasi peringatan Forced Reflow."
+  },
+  {
     "id": "act_1791287596200",
     "timestamp": "2026-10-06T11:53:16.200Z",
     "display_time": "2026-10-06 18:52 WIB",

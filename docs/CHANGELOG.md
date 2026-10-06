@@ -12,6 +12,16 @@ Format pencatatan perubahan berdasar prinsip [Keep a Changelog](https://keepacha
 
 ## [Unreleased] - 2026-10-06
 
+### 8. PENERAPAN SEMANTIK MAIN LANDMARK & PENCEGAHAN FORCED REFLOW
+- **Fixed (Aksesibilitas - Document does not have a main landmark)**:
+  - Menyematkan kontainer semantik HTML5 `<main id="main">` tepat setelah navigasi (`<!-- END nav -->`) dan menutupnya sebelum footer (`</main>`) pada seluruh 9 berkas HTML (`index.html`, `about.html`, `blog.html`, `courses.html`, `prestasi.html`, `teacher.html`, `contact.html`, `pricing.html`, `blog-single.html`).
+  - Memastikan pembaca layar (*screen reader*) dan validator Best Practices Lighthouse dapat langsung mengenali area konten utama halaman.
+- **Fixed (Performa - Eliminasi Forced Reflow / Layout Thrashing)**:
+  - Memasang guard kondisional pada fungsi `fullHeight()` di `js/main.js` dan `js/main.min.js`: kueri geometri `$(window).height()` hanya dieksekusi jika elemen target `.js-fullheight` benar-benar ada di DOM.
+  - Mencegah browser melakukan kalkulasi ulang layout (*layout invalidation*) yang tidak perlu saat halaman pertama kali dibuka.
+
+---
+
 ### 7. RESOLUSI PENUH KONTRAS WCAG AA, VALIDASI SKEMA ARD AI-CATALOG.JSON, & OPTIMASI LCP MOBILE
 - **Fixed (Aksesibilitas - Rasio Kontras Warna WCAG AA Melampaui 4.5:1)**:
   - Mengubah latar belakang `.bg-primary` dan `.badge-primary` dari biru muda cerah (`#1eaaf1`) menjadi Deep Satya Wacana Navy (`#0b427b`), menghasilkan rasio kontras spektakuler **8.8:1** terhadap teks putih pada bilah atas dan kolom info PPDB.

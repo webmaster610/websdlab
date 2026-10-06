@@ -42,10 +42,13 @@
 	}
 
 	var fullHeight = function() {
-		$('.js-fullheight').css('height', $(window).height());
-		$(window).resize(function(){
-			$('.js-fullheight').css('height', $(window).height());
-		});
+		var $elems = $('.js-fullheight');
+		if ($elems.length > 0) {
+			$elems.css('height', $(window).height());
+			$(window).resize(function(){
+				$elems.css('height', $(window).height());
+			});
+		}
 	};
 	fullHeight();
 
