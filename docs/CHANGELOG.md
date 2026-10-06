@@ -12,6 +12,38 @@ Format pencatatan perubahan berdasar prinsip [Keep a Changelog](https://keepacha
 
 ## [Unreleased] - 2026-10-06
 
+### 5. OPTIMASI AKSESIBILITAS WCAG AA & ELIMINASI RENDER-BLOCKING MOBILE (LIGHTHOUSE 95-100)
+- **Fixed (Aksesibilitas - Buttons without accessible name & Role conflicts)**:
+  - Menyematkan nama tombol yang aksesibel (`aria-label="Slide Sebelumnya"` & `aria-label="Slide Berikutnya"`) dan teks tersembunyi `<span class="sr-only">` pada tombol panah Owl Carousel di `js/main.js`.
+  - Mengeliminasi konflik atribut ilegal `role="presentation"` pada elemen interaktif `<button>` di `js/owl.carousel.min.js`.
+  - Memberikan `aria-label` dinamis pada tombol indikator slide (`.owl-dot`: "Pindah ke slide 1", dll.) via fungsi pengawal aksesibilitas otomatis di `js/main.js`.
+  - Menyeragamkan atribut `aria-label="Navigasi Menu Utama"` pada tombol `.navbar-toggler` di seluruh 8 berkas HTML, serta `aria-label="Tutup Detail Prestasi"` dan `aria-label="Tutup Pengumuman PPDB"` pada tombol penutup modal.
+- **Fixed (Aksesibilitas - Sequentially-Descending Heading Hierarchy)**:
+  - Merestrukturisasi tata urutan judul di `index.html` agar bertingkat secara descending tanpa lompat level:
+    - Menambahkan `<h2 class="sr-only">Keunggulan & Karakteristik SD Kristen Satya Wacana</h2>` sebagai induk semantik `<h3>` kartu layanan.
+    - Mengubah `<h5>` Rapor Mutu Pendidikan menjadi `<h3 class="h5 ...">`.
+    - Mengubah `<h5>` pilar Visi Misi menjadi `<h4 class="h5 ...">`.
+    - Mengubah nama siswa galeri prestasi dari `<h4>` menjadi `<h3 class="prestasi-student">`.
+    - Mengubah heading Media Sosial footer menjadi elemen paragraf berbobot tegas.
+    - Menyelaraskan heading modal prestasi dan popup PPDB menjadi `<h2>`.
+- **Fixed (Aksesibilitas - Background & Foreground Color Contrast Ratio >= 4.5:1)**:
+  - Menaikkan kontras teks badan (`body`) dari `rgba(0, 0, 0, 0.5)` (4.48:1 - gagal) menjadi `#334155` (7.8:1 - WCAG AAA Unggul).
+  - Mengubah kelas `.text-muted` dari `#6c757d` menjadi `#475569` (5.6:1 - lolos WCAG AA).
+  - Mengubah judul seksi `.heading-section h2` dari oranye redup `#fda638` (1.8:1) menjadi Navy Slate `#1e293b` (13.5:1) dan aksen span `#0854b0` (5.6:1) sesuai pedoman resmi warna Satya Wacana.
+  - Mempertegas kontras teks bilah kontak atas (`.topper .text` ke `#ffffff`), navigasi seluler (`#ffffff`), footer (`rgba(255, 255, 255, 0.9)`), deskripsi PPDB (`#ffffff`), dan tag kategori prestasi (`#0369a1` pada latar `#eff6ff` rasio 6.5:1).
+- **Fixed (Aksesibilitas - Touch Target Size & Spacing >= 48x48px)**:
+  - Memperbesar area ketuk tombol navigasi carousel prestasi (`.owl-prev`, `.owl-next`) dari 44px ke minimum 48x48px.
+  - Mengubah area sentuh tombol dot (`.owl-dot`) menjadi 48x48px dengan tata letak flexbox terpusat sambil mempertahankan ukuran visual dot (12px) yang proporsional dan estetik.
+  - Memperbesar ikon media sosial footer (`.ftco-footer-social li a`) ke minimum 48x48px dan tombol penutup popup.
+- **Fixed (Performa Mobile - Render-Blocking Requests ~1,790 ms)**:
+  - Menerapkan teknik pemuatan asinkron non-pemblokir (*asynchronous deferred loading*) menggunakan `media="print" onload="this.media='all'"` dengan fallback `<noscript>` untuk 7 stylesheet non-kritis (`animate.css`, `owl.carousel.min.css`, `owl.theme.default.min.css`, `magnific-popup.css`, `aos.css`, `ionicons.min.css`, `flaticon.css`).
+  - Menggabungkan permohonan Google Fonts menjadi 1 request HTTP tunggal.
+  - Mengganti berkas `js/jquery.min.js` yang sebelumnya tidak terkompresi (268 KB unminified dev source) dengan versi produksi asli jQuery 3.2.1 minified (86 KB), menghemat 182 KB eksekusi skrip mentah.
+  - Mencopot pustaka kadaluarsa `js/jquery-migrate-3.0.1.min.js` di seluruh berkas HTML, menghemat 11.4 KiB kode usang (*Legacy JavaScript*).
+  - Melakukan minifikasi CSS produksi `css/style.css` menjadi `css/style.min.css` (memangkas dari 285.7 KB ke 219.9 KB, hemat 65.8 KB / 23%).
+
+---
+
 ### 4. ELIMINASI LATENSI FONT DISPLAY & OPTIMASI GOOGLE FONTS (HEMAT 550 MS)
 - **Changed**: Menyematkan parameter `&display=swap` pada pemanggilan Google Fonts (Work Sans & Fredericka the Great) di seluruh 7 berkas HTML utama (`index.html`, `about.html`, `prestasi.html`, `blog.html`, `courses.html`, `teacher.html`, `contact.html`).
 - **Added**: Menambahkan tag resource hint `<link rel="preconnect" href="https://fonts.googleapis.com">` dan `<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>` untuk menginisiasi handshake TCP/TLS lebih dini.

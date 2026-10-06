@@ -50,7 +50,7 @@
 	    nav:false,
 	    autoplayHoverPause: false,
 	    items: 1,
-	    navText : ["<span class='ion-md-arrow-back'></span>","<span class='ion-chevron-right'></span>"],
+	    navText : ["<span class='ion-md-arrow-back' aria-hidden='true'></span><span class='sr-only'>Slide Sebelumnya</span>","<span class='ion-chevron-right' aria-hidden='true'></span><span class='sr-only'>Slide Berikutnya</span>"],
 	    responsive:{
 	      0:{
 	        items:1
@@ -71,7 +71,7 @@
 			margin: 30,
 			stagePadding: 0,
 			nav: false,
-			navText: ['<span class="ion-ios-arrow-back">', '<span class="ion-ios-arrow-forward">'],
+			navText: ['<span class="ion-ios-arrow-back" aria-hidden="true"></span><span class="sr-only">Slide Sebelumnya</span>', '<span class="ion-ios-arrow-forward" aria-hidden="true"></span><span class="sr-only">Slide Berikutnya</span>'],
 			responsive:{
 				0:{
 					items: 1
@@ -94,7 +94,7 @@
 			stagePadding: 0,
 			nav: true,
 			dots: true,
-			navText: ['<span class="ion-ios-arrow-back">', '<span class="ion-ios-arrow-forward">'],
+			navText: ['<span class="ion-ios-arrow-back" aria-hidden="true"></span><span class="sr-only">Slide Sebelumnya</span>', '<span class="ion-ios-arrow-forward" aria-hidden="true"></span><span class="sr-only">Slide Berikutnya</span>'],
 			responsive:{
 				0:{
 					items: 1
@@ -107,6 +107,24 @@
 				}
 			}
 		});
+
+		function updateCarouselA11y() {
+			$('.owl-carousel').each(function() {
+				var $carousel = $(this);
+				$carousel.find('.owl-prev').removeAttr('role').attr('aria-label', 'Slide Sebelumnya');
+				$carousel.find('.owl-next').removeAttr('role').attr('aria-label', 'Slide Berikutnya');
+				$carousel.find('.owl-dot').removeAttr('role').each(function(index) {
+					$(this).attr('aria-label', 'Pindah ke slide ' + (index + 1));
+				});
+			});
+		}
+
+		$('.home-slider, .carousel-testimony, .carousel-prestasi').on('initialized.owl.carousel refreshed.owl.carousel translated.owl.carousel', function() {
+			updateCarouselA11y();
+		});
+
+		setTimeout(updateCarouselA11y, 100);
+		setTimeout(updateCarouselA11y, 500);
 
 	};
 	carousel();

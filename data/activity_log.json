@@ -1,5 +1,22 @@
 [
   {
+    "id": "act_1791285958145",
+    "timestamp": "2026-10-06T11:25:58.150Z",
+    "display_time": "2026-10-06 18:25 WIB",
+    "action": "OPTIMASI_A11Y_PERFORMA",
+    "category_tag": "AKSESIBILITAS_PERFORMA",
+    "target_id": null,
+    "student_name": "Optimasi Aksesibilitas WCAG & Eliminasi Render-Blocking Mobile",
+    "student_class": "-",
+    "competition": "Resolusi Penuh Audit Aksesibilitas (85 -> 95+) & Performa Mobile (Hemat 1,790ms)",
+    "badge": "A11y & Speed 95+",
+    "category": "Aksesibilitas & Performa",
+    "actor": "Webmaster / Admin",
+    "expires_at": null,
+    "image": "images/logo.png",
+    "notes": "Menyelesaikan seluruh temuan Lighthouse: (1) Menyematkan accessible name & menghapus konflik role='presentation' pada Owl Carousel nav/dot dan navbar toggler; (2) Memperbaiki hirarki heading sequentially descending tanpa loncat (h1->h2->h3->h4); (3) Meningkatkan rasio kontras teks (body, heading, footer, tags) melampaui WCAG AA 4.5:1; (4) Menstandardisasi touch target mobile minimum 48x48px; (5) Mengeliminasi render-blocking CSS (hemat 1,790ms) via async loading media='print'; (6) Mengganti unminified jquery.min.js (268KB->86KB, hemat 182KB); (7) Menghapus jquery-migrate (hemat 11.4KiB legacy JS); (8) Menerbitkan css/style.min.css (hemat 65.8KB)."
+  },
+  {
     "id": "act_1791282000000",
     "timestamp": "2026-10-06T10:35:00.000Z",
     "display_time": "2026-10-06 17:35 WIB",
