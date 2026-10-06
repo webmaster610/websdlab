@@ -12,6 +12,14 @@ Format pencatatan perubahan berdasar prinsip [Keep a Changelog](https://keepacha
 
 ## [Unreleased] - 2026-10-06
 
+### 4. ELIMINASI LATENSI FONT DISPLAY & OPTIMASI GOOGLE FONTS (HEMAT 550 MS)
+- **Changed**: Menyematkan parameter `&display=swap` pada pemanggilan Google Fonts (Work Sans & Fredericka the Great) di seluruh 7 berkas HTML utama (`index.html`, `about.html`, `prestasi.html`, `blog.html`, `courses.html`, `teacher.html`, `contact.html`).
+- **Added**: Menambahkan tag resource hint `<link rel="preconnect" href="https://fonts.googleapis.com">` dan `<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>` untuk menginisiasi handshake TCP/TLS lebih dini.
+- **Changed**: Menambahkan deklarasi `font-display: swap;` pada seluruh definisi `@font-face` di berkas font ikon: `css/flaticon.css`, `css/icomoon.css`, `css/ionicons.min.css`, dan `css/open-iconic-bootstrap.min.css`.
+- **Result**: Mengeliminasi masa tunggu render font (Flash of Invisible Text / FOIT) sebesar 550 ms pada audit PageSpeed Desktop & Mobile.
+
+---
+
 ### 3. RESOLUSI AUDIT CLOUDFLARE PAGES, LIGHTHOUSE SEO & BEST PRACTICES
 - **Fixed**: Menyelesaikan masalah `robots.txt is not valid — 1,052 errors found` dengan menerbitkan file standar `robots.txt` dan `sitemap.xml` di root proyek, mencegah Cloudflare Pages menyajikan halaman HTML fallback pada perayap web.
 - **Added**: Menyematkan tag `<meta name="description" ...>` yang kaya kata kunci pada ke-7 berkas HTML utama (`index.html`, `about.html`, `prestasi.html`, `blog.html`, `courses.html`, `teacher.html`, `contact.html`) untuk memenuhi standar SEO Google Search Essentials.

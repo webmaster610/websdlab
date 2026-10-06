@@ -1,5 +1,22 @@
 [
   {
+    "id": "act_1791282000000",
+    "timestamp": "2026-10-06T10:35:00.000Z",
+    "display_time": "2026-10-06 17:35 WIB",
+    "action": "UPDATE_PERFORMA",
+    "category_tag": "OPTIMASI_WEB",
+    "target_id": null,
+    "student_name": "Penerapan Font-Display Swap & Preconnect Google Fonts",
+    "student_class": "-",
+    "competition": "Eliminasi Latensi Font Display (Est Savings 550ms) & Render Blocking",
+    "badge": "Hemat 550ms Font",
+    "category": "Performa & Tipografi",
+    "actor": "Webmaster / Admin",
+    "expires_at": null,
+    "image": "images/logo.png",
+    "notes": "Menyematkan parameter &display=swap dan rel='preconnect' untuk Google Fonts pada seluruh 7 halaman utama, serta menambahkan aturan font-display: swap pada @font-face di flaticon.css, icomoon.css, ionicons.min.css, dan open-iconic-bootstrap.min.css untuk mengeliminasi FOIT (Flash of Invisible Text) dan menghemat 550ms waktu tunggu render font."
+  },
+  {
     "id": "act_1791280000000",
     "timestamp": "2026-10-06T10:25:00.000Z",
     "display_time": "2026-10-06 17:25 WIB",
