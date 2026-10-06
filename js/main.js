@@ -7,35 +7,47 @@
 
 	"use strict";
 
-	$(window).stellar({
-    responsive: true,
-    parallaxBackgrounds: true,
-    parallaxElements: true,
-    horizontalScrolling: false,
-    hideDistantElements: false,
-    scrollProperty: 'scroll'
-  });
+	// Dismiss loader immediately so content is never blocked
+	var loader = function() {
+		if ($('#ftco-loader').length > 0) {
+			$('#ftco-loader').removeClass('show');
+		}
+	};
+	loader();
+	setTimeout(loader, 1);
+	setTimeout(loader, 500);
 
+	// Polyfill $(window).offset for Stellar.js compatibility in jQuery 3
+	if ($.fn && $.fn.offset) {
+		var _origOffset = $.fn.offset;
+		$.fn.offset = function() {
+			if (!this[0] || this[0] === window || this[0] === document) {
+				return { top: window.pageYOffset || 0, left: window.pageXOffset || 0 };
+			}
+			return _origOffset.apply(this, arguments);
+		};
+	}
+
+	try {
+		$(window).stellar({
+			responsive: true,
+			parallaxBackgrounds: true,
+			parallaxElements: true,
+			horizontalScrolling: false,
+			hideDistantElements: false,
+			scrollProperty: 'scroll'
+		});
+	} catch(e) {
+		console.warn('Stellar initialization skipped:', e);
+	}
 
 	var fullHeight = function() {
-
 		$('.js-fullheight').css('height', $(window).height());
 		$(window).resize(function(){
 			$('.js-fullheight').css('height', $(window).height());
 		});
-
 	};
 	fullHeight();
-
-	// loader
-	var loader = function() {
-		setTimeout(function() { 
-			if($('#ftco-loader').length > 0) {
-				$('#ftco-loader').removeClass('show');
-			}
-		}, 1);
-	};
-	loader();
 
 	// Scrollax
    $.Scrollax();
@@ -289,12 +301,16 @@
   });
 
 
-  $('.appointment_date').datepicker({
-	  'format': 'm/d/yyyy',
-	  'autoclose': true
-	});
+  if ($.fn.datepicker) {
+    $('.appointment_date').datepicker({
+	    'format': 'm/d/yyyy',
+	    'autoclose': true
+	  });
+  }
 
-	$('.appointment_time').timepicker();
+	if ($.fn.timepicker) {
+		$('.appointment_time').timepicker();
+	}
 
 
 

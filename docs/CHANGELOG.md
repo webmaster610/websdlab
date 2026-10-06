@@ -12,6 +12,17 @@ Format pencatatan perubahan berdasar prinsip [Keep a Changelog](https://keepacha
 
 ## [Unreleased] - 2026-10-06
 
+### 6. RESOLUSI BUG PRELOADER MACET (STELLAR OFFSET POLYFILL & DATEPICKER GUARDS)
+- **Fixed**: Mengeliminasi layar abu-abu berputar (*spinning loader* macet pada `#ftco-loader`) yang menutupi konten saat halaman dimuat:
+  - Menghapus kelas bawaan `show` dari markup `<div id="ftco-loader" class="fullscreen">` di seluruh berkas HTML, memastikan halaman dapat diakses langsung tanpa hambatan preloader overlay.
+  - Memindahkan eksekusi penutup loader (`loader()`) ke baris paling awal di `js/main.js` dan `js/main.min.js`.
+  - Menambahkan polyfill `$.fn.offset` untuk objek `window` dan `document` agar pustaka `jquery.stellar.min.js` tetap berfungsi mulus pada lingkungan jQuery 3.2.1 tanpa membutuhkan `jquery-migrate`.
+  - Membungkus inisialisasi Stellar dalam blok proteksi `try...catch`.
+  - Menyematkan pengaman `if ($.fn.datepicker)` dan `if ($.fn.timepicker)` di `js/main.js` untuk mencegah `TypeError` tak tertangani.
+- **Verification**: Diuji dan diverifikasi menggunakan simulasi browser nyata Edge CDP headless tanpa menyisakan satu pun galat konsol (`0 errors`).
+
+---
+
 ### 5. OPTIMASI AKSESIBILITAS WCAG AA & ELIMINASI RENDER-BLOCKING MOBILE (LIGHTHOUSE 95-100)
 - **Fixed (Aksesibilitas - Buttons without accessible name & Role conflicts)**:
   - Menyematkan nama tombol yang aksesibel (`aria-label="Slide Sebelumnya"` & `aria-label="Slide Berikutnya"`) dan teks tersembunyi `<span class="sr-only">` pada tombol panah Owl Carousel di `js/main.js`.

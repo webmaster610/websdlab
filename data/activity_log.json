@@ -1,5 +1,22 @@
 [
   {
+    "id": "act_1791286734710",
+    "timestamp": "2026-10-06T11:38:54.710Z",
+    "display_time": "2026-10-06 18:38 WIB",
+    "action": "FIX_PRELOADER",
+    "category_tag": "PERBAIKAN_BUG",
+    "target_id": null,
+    "student_name": "Resolusi Bug Preloader Macet (Stellar Offset & Datepicker Guards)",
+    "student_class": "-",
+    "competition": "Eliminasi Layar Abu-Abu Berputar (ftco-loader)",
+    "badge": "Bugfix Preloader",
+    "category": "Stabilitas & JavaScript",
+    "actor": "Webmaster / Admin",
+    "expires_at": null,
+    "image": "images/logo.png",
+    "notes": "Memperbaiki masalah layar macet/berputar (ftco-loader tetap tampil): (1) Menghapus class 'show' pada markup ftco-loader di seluruh berkas HTML agar tidak menutupi konten; (2) Memindahkan eksekusi dismiss loader ke baris paling awal main.js; (3) Menyediakan polyfill $(window).offset untuk kompatibilitas Stellar.js di jQuery 3; (4) Membungkus Stellar dengan try-catch; (5) Memasang guard if ($.fn.datepicker) dan if ($.fn.timepicker) mencegah TypeError tak tertangani."
+  },
+  {
     "id": "act_1791285958145",
     "timestamp": "2026-10-06T11:25:58.150Z",
     "display_time": "2026-10-06 18:25 WIB",
