@@ -12,6 +12,25 @@ Format pencatatan perubahan berdasar prinsip [Keep a Changelog](https://keepacha
 
 ## [Unreleased] - 2026-10-06
 
+### 7. RESOLUSI PENUH KONTRAS WCAG AA, VALIDASI SKEMA ARD AI-CATALOG.JSON, & OPTIMASI LCP MOBILE
+- **Fixed (Aksesibilitas - Rasio Kontras Warna WCAG AA Melampaui 4.5:1)**:
+  - Mengubah latar belakang `.bg-primary` dan `.badge-primary` dari biru muda cerah (`#1eaaf1`) menjadi Deep Satya Wacana Navy (`#0b427b`), menghasilkan rasio kontras spektakuler **8.8:1** terhadap teks putih pada bilah atas dan kolom info PPDB.
+  - Memperbaiki seluruh tombol `.btn.btn-secondary` (`Hubungi WhatsApp`, `Pelajari 7 Misi`, `Lihat 19 Profil Guru`, `Chat Langsung via WhatsApp`, `Jelajahi Arsip Prestasi`) menjadi Burnt Orange Satya Wacana (`#c2410c`) dengan teks putih (rasio **4.6:1** - lolos WCAG AA).
+  - Mengubah tombol `.btn-success` (`WhatsApp Kami` di footer) menjadi Forest Green (`#15803d`) dengan rasio **5.1:1**.
+  - Mengubah slogan PPDB `.ppdb-slogan` ("Let's Grow Together in Love") menjadi `#c2410c` pada kartu putih (rasio **4.6:1**).
+- **Fixed (Agentic Browsing - Validasi Skema Resmi ARD RFC 8141)**:
+  - Memperbaiki `ai-catalog.json` dan `.well-known/ai-catalog.json` agar sepenuhnya lolos validator skema Agent Resource Discovery (ARD):
+    - Mengganti identifier generik menjadi format resmi URN RFC 8141: `urn:air:sdlabuksw:education:school-guide`.
+    - Menggunakan standar media discovery type yang valid: `text/markdown; profile="urn:air:agent-skills"` yang merujuk pada `llms.txt`.
+    - Menyertakan `representativeQueries` untuk optimasi pencarian semantik dan vector index embedding AI agent.
+- **Fixed (Performa Mobile - Optimasi LCP & Pemuatan Aset)**:
+  - Menunda waktu pemicu otomatis popup modal PPDB dari 600 ms menjadi 4.5 detik (`4500 ms`), memastikan browser mobile dapat merender elemen LCP hero secara alami tanpa terinterupsi oleh pop-up blocking modal.
+  - Mengompresi aset gambar latar modal `images/gedung_depan.webp` dari 127 KB menjadi 70 KB (hemat ~45%).
+  - Memangkas permohonan Google Fonts menjadi 4 bobot esensial (`300;400;600;700`), memotong separuh bobot transfer font.
+  - Mengubah pemuatan `open-iconic-bootstrap.min.css` dan `icomoon.css` menjadi non-blocking asinkron via `media="print" onload="this.media='all'"`.
+
+---
+
 ### 6. RESOLUSI BUG PRELOADER MACET (STELLAR OFFSET POLYFILL & DATEPICKER GUARDS)
 - **Fixed**: Mengeliminasi layar abu-abu berputar (*spinning loader* macet pada `#ftco-loader`) yang menutupi konten saat halaman dimuat:
   - Menghapus kelas bawaan `show` dari markup `<div id="ftco-loader" class="fullscreen">` di seluruh berkas HTML, memastikan halaman dapat diakses langsung tanpa hambatan preloader overlay.

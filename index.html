@@ -34,12 +34,14 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fredericka+the+Great&family=Work+Sans:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fredericka+the+Great&family=Work+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-    <!-- Critical CSS (Loaded synchronously for instant First Contentful Paint) -->
-    <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
-    <link rel="stylesheet" href="css/icomoon.css">
+    <!-- Critical Base CSS -->
     <link rel="stylesheet" href="css/style.min.css">
+
+    <!-- Non-critical CSS & Icons (Asynchronous non-blocking loading for 100 Mobile Performance) -->
+    <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="css/icomoon.css" media="print" onload="this.media='all'">
 
     <!-- Non-critical CSS (Asynchronous non-blocking loading for 100 Mobile Performance) -->
     <link rel="stylesheet" href="css/animate.css" media="print" onload="this.media='all'">
@@ -50,6 +52,8 @@
     <link rel="stylesheet" href="css/ionicons.min.css" media="print" onload="this.media='all'">
     <link rel="stylesheet" href="css/flaticon.css" media="print" onload="this.media='all'">
     <noscript>
+      <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
+      <link rel="stylesheet" href="css/icomoon.css">
       <link rel="stylesheet" href="css/animate.css">
       <link rel="stylesheet" href="css/owl.carousel.min.css">
       <link rel="stylesheet" href="css/owl.theme.default.min.css">
@@ -2563,7 +2567,7 @@
           if (modal) {
             modal.classList.add('show');
           }
-        }, 600);
+        }, 4500);
       }
 
       function closeModal() {

@@ -2,21 +2,20 @@
   "specVersion": "1.0",
   "host": {
     "displayName": "SD Kristen Satya Wacana (SD Lab UKSW)",
-    "documentationUrl": "https://sdlabuksw.sch.id/about.html",
+    "documentationUrl": "https://sdlabuksw.sch.id/llms.txt",
     "logoUrl": "https://sdlabuksw.sch.id/images/logo.png"
   },
   "entries": [
     {
-      "identifier": "school-profile",
-      "displayName": "Profil Resmi SD Kristen Satya Wacana",
-      "type": "documentation",
-      "url": "https://sdlabuksw.sch.id/about.html"
-    },
-    {
-      "identifier": "student-achievements",
-      "displayName": "Data Prestasi Siswa SD Lab UKSW",
-      "type": "documentation",
-      "url": "https://sdlabuksw.sch.id/prestasi.html"
+      "identifier": "urn:air:sdlabuksw:education:school-guide",
+      "displayName": "Panduan Resmi & Informasi SD Kristen Satya Wacana",
+      "type": "text/markdown; profile=\"urn:air:agent-skills\"",
+      "url": "https://sdlabuksw.sch.id/llms.txt",
+      "representativeQueries": [
+        "Profil dan kurikulum SD Kristen Satya Wacana Salatiga",
+        "Pendaftaran PPDB SD Lab UKSW Salatiga",
+        "Prestasi dan program ekstrakurikuler SD Satya Wacana"
+      ]
     }
   ]
 }
