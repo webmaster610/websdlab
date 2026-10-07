@@ -1,5 +1,22 @@
 [
   {
+    "id": "act_1791386900000",
+    "timestamp": "2026-10-07T15:48:00.000Z",
+    "display_time": "2026-10-07 22:48 WIB",
+    "action": "ANIMASI_GLIDE_ZERO_BLINK",
+    "category_tag": "DESAIN_DAN_ESTETIKA_UX",
+    "target_id": null,
+    "student_name": "Sistem Animasi Meluncur Alami (Zero-Blink Glide & Staggered Hero)",
+    "student_class": "-",
+    "competition": "Resolusi Kedip Animasi (Flicker) ke Transisi Meluncur Halus (32px Glide)",
+    "badge": "Zero-Blink Glide Motion",
+    "category": "Estetika & Pengalaman Visual",
+    "actor": "Webmaster / Admin",
+    "expires_at": null,
+    "image": "images/logo.webp",
+    "notes": "Mengeliminasi efek 'kedip-kedip' secara tuntas dengan transisi alami: (1) Mengubah scroll-reveal menjadi CSS transition murni (opacity 0->1 dan translateY 32px->0 durasi 0.8s) tanpa keyframe reset sehingga elemen meluncur mulus dari bawah tanpa flicker; (2) Mengaktifkan animasi heroGlideUp berlapis (0.1s, 0.2s, 0.3s) pada slide aktif Owl Carousel (.owl-item.active) sehingga teks meluncur naik anggun setiap pergantian foto; (3) Mempertahankan First Contentful Paint 0ms pada halaman pertama; (4) Menambahkan efek hover melayang lembut (translateY -6px hingga -8px) pada seluruh kartu layanan, guru, ekskul, dan berita."
+  },
+  {
     "id": "act_1791386400000",
     "timestamp": "2026-10-07T15:40:00.000Z",
     "display_time": "2026-10-07 22:40 WIB",

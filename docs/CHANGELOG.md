@@ -12,6 +12,23 @@ Format pencatatan perubahan berdasar prinsip [Keep a Changelog](https://keepacha
 
 ## [Unreleased] - 2026-10-07
 
+### 12. SISTEM GERAKAN MELUNCUR ALAMI (ZERO-BLINK GLIDE & STAGGERED HERO)
+- **Changed (Animasi & Estetika - Eliminasi Kedipan / Flicker ke CSS Transition Murni)**:
+  - Mengganti pemanggilan `@keyframes fadeInUp` saat scroll menjadi **CSS Transition Alami** (`opacity` 0 ke 1, `transform: translate3d(0, 32px, 0)` ke `(0,0,0)` dengan kurva `cubic-bezier(0.22, 1, 0.36, 1)` durasi 0.8s).
+  - Menghilangkan sepenuhnya efek "lampu mati lalu hidup (kedip)" karena browser tidak lagi mereset state elemen dari nol, melainkan menginterpolasi pergeseran posisi naik secara lembut.
+  - Memperbarui fungsi `contentWayPoint` di `js/main.js` & `js/main.min.js` agar langsung mengaktifkan `.ftco-animated` dengan jeda ripple 70ms.
+- **Added (Slider Banner Hero - Teks Bergerak Naik Setiap Berganti Slide)**:
+  - Menyematkan aturan gerak berbasis status aktif `.home-slider .owl-item.active .slider-text`:
+    - Badge kategori meluncur naik pada detik ke-0 (0.8s).
+    - Judul utama (*H1*) menyusul naik dengan jeda 0.1s.
+    - Paragraf deskripsi (*Lead*) menyusul pada jeda 0.2s.
+    - Tombol CTA menyusul pada jeda 0.3s.
+  - Setiap kali foto slide berganti, teks tidak lagi sekadar pudar di tempat, melainkan **benar-benar meluncur naik bertingkat (*staggered glide*)** secara memukau dan anggun.
+- **Added (Mikro-Interaksi Kartu - Luxury Card Lift)**:
+  - Menambahkan efek hover angkat lembut `translateY(-6px)` hingga `-8px` dengan bayangan berbobot pada kartu layanan, kartu guru (`.staff`), kartu ekstrakurikuler (`.course`), dan kartu kegiatan (`.blog-entry`).
+
+---
+
 ### 11. KALIBRASI TRANSISI ARTISTIK (SENTUHAN 'NYENI' & EASE-OUT BERGELOMBANG)
 - **Changed (Estetika & Animasi - Keyframe 'poeticFadeUp' & Kurva Easing Mewah)**:
   - Menyematkan keyframe animasi khusus `@keyframes poeticFadeUp` dengan kurva mewah `cubic-bezier(0.22, 1, 0.36, 1)` durasi 0.85s pada judul dan subjudul Hero Slider serta breadcrumb banner semua subhalaman. Teks meluncur naik secara lembut dan anggun saat slide berganti.

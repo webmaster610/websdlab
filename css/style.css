@@ -8875,23 +8875,39 @@ h1, h2, h3, h4, h5,
 textarea.form-control {
   height: inherit !important; }
 
+/* ============================================================
+   SISTEM ANIMASI ARTISTIK & HALUS (ZERO-BLINK & GLIDE MOTION)
+   ============================================================ */
+
+/* 1. Scroll-Reveal Tanpa Kedip: CSS Transition Alami */
 .ftco-animate {
-  opacity: 1;
-  visibility: visible; }
+  opacity: 0;
+  visibility: hidden;
+  transform: translate3d(0, 32px, 0);
+  transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1), transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
 
-.ftco-animated {
-  -webkit-animation-duration: .85s !important;
-  animation-duration: .85s !important;
-  -webkit-animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1) !important;
-  animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1) !important;
-  -webkit-animation-fill-mode: both !important;
-  animation-fill-mode: both !important; }
+.ftco-animate.ftco-animated {
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: translate3d(0, 0, 0) !important;
+}
 
-/* Transisi Halus Artistik (Nyeni & Graceful) untuk Hero Banner & Breadcrumb */
-@keyframes poeticFadeUp {
+@media (prefers-reduced-motion: reduce) {
+  .ftco-animate {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
+/* 2. Hero Slider: Meluncur Naik Anggun Setiap Pergantian Slide */
+@keyframes heroGlideUp {
   0% {
     opacity: 0;
-    transform: translate3d(0, 28px, 0);
+    transform: translate3d(0, 32px, 0);
   }
   100% {
     opacity: 1;
@@ -8899,20 +8915,50 @@ textarea.form-control {
   }
 }
 
-.home-slider .slider-text h1,
-.hero-wrap .slider-text h1,
+.home-slider .owl-item.active .slider-text .badge,
 .hero-wrap .bread {
-  animation: poeticFadeUp 0.85s cubic-bezier(0.22, 1, 0.36, 1) both; }
+  animation: heroGlideUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
 
-.home-slider .slider-text p,
-.hero-wrap .slider-text p {
-  animation: poeticFadeUp 0.85s cubic-bezier(0.22, 1, 0.36, 1) 0.15s both; }
+.home-slider .owl-item.active .slider-text h1 {
+  animation: heroGlideUp 0.85s cubic-bezier(0.22, 1, 0.36, 1) 0.1s both;
+}
 
-.home-slider .slider-text .subheading {
-  animation: poeticFadeUp 0.85s cubic-bezier(0.22, 1, 0.36, 1) both; }
+.home-slider .owl-item.active .slider-text p.lead,
+.hero-wrap .breadcrumbs {
+  animation: heroGlideUp 0.85s cubic-bezier(0.22, 1, 0.36, 1) 0.2s both;
+}
 
-.ftco-services .services {
-  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.4s ease !important; }
+.home-slider .owl-item.active .slider-text p:last-child {
+  animation: heroGlideUp 0.85s cubic-bezier(0.22, 1, 0.36, 1) 0.3s both;
+}
+
+.home-slider .owl-item:not(.active) .slider-text .badge,
+.home-slider .owl-item:not(.active) .slider-text h1,
+.home-slider .owl-item:not(.active) .slider-text p {
+  opacity: 0;
+  transform: translate3d(0, 32px, 0);
+}
+
+/* 3. Efek Hover Melayang Mewah (Luxury Card Lift) */
+.services,
+.staff,
+.course,
+.blog-entry {
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.35s ease !important;
+}
+
+.services:hover {
+  transform: translateY(-8px) scale(1.015);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.16) !important;
+}
+
+.staff:hover,
+.course:hover,
+.blog-entry:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 35px -5px rgba(15, 23, 42, 0.14) !important;
+}
 
 .bg-primary {
   background: #0b427b !important; }
