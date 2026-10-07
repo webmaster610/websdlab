@@ -159,7 +159,7 @@
 			$this.find('> a').attr('aria-expanded', false);
 			// $this.find('.dropdown-menu').removeClass('animated-fast fadeInUp show');
 			$this.find('.dropdown-menu').removeClass('show');
-		// }, 20);
+		// }, 60);
 	});
 
 
@@ -259,10 +259,10 @@
 								el.addClass('fadeInUp ftco-animated');
 							}
 							el.removeClass('item-animate');
-						},  k * 25, 'easeInOutExpo' );
+						},  k * 70, 'easeInOutExpo' );
 					});
 					
-				}, 20);
+				}, 60);
 				
 			}
 

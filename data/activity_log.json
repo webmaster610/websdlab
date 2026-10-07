@@ -1,5 +1,22 @@
 [
   {
+    "id": "act_1791386400000",
+    "timestamp": "2026-10-07T15:40:00.000Z",
+    "display_time": "2026-10-07 22:40 WIB",
+    "action": "PENYELARASAN_ANIMASI_NYENI",
+    "category_tag": "DESAIN_DAN_ESTETIKA_UX",
+    "target_id": null,
+    "student_name": "Penyelarasan Transisi Animasi Anggun & Artistik (Sentuhan 'Nyeni')",
+    "student_class": "-",
+    "competition": "Kalibrasi Durasi & Easing Transisi Elegan (Poetic Fade-Up)",
+    "badge": "Transisi Nyeni & Anggun",
+    "category": "Estetika & Pengalaman Visual",
+    "actor": "Webmaster / Admin",
+    "expires_at": null,
+    "image": "images/logo.webp",
+    "notes": "Menyelaraskan kecepatan dan kehalusan animasi agar berkesan mewah, anggun, dan 'nyeni': (1) Menerapkan keyframe animation khusus poeticFadeUp (0.85s dengan kurva cubic-bezier(0.22, 1, 0.36, 1)) pada teks judul dan tombol hero banner/breadcrumb agar meluncur lembut tanpa jeda kosong; (2) Memperpanjang durasi animasi scroll reveal .ftco-animated dari 0.5s ke 0.85s dengan stagger 70ms agar kartu bergulir bergelombang secara ritmis dan estetik; (3) Menghaluskan kecepatan rotasi slider carousel dengan smartSpeed 700-800ms dan autoplayTimeout 5000-5500ms."
+  },
+  {
     "id": "act_1791385800000",
     "timestamp": "2026-10-07T15:30:00.000Z",
     "display_time": "2026-10-07 22:30 WIB",

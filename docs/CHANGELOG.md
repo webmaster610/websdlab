@@ -12,6 +12,15 @@ Format pencatatan perubahan berdasar prinsip [Keep a Changelog](https://keepacha
 
 ## [Unreleased] - 2026-10-07
 
+### 11. KALIBRASI TRANSISI ARTISTIK (SENTUHAN 'NYENI' & EASE-OUT BERGELOMBANG)
+- **Changed (Estetika & Animasi - Keyframe 'poeticFadeUp' & Kurva Easing Mewah)**:
+  - Menyematkan keyframe animasi khusus `@keyframes poeticFadeUp` dengan kurva mewah `cubic-bezier(0.22, 1, 0.36, 1)` durasi 0.85s pada judul dan subjudul Hero Slider serta breadcrumb banner semua subhalaman. Teks meluncur naik secara lembut dan anggun saat slide berganti.
+  - Memperpanjang durasi animasi kemunculan elemen `.ftco-animated` di `css/animate.css` dan `css/style.min.css` dari sebelumnya 0.5s yang terlalu kaku menjadi **0.85s** dengan kurva akselerasi halus.
+  - Menata jeda bertingkat (*staggered wave delay*) pada fungsi `contentWayPoint` di `js/main.js` & `js/main.min.js` dari 25ms menjadi **70ms**, menghasilkan efek kemunculan bergelombang (*cascading ripple*) yang sangat indah dan memikat saat pengunjung menggulir layar.
+  - Menghaluskan pergantian antar-slide pada slider Hero, Carousel Testimoni, dan Carousel Prestasi dengan menyematkan `smartSpeed: 700-800ms` dan `autoplayTimeout: 5000-5500ms`, memberikan waktu yang cukup bagi mata pengunjung untuk menikmati konten secara rileks.
+
+---
+
 ### 10. REKAYASA PERCEIVED PERFORMANCE: ZERO-DELAY INSTANT PAINT, CLOUDFLARE EDGE CACHING, & SPECULATIVE NAVIGATION
 - **Changed (Kecepatan & Perceived Performance - Zero-Delay Instant Paint / Efek 'Cling')**:
   - Mengubah aturan CSS `.ftco-animate` dari awalnya disembunyikan `opacity: 0; visibility: hidden;` menjadi langsung tampil `opacity: 1; visibility: visible;`.
