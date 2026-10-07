@@ -17,13 +17,23 @@
     <link rel="stylesheet" href="css/owl.theme.default.min.css">
     <link rel="stylesheet" href="css/magnific-popup.css">
 
-    <link rel="stylesheet" href="css/aos.css">
 
     <link rel="stylesheet" href="css/ionicons.min.css">
     
     <link rel="stylesheet" href="css/flaticon.css">
     <link rel="stylesheet" href="css/icomoon.css">
     <link rel="stylesheet" href="css/style.css">
+      <script type="speculationrules">
+    {
+      "prerender": [
+        {
+          "source": "list",
+          "urls": ["index.html", "about.html", "courses.html", "prestasi.html", "teacher.html", "blog.html", "contact.html"],
+          "eagerness": "moderate"
+        }
+      ]
+    }
+    </script>
   </head>
   <body>
 	  <div class="py-2 bg-primary">
@@ -77,7 +87,7 @@
       <div class="overlay" style="background: rgba(15, 23, 42, 0.85);"></div>
       <div class="container">
         <div class="row no-gutters slider-text align-items-center justify-content-center">
-          <div class="col-md-9 ftco-animate text-center">
+          <div class="col-md-9 text-center">
             <h1 class="mb-2 bread" style="color: #ffffff; text-shadow: 0 2px 4px rgba(0,0,0,0.4);">Galeri Prestasi Siswa</h1>
             <p class="breadcrumbs"><span class="mr-2"><a href="index.html" style="color: #fd5f00;">Beranda <i class="ion-ios-arrow-forward"></i></a></span> <span style="color: #e2e8f0;">Prestasi Siswa <i class="ion-ios-arrow-forward"></i></span></p>
           </div>
@@ -258,7 +268,6 @@
   <script src="js/jquery.stellar.min.js"></script>
   <script src="js/owl.carousel.min.js"></script>
   <script src="js/jquery.magnific-popup.min.js"></script>
-  <script src="js/aos.js"></script>
   <script src="js/jquery.animateNumber.min.js"></script>
   <script src="js/scrollax.min.js"></script>
   <script src="js/main.js"></script>
@@ -497,5 +506,6 @@
     })(jQuery);
   </script>
     
-  </body>
+    <script src="js/instantpage.min.js" type="module"></script>
+</body>
 </html>

@@ -1,8 +1,3 @@
- AOS.init({
- 	duration: 800,
- 	easing: 'slide'
- });
-
 (function($) {
 
 	"use strict";
@@ -164,7 +159,7 @@
 			$this.find('> a').attr('aria-expanded', false);
 			// $this.find('.dropdown-menu').removeClass('animated-fast fadeInUp show');
 			$this.find('.dropdown-menu').removeClass('show');
-		// }, 100);
+		// }, 20);
 	});
 
 
@@ -264,10 +259,10 @@
 								el.addClass('fadeInUp ftco-animated');
 							}
 							el.removeClass('item-animate');
-						},  k * 50, 'easeInOutExpo' );
+						},  k * 25, 'easeInOutExpo' );
 					});
 					
-				}, 100);
+				}, 20);
 				
 			}
 

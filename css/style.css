@@ -8876,8 +8876,18 @@ textarea.form-control {
   height: inherit !important; }
 
 .ftco-animate {
-  opacity: 0;
-  visibility: hidden; }
+  opacity: 1;
+  visibility: visible; }
+
+.hero-wrap .ftco-animate,
+.home-slider .ftco-animate,
+.ftco-services .ftco-animate,
+.services-wrap .ftco-animate {
+  opacity: 1 !important;
+  visibility: visible !important;
+  -webkit-animation: none !important;
+  animation: none !important;
+  transform: none !important; }
 
 .bg-primary {
   background: #0b427b !important; }

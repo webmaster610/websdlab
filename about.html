@@ -62,7 +62,6 @@
 
 
 
-    <link rel="stylesheet" href="css/aos.css">
 
 
 
@@ -90,6 +89,17 @@
 
 
 
+      <script type="speculationrules">
+    {
+      "prerender": [
+        {
+          "source": "list",
+          "urls": ["index.html", "about.html", "courses.html", "prestasi.html", "teacher.html", "blog.html", "contact.html"],
+          "eagerness": "moderate"
+        }
+      ]
+    }
+    </script>
   </head>
 
 
@@ -296,7 +306,7 @@
 
 
 
-          <div class="col-md-9 ftco-animate text-center">
+          <div class="col-md-9 text-center">
 
 
 
@@ -1409,7 +1419,6 @@
 
 
 
-  <script src="js/aos.js"></script>
 
 
 
@@ -1429,7 +1438,8 @@
 
 
 
-  </body>
+    <script src="js/instantpage.min.js" type="module"></script>
+</body>
 
 
 

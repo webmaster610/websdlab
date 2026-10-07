@@ -40,7 +40,6 @@
     <link rel="stylesheet" href="css/owl.carousel.min.css" media="print" onload="this.media='all'">
     <link rel="stylesheet" href="css/owl.theme.default.min.css" media="print" onload="this.media='all'">
     <link rel="stylesheet" href="css/magnific-popup.css" media="print" onload="this.media='all'">
-    <link rel="stylesheet" href="css/aos.css" media="print" onload="this.media='all'">
     <link rel="stylesheet" href="css/ionicons.min.css" media="print" onload="this.media='all'">
     <link rel="stylesheet" href="css/flaticon.css" media="print" onload="this.media='all'">
     <noscript>
@@ -50,13 +49,23 @@
       <link rel="stylesheet" href="css/owl.carousel.min.css">
       <link rel="stylesheet" href="css/owl.theme.default.min.css">
       <link rel="stylesheet" href="css/magnific-popup.css">
-      <link rel="stylesheet" href="css/aos.css">
       <link rel="stylesheet" href="css/ionicons.min.css">
       <link rel="stylesheet" href="css/flaticon.css">
     </noscript>
 
 
 
+      <script type="speculationrules">
+    {
+      "prerender": [
+        {
+          "source": "list",
+          "urls": ["index.html", "about.html", "courses.html", "prestasi.html", "teacher.html", "blog.html", "contact.html"],
+          "eagerness": "moderate"
+        }
+      ]
+    }
+    </script>
   </head>
 
 
@@ -267,7 +276,7 @@
 
 
 
-          <div class="col-md-10 text-center ftco-animate">
+          <div class="col-md-10 text-center">
 
 
 
@@ -323,7 +332,7 @@
 
 
 
-          <div class="col-md-10 text-center ftco-animate">
+          <div class="col-md-10 text-center">
 
 
 
@@ -379,7 +388,7 @@
 
 
 
-          <div class="col-md-10 text-center ftco-animate">
+          <div class="col-md-10 text-center">
 
 
 
@@ -433,7 +442,7 @@
 
 
 
-          <div class="col-md-3 d-flex services align-self-stretch pb-4 px-4 ftco-animate bg-primary">
+          <div class="col-md-3 d-flex services align-self-stretch pb-4 px-4 bg-primary">
 
 
 
@@ -477,7 +486,7 @@
 
 
 
-          <div class="col-md-3 d-flex services align-self-stretch pb-4 px-4 ftco-animate bg-tertiary">
+          <div class="col-md-3 d-flex services align-self-stretch pb-4 px-4 bg-tertiary">
 
 
 
@@ -521,7 +530,7 @@
 
 
 
-          <div class="col-md-3 d-flex services align-self-stretch pb-4 px-4 ftco-animate bg-fifth">
+          <div class="col-md-3 d-flex services align-self-stretch pb-4 px-4 bg-fifth">
 
 
 
@@ -565,7 +574,7 @@
 
 
 
-          <div class="col-md-3 d-flex services align-self-stretch pb-4 px-4 ftco-animate bg-quarternary">
+          <div class="col-md-3 d-flex services align-self-stretch pb-4 px-4 bg-quarternary">
 
 
 
@@ -2430,7 +2439,6 @@
 
 
 
-  <script src="js/aos.js"></script>
 
 
 
@@ -2639,5 +2647,6 @@
       });
     })(jQuery);
   </script>
+  <script src="js/instantpage.min.js" type="module"></script>
 </body>
 </html>
