@@ -10,7 +10,21 @@ Format pencatatan perubahan berdasar prinsip [Keep a Changelog](https://keepacha
 
 ---
 
-## [Unreleased] - 2026-10-06
+## [Unreleased] - 2026-10-07
+
+### 9. OPTIMASI GAMBAR WEBP (LOGO & HERO), ELIMINASI UNUSED PRECONNECT, & DEFER STELLAR.JS
+- **Changed (Performa - Optimasi Aset Gambar / Est Savings 106+ KiB)**:
+  - Mengonversi dan merampingkan `images/logo.webp` (104x104 Retina @ 11.4 KB) serta mengompresi `images/logo.png` dari 73.7 KB ke 27.0 KB (hemat 46.7 KB).
+  - Mengompresi `images/hero_2.webp` ke resolusi 1280x720 dari 222.6 KB menjadi 156.8 KB (hemat 65.8 KB).
+  - Total penghematan payload gambar mencapai **112.5 KB**, melampaui estimasi target Lighthouse (106 KiB).
+  - Memperbarui tag `<img>` logo navbar dan modal PPDB pada seluruh berkas HTML (`index.html`, `about.html`, `blog.html`, `contact.html`, `courses.html`, `prestasi.html`, `teacher.html`) dengan fallback aman `onerror="this.src='images/logo.png';"`.
+- **Removed (Performa - Eliminasi Unused Preconnect Warning)**:
+  - Menghapus tag redundan `<link rel="preconnect" href="https://fonts.googleapis.com">`. Browser Chromium secara otomatis meminta stylesheet font langsung, sehingga hanya `https://fonts.gstatic.com` (asal berkas font .woff2) yang memerlukan preconnect. Peringatan *"Unused preconnect"* tuntas 100%.
+- **Fixed (Performa - Layout Thrashing / Forced Reflow Stellar.js)**:
+  - Membatasi inisialisasi parallax `$(window).stellar` pada perangkat desktop saja (`window.innerWidth >= 992`) dengan jeda tunda 300 ms (`setTimeout`) di `js/main.js` dan `js/main.min.js`.
+  - Mencegah kueri geometri layar prematur saat proses first render mobile, mengeliminasi forced reflow saat inisialisasi.
+
+---
 
 ### 8. PENERAPAN SEMANTIK MAIN LANDMARK & PENCEGAHAN FORCED REFLOW
 - **Fixed (Aksesibilitas - Document does not have a main landmark)**:

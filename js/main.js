@@ -28,17 +28,21 @@
 		};
 	}
 
-	try {
-		$(window).stellar({
-			responsive: true,
-			parallaxBackgrounds: true,
-			parallaxElements: true,
-			horizontalScrolling: false,
-			hideDistantElements: false,
-			scrollProperty: 'scroll'
-		});
-	} catch(e) {
-		console.warn('Stellar initialization skipped:', e);
+	if (window.innerWidth >= 992) {
+		setTimeout(function() {
+			try {
+				$(window).stellar({
+					responsive: true,
+					parallaxBackgrounds: true,
+					parallaxElements: true,
+					horizontalScrolling: false,
+					hideDistantElements: false,
+					scrollProperty: 'scroll'
+				});
+			} catch(e) {
+				console.warn('Stellar initialization skipped:', e);
+			}
+		}, 300);
 	}
 
 	var fullHeight = function() {

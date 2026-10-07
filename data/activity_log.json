@@ -1,5 +1,22 @@
 [
   {
+    "id": "act_1791350645000",
+    "timestamp": "2026-10-07T05:25:00.000Z",
+    "display_time": "2026-10-07 12:25 WIB",
+    "action": "OPTIMASI_GAMBAR_DAN_PRECONNECT",
+    "category_tag": "PERFORMA_PAGESPEED",
+    "target_id": null,
+    "student_name": "Optimasi Gambar WebP, Eliminasi Unused Preconnect & Defer Reflow Stellar",
+    "student_class": "-",
+    "competition": "Resolusi Lighthouse Image Delivery 106 KiB & Layout Thrashing",
+    "badge": "WebP & Preconnect Clean",
+    "category": "Performa & Kecepatan",
+    "actor": "Webmaster / Admin",
+    "expires_at": null,
+    "image": "images/logo.webp",
+    "notes": "Menyelesaikan 3 temuan PageSpeed/Lighthouse: (1) Menghasilkan logo.webp (11.4 KB) dan mengompresi logo.png (27 KB) serta hero_2.webp (156.8 KB) untuk menghemat lebih dari 112.5 KB (melampaui target estimasi 106 KiB) dengan fallback onerror di 7 file HTML; (2) Menghapus tag link preconnect redundan ke fonts.googleapis.com pada seluruh berkas HTML; (3) Memasang filter window.innerWidth >= 992 dan setTimeout 300ms pada inisialisasi Stellar.js di main.js & main.min.js untuk mengeliminasi forced reflow saat inisialisasi awal."
+  },
+  {
     "id": "act_1791289815203",
     "timestamp": "2026-10-06T12:30:15.203Z",
     "display_time": "2026-10-06 19:30 WIB",
