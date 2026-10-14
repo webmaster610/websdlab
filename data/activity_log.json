@@ -1,5 +1,22 @@
 [
   {
+    "id": "act_1791959465300",
+    "timestamp": "2026-10-14T06:31:05.300Z",
+    "display_time": "2026-10-14 06:31 WIB",
+    "action": "TAMBAH",
+    "category_tag": "PRESTASI",
+    "target_id": 7,
+    "student_name": "Rahardian Erland Dimas",
+    "student_class": "Kelas 5B",
+    "competition": "E-Artium International Piano Competition",
+    "badge": "Juara 1 • Tingkat Nasional",
+    "category": "Seni Vokal & Musik",
+    "actor": "Admin (7187970534)",
+    "expires_at": null,
+    "image": "images/prestasi/prestasi_1791959460209.jpg",
+    "notes": "Disetujui Admin. Masa aktif: Abadi (Evergreen)"
+  },
+  {
     "id": "act_1791386900000",
     "timestamp": "2026-10-07T15:48:00.000Z",
     "display_time": "2026-10-07 22:48 WIB",
